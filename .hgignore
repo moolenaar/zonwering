@@ -1,0 +1,10 @@
+syntax: glob
+software/build
+*.bak
+*-bak
+electronics/rescue-backup
+electronics/gerber
+electronics/zonwering.csv
+electronics/zonwering.dsn
+electronics/zonwering.net
+electronics/zonwering.xml

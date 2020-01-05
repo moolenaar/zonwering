@@ -1,0 +1,1816 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L zonwering-rescue:SW_PUSH SW2
+U 1 1 5AF0C35E
+P 2300 4850
+F 0 "SW2" V 2400 5100 50  0000 C CNN
+F 1 "tactile switch" H 2300 4750 50  0000 C CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_EVPBF" H 2300 4850 50  0001 C CNN
+F 3 "" H 2300 4850 50  0000 C CNN
+	1    2300 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:SW_PUSH SW1
+U 1 1 5AF0C3D9
+P 1450 4850
+F 0 "SW1" V 1550 5050 50  0000 C CNN
+F 1 "tactile switch" H 1450 4750 50  0000 C CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_EVPBF" H 1450 4850 50  0001 C CNN
+F 3 "" H 1450 4850 50  0000 C CNN
+	1    1450 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:SW_PUSH SW3
+U 1 1 5AF0C40A
+P 3150 4850
+F 0 "SW3" V 3250 5100 50  0000 C CNN
+F 1 "tactile switch" H 3150 4750 50  0000 C CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_EVPBF" H 3150 4850 50  0001 C CNN
+F 3 "" H 3150 4850 50  0000 C CNN
+	1    3150 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:VR VR1
+U 1 1 5AF44DBB
+P 3100 2750
+F 0 "VR1" V 2850 2750 50  0000 C TNN
+F 1 "JVR7N391K" V 3000 2750 50  0000 C CNN
+F 2 "Varistors:RV_Disc_D7_W3.5_P5" H 3100 2750 50  0001 C CNN
+F 3 "" H 3100 2750 50  0000 C CNN
+	1    3100 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:Fuse F1
+U 1 1 5AF4BAD0
+P 1750 2600
+F 0 "F1" H 1600 2600 50  0000 C CNN
+F 1 "1A slow" H 1500 2700 50  0000 C CNN
+F 2 "Fuse_Holders_and_Fuses:Fuseholder5x20_horiz_open_Schurter_0031_8201" V 1680 2600 50  0001 C CNN
+F 3 "" H 1750 2600 50  0000 C CNN
+	1    1750 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:LCD5110 U6
+U 1 1 5AF4C7DB
+P 8800 4500
+F 0 "U6" H 8800 4600 50  0000 C CNN
+F 1 "LCD5110" H 8800 4400 50  0000 C CNN
+F 2 "footprints:Nokia_lcd5110" H 8800 4500 50  0001 C CNN
+F 3 "" H 8800 4500 50  0000 C CNN
+	1    8800 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:LNK302D U3
+U 1 1 5AF6C8AF
+P 6600 2550
+F 0 "U3" H 6150 3400 50  0000 C CNN
+F 1 "LNK302D" H 6250 3300 50  0000 C CNN
+F 2 "Power_Integrations:SO-8C" H 6600 2550 50  0001 C CNN
+F 3 "" H 6600 2550 50  0000 C CNN
+	1    6600 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:D D1
+U 1 1 5AF6CADC
+P 4350 2450
+F 0 "D1" H 4350 2550 50  0000 C CNN
+F 1 "US1M" H 4350 2350 50  0000 C CNN
+F 2 "Diodes_SMD:SMA_Handsoldering" H 4350 2450 50  0001 C CNN
+F 3 "" H 4350 2450 50  0000 C CNN
+	1    4350 2450
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:D D2
+U 1 1 5AF6CB75
+P 7750 2150
+F 0 "D2" H 7750 2250 50  0000 C CNN
+F 1 "US1M" H 7750 2050 50  0000 C CNN
+F 2 "Diodes_SMD:SMA_Handsoldering" H 7750 2150 50  0001 C CNN
+F 3 "" H 7750 2150 50  0000 C CNN
+	1    7750 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C11
+U 1 1 5AF6CBE0
+P 7150 1850
+F 0 "C11" H 7250 2050 50  0000 L CNN
+F 1 "100nF" H 7250 1950 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7188 1700 50  0001 C CNN
+F 3 "" H 7150 1850 50  0000 C CNN
+F 4 "50V" H 7350 1850 60  0000 C CNN "voltage"
+	1    7150 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:CP C7
+U 1 1 5AF6CC8F
+P 4850 2800
+F 0 "C7" H 4875 2900 50  0000 L CNN
+F 1 "2.2uF" H 4875 2700 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D8_L11.5_P3.5" H 4888 2650 50  0001 C CNN
+F 3 "" H 4850 2800 50  0000 C CNN
+F 4 "400V" H 5000 2600 60  0000 C CNN "voltage"
+	1    4850 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:CP C9
+U 1 1 5AF6CD0E
+P 5750 2800
+F 0 "C9" H 5775 2900 50  0000 L CNN
+F 1 "2.2uF" H 5775 2700 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D8_L11.5_P3.5" H 5788 2650 50  0001 C CNN
+F 3 "" H 5750 2800 50  0000 C CNN
+F 4 "400V" H 5900 2600 60  0000 C CNN "Field4"
+	1    5750 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:INDUCTOR L1
+U 1 1 5AF6CD7B
+P 5300 2450
+F 0 "L1" V 5250 2450 50  0000 C CNN
+F 1 "100uH" V 5400 2450 50  0000 C CNN
+F 2 "footprints:Choke_6mm" H 5300 2450 50  0001 C CNN
+F 3 "" H 5300 2450 50  0000 C CNN
+F 4 "80mA" V 5150 2450 60  0000 C CNN "current"
+	1    5300 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L zonwering-rescue:INDUCTOR L2
+U 1 1 5AF6CE0A
+P 7450 2650
+F 0 "L2" H 7350 2600 50  0000 C CNN
+F 1 "1mH" H 7300 2700 50  0000 C CNN
+F 2 "footprints:Choke_6mm" H 7450 2650 50  0001 C CNN
+F 3 "" H 7450 2650 50  0000 C CNN
+F 4 "150mA" H 7250 2800 60  0000 C CNN "current"
+	1    7450 2650
+	1    0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:CP C12
+U 1 1 5AF6CF68
+P 8100 2600
+F 0 "C12" H 8125 2700 50  0000 L CNN
+F 1 "100uF" H 8125 2500 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Radial_D8_L13_P3.8" H 8138 2450 50  0001 C CNN
+F 3 "" H 8100 2600 50  0000 C CNN
+F 4 "16V" H 8200 2400 60  0000 C CNN "voltage"
+	1    8100 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:R R9
+U 1 1 5AF6D9E7
+P 3500 2450
+F 0 "R9" V 3600 2450 50  0000 C CNN
+F 1 "47" V 3700 2450 50  0000 C CNN
+F 2 "footprints:Resistor_14mm" V 3430 2450 50  0001 C CNN
+F 3 "" H 3500 2450 50  0000 C CNN
+F 4 "2W" V 3800 2450 60  0000 C CNN "power"
+F 5 "CRF253-45T47R" V 3400 2400 60  0000 C CNN "type"
+	1    3500 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:TRIAC_small U1
+U 1 1 5AF727BD
+P 3550 1000
+F 0 "U1" H 3200 1100 50  0000 C CNN
+F 1 "BT137S-600E" H 3050 1000 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TO-252-2Lead" H 3325 1050 50  0001 C CNN
+F 3 "" H 3325 1050 50  0000 C CNN
+	1    3550 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:TRIAC_small U2
+U 1 1 5AF728A4
+P 5000 1000
+F 0 "U2" H 4650 1100 50  0000 C CNN
+F 1 "BT137S-600E" H 4500 1000 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:TO-252-2Lead" H 4775 1050 50  0001 C CNN
+F 3 "" H 4775 1050 50  0000 C CNN
+	1    5000 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:GND #PWR01
+U 1 1 5AF7400E
+P 4600 2050
+F 0 "#PWR01" H 4600 1800 50  0001 C CNN
+F 1 "GND" H 4600 1900 50  0000 C CNN
+F 2 "" H 4600 2050 50  0000 C CNN
+F 3 "" H 4600 2050 50  0000 C CNN
+	1    4600 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:GND #PWR02
+U 1 1 5AF7407A
+P 4850 3050
+F 0 "#PWR02" H 4850 2800 50  0001 C CNN
+F 1 "GND" H 4850 2900 50  0000 C CNN
+F 2 "" H 4850 3050 50  0000 C CNN
+F 3 "" H 4850 3050 50  0000 C CNN
+	1    4850 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R32
+U 1 1 5AF78D25
+P 10250 4450
+F 0 "R32" H 10400 4500 50  0000 C CNN
+F 1 "22" H 10400 4400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 10180 4450 50  0001 C CNN
+F 3 "" H 10250 4450 50  0000 C CNN
+	1    10250 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:CONN_02X03 P2
+U 1 1 5AF7C306
+P 2300 6600
+F 0 "P2" H 2300 6800 50  0000 C CNN
+F 1 "CONN_02X03" H 2350 6900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x03" H 2300 5400 50  0001 C CNN
+F 3 "" H 2300 5400 50  0000 C CNN
+	1    2300 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:ATTINY84S IC1
+U 1 1 5AF7D878
+P 4400 6750
+F 0 "IC1" H 3550 7500 50  0000 C CNN
+F 1 "ATTINY84S" H 5100 6000 50  0000 C CNN
+F 2 "SMD_Packages:SOIC-14_N" H 4350 6850 50  0001 C CIN
+F 3 "" H 4400 6750 50  0000 C CNN
+	1    4400 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R5
+U 1 1 5AF77EF4
+P 1750 6150
+F 0 "R5" H 1900 6200 50  0000 C CNN
+F 1 "4.7k" H 1900 6100 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1680 6150 50  0001 C CNN
+F 3 "" H 1750 6150 50  0000 C CNN
+	1    1750 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C1
+U 1 1 5AF7892A
+P 1100 6100
+F 0 "C1" H 750 6150 50  0000 L CNN
+F 1 "100nF" H 750 6050 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1138 5950 50  0001 C CNN
+F 3 "" H 1100 6100 50  0000 C CNN
+	1    1100 6100
+	1    0    0    -1  
+$EndComp
+Text GLabel 7950 5150 0    60   Input ~ 0
+LCDDin
+Text GLabel 7950 4950 0    60   Input ~ 0
+D/nC
+Text GLabel 7950 4750 0    60   Input ~ 0
+LCDCLK
+Text GLabel 4450 1200 0    60   Input ~ 0
+UP
+Text GLabel 2950 1200 0    60   Input ~ 0
+DOWN
+Text GLabel 6350 4450 2    60   Output ~ 0
+UP
+Text GLabel 6350 3450 2    60   Output ~ 0
+DOWN
+Text GLabel 1150 7250 0    60   Output ~ 0
+LCDDin
+Text GLabel 1150 7100 0    60   Output ~ 0
+LCDCLK
+$Comp
+L zonwering-rescue:C C14
+U 1 1 5AF7C264
+P 9600 4400
+F 0 "C14" H 9625 4500 50  0000 L CNN
+F 1 "100nF" H 9625 4300 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 9638 4250 50  0001 C CNN
+F 3 "" H 9600 4400 50  0000 C CNN
+	1    9600 4400
+	1    0    0    -1  
+$EndComp
+Text Notes 2250 6250 0    60   ~ 0
+ICSP
+$Comp
+L zonwering-rescue:C C5
+U 1 1 5AF7DE2B
+P 3900 2750
+F 0 "C5" H 3925 2850 50  0000 L CNN
+F 1 "10nF" H 3925 2650 50  0000 L CNN
+F 2 "footprints:capacitor_RM7.5" H 3938 2600 50  0001 C CNN
+F 3 "" H 3900 2750 50  0000 C CNN
+F 4 "300VAC X2" H 4150 2550 60  0000 C CNN "voltage"
+	1    3900 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C6
+U 1 1 5AF7E5C1
+P 3900 3400
+F 0 "C6" H 3925 3500 50  0000 L CNN
+F 1 "1nF" H 3925 3300 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 3938 3250 50  0001 C CNN
+F 3 "" H 3900 3400 50  0000 C CNN
+	1    3900 3400
+	1    0    0    -1  
+$EndComp
+Text Label 1850 6700 0    60   ~ 0
+RST
+Text Label 2600 6600 0    60   ~ 0
+MOSI
+Text Label 1800 6500 0    60   ~ 0
+MISO
+Text Label 1850 6600 0    60   ~ 0
+CLK
+Text GLabel 5750 7150 2    60   Output ~ 0
+D/nC
+$Comp
+L zonwering-rescue:R R2
+U 1 1 5AF8255C
+P 1500 6150
+F 0 "R2" H 1350 6200 50  0000 C CNN
+F 1 "100k" H 1350 6100 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1430 6150 50  0001 C CNN
+F 3 "" H 1500 6150 50  0000 C CNN
+	1    1500 6150
+	1    0    0    -1  
+$EndComp
+Text GLabel 7400 3650 0    60   Input ~ 0
+nCE
+$Comp
+L zonwering-rescue:R R27
+U 1 1 5AF7F6C4
+P 8350 3650
+F 0 "R27" V 8150 3650 50  0000 C CNN
+F 1 "100k" V 8250 3650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8280 3650 50  0001 C CNN
+F 3 "" H 8350 3650 50  0000 C CNN
+	1    8350 3650
+	0    1    1    0   
+$EndComp
+Text GLabel 5750 6950 2    60   Output ~ 0
+nCE
+$Comp
+L zonwering-rescue:R R4
+U 1 1 5AF7FC3F
+P 1800 4550
+F 0 "R4" V 1900 4550 50  0000 C CNN
+F 1 "51k" V 2000 4550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1730 4550 50  0001 C CNN
+F 3 "" H 1800 4550 50  0000 C CNN
+	1    1800 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R7
+U 1 1 5AF7FD60
+P 2700 4550
+F 0 "R7" V 2800 4550 50  0000 C CNN
+F 1 "51k" V 2900 4550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 2630 4550 50  0001 C CNN
+F 3 "" H 2700 4550 50  0000 C CNN
+	1    2700 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R1
+U 1 1 5AF7FDEB
+P 1000 5150
+F 0 "R1" V 1100 5150 50  0000 C CNN
+F 1 "100k" V 1200 5150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 930 5150 50  0001 C CNN
+F 3 "" H 1000 5150 50  0000 C CNN
+	1    1000 5150
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R11
+U 1 1 5AF80AFD
+P 3550 3650
+F 0 "R11" V 3650 3650 50  0000 C CNN
+F 1 "100k" V 3750 3650 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 3480 3650 50  0001 C CNN
+F 3 "" H 3550 3650 50  0000 C CNN
+	1    3550 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R17
+U 1 1 5AF80BBE
+P 5100 3800
+F 0 "R17" V 5180 3800 50  0000 C CNN
+F 1 "100k" V 5250 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 5030 3800 50  0001 C CNN
+F 3 "" H 5100 3800 50  0000 C CNN
+	1    5100 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R14
+U 1 1 5AF80C55
+P 4700 3800
+F 0 "R14" V 4780 3800 50  0000 C CNN
+F 1 "100k" V 4850 3800 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 4630 3800 50  0001 C CNN
+F 3 "" H 4700 3800 50  0000 C CNN
+	1    4700 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R18
+U 1 1 5AF80CEE
+P 5100 4800
+F 0 "R18" V 5180 4800 50  0000 C CNN
+F 1 "100k" V 5250 4800 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 5030 4800 50  0001 C CNN
+F 3 "" H 5100 4800 50  0000 C CNN
+	1    5100 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R15
+U 1 1 5AF80D85
+P 4700 4800
+F 0 "R15" V 4780 4800 50  0000 C CNN
+F 1 "100k" V 4850 4800 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 4630 4800 50  0001 C CNN
+F 3 "" H 4700 4800 50  0000 C CNN
+	1    4700 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R19
+U 1 1 5AF80E22
+P 6000 3450
+F 0 "R19" V 6080 3450 50  0000 C CNN
+F 1 "100" V 6150 3450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5930 3450 50  0001 C CNN
+F 3 "" H 6000 3450 50  0000 C CNN
+	1    6000 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R20
+U 1 1 5AF80EC1
+P 6000 4450
+F 0 "R20" V 6080 4450 50  0000 C CNN
+F 1 "100" V 6150 4450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 5930 4450 50  0001 C CNN
+F 3 "" H 6000 4450 50  0000 C CNN
+	1    6000 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R24
+U 1 1 5AF84F91
+P 7700 4200
+F 0 "R24" H 7550 4250 50  0000 C CNN
+F 1 "100k" H 7550 4150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7630 4200 50  0001 C CNN
+F 3 "" H 7700 4200 50  0000 C CNN
+	1    7700 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R21
+U 1 1 5AF85A29
+P 6150 5550
+F 0 "R21" V 5900 5550 50  0000 C CNN
+F 1 "100k" V 6000 5550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6080 5550 50  0001 C CNN
+F 3 "" H 6150 5550 50  0000 C CNN
+	1    6150 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R22
+U 1 1 5AF85AEC
+P 6150 5800
+F 0 "R22" V 6230 5800 50  0000 C CNN
+F 1 "100k" V 6300 5800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6080 5800 50  0001 C CNN
+F 3 "" H 6150 5800 50  0000 C CNN
+	1    6150 5800
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:C C2
+U 1 1 5AF8946C
+P 1750 3350
+F 0 "C2" H 1775 3450 50  0000 L CNN
+F 1 "150nF" H 1775 3250 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1788 3200 50  0001 C CNN
+F 3 "" H 1750 3350 50  0000 C CNN
+	1    1750 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C3
+U 1 1 5AF89551
+P 2600 3350
+F 0 "C3" H 2750 3450 50  0000 L CNN
+F 1 "470pF" H 2750 3350 50  0000 L CNN
+F 2 "Capacitors_ThroughHole:C_Disc_D6_P5" H 2638 3200 50  0001 C CNN
+F 3 "" H 2600 3350 50  0000 C CNN
+F 4 "400VAC Y" H 2950 3250 60  0000 C CNN "voltage"
+	1    2600 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R8
+U 1 1 5AF8A4C0
+P 3100 3650
+F 0 "R8" V 3200 3650 50  0000 C CNN
+F 1 "100k" V 3300 3650 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 3030 3650 50  0001 C CNN
+F 3 "" H 3100 3650 50  0000 C CNN
+	1    3100 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R13
+U 1 1 5AF8C723
+P 4600 1850
+F 0 "R13" H 4450 1950 50  0000 C CNN
+F 1 "0" H 4450 1850 50  0000 C CNN
+F 2 "footprints:Resistor_14mm" V 4530 1850 50  0001 C CNN
+F 3 "" H 4600 1850 50  0000 C CNN
+F 4 "2W" H 4450 1750 60  0000 C CNN "power"
+	1    4600 1850
+	1    0    0    -1  
+$EndComp
+Text GLabel 2950 1650 0    60   Output ~ 0
+SENSE
+$Comp
+L zonwering-rescue:R R26
+U 1 1 5AF922D8
+P 8200 5700
+F 0 "R26" V 8000 5700 50  0000 C CNN
+F 1 "100k" V 8100 5700 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 8130 5700 50  0001 C CNN
+F 3 "" H 8200 5700 50  0000 C CNN
+	1    8200 5700
+	0    1    1    0   
+$EndComp
+Text GLabel 9150 5700 2    60   Input ~ 0
+SENSE
+$Comp
+L zonwering-rescue:R R16
+U 1 1 5AF9963B
+P 5350 1100
+F 0 "R16" H 5500 1150 50  0000 C CNN
+F 1 "2.2k" H 5500 1050 50  0000 C CNN
+F 2 "footprints:Resistor_14mm" V 5280 1100 50  0001 C CNN
+F 3 "" H 5350 1100 50  0000 C CNN
+	1    5350 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C8
+U 1 1 5AF996EE
+P 5350 1850
+F 0 "C8" H 5050 1950 50  0000 L CNN
+F 1 "10nF" H 5000 1850 50  0000 L CNN
+F 2 "footprints:capacitor_RM7.5" H 5388 1700 50  0001 C CNN
+F 3 "" H 5350 1850 50  0000 C CNN
+F 4 "300VAC X2" H 5050 1750 60  0000 C CNN "voltage"
+	1    5350 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R12
+U 1 1 5AF997B3
+P 3900 1100
+F 0 "R12" H 4050 1150 50  0000 C CNN
+F 1 "2.2k" H 4050 1050 50  0000 C CNN
+F 2 "footprints:Resistor_14mm" V 3830 1100 50  0001 C CNN
+F 3 "" H 3900 1100 50  0000 C CNN
+	1    3900 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C4
+U 1 1 5AF99868
+P 3900 1850
+F 0 "C4" H 3600 1900 50  0000 L CNN
+F 1 "10nF" H 3550 1800 50  0000 L CNN
+F 2 "footprints:capacitor_RM7.5" H 3938 1700 50  0001 C CNN
+F 3 "" H 3900 1850 50  0000 C CNN
+F 4 "300VAC X2" H 3600 1700 60  0000 C CNN "voltage"
+	1    3900 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:GND #PWR03
+U 1 1 5AF9B3BF
+P 9050 3600
+F 0 "#PWR03" H 9050 3350 50  0001 C CNN
+F 1 "GND" H 9050 3450 50  0000 C CNN
+F 2 "" H 9050 3600 50  0000 C CNN
+F 3 "" H 9050 3600 50  0000 C CNN
+	1    9050 3600
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:GND #PWR04
+U 1 1 5AF9BEE3
+P 1750 5850
+F 0 "#PWR04" H 1750 5600 50  0001 C CNN
+F 1 "GND" H 1750 5700 50  0000 C CNN
+F 2 "" H 1750 5850 50  0000 C CNN
+F 3 "" H 1750 5850 50  0000 C CNN
+	1    1750 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:GND #PWR05
+U 1 1 5AF9C087
+P 1250 4450
+F 0 "#PWR05" H 1250 4200 50  0001 C CNN
+F 1 "GND" H 1250 4300 50  0000 C CNN
+F 2 "" H 1250 4450 50  0000 C CNN
+F 3 "" H 1250 4450 50  0000 C CNN
+	1    1250 4450
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR06
+U 1 1 5AF9CDBD
+P 9600 5150
+F 0 "#PWR06" H 9600 5000 50  0001 C CNN
+F 1 "-3.3V" H 9600 5290 50  0000 C CNN
+F 2 "" H 9600 5150 50  0000 C CNN
+F 3 "" H 9600 5150 50  0000 C CNN
+	1    9600 5150
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR07
+U 1 1 5AF9D13F
+P 6400 5950
+F 0 "#PWR07" H 6400 5800 50  0001 C CNN
+F 1 "-3.3V" H 6400 6090 50  0000 C CNN
+F 2 "" H 6400 5950 50  0000 C CNN
+F 3 "" H 6400 5950 50  0000 C CNN
+	1    6400 5950
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR08
+U 1 1 5AF9D331
+P 2850 7350
+F 0 "#PWR08" H 2850 7200 50  0001 C CNN
+F 1 "-3.3V" H 2850 7490 50  0000 C CNN
+F 2 "" H 2850 7350 50  0000 C CNN
+F 3 "" H 2850 7350 50  0000 C CNN
+	1    2850 7350
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR09
+U 1 1 5AF9D573
+P 1100 6300
+F 0 "#PWR09" H 1100 6150 50  0001 C CNN
+F 1 "-3.3V" H 1100 6440 50  0000 C CNN
+F 2 "" H 1100 6300 50  0000 C CNN
+F 3 "" H 1100 6300 50  0000 C CNN
+	1    1100 6300
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR010
+U 1 1 5AF9D623
+P 750 5250
+F 0 "#PWR010" H 750 5100 50  0001 C CNN
+F 1 "-3.3V" H 750 5390 50  0000 C CNN
+F 2 "" H 750 5250 50  0000 C CNN
+F 3 "" H 750 5250 50  0000 C CNN
+	1    750  5250
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR011
+U 1 1 5AF9DAE3
+P 5650 4050
+F 0 "#PWR011" H 5650 3900 50  0001 C CNN
+F 1 "-3.3V" H 5650 4190 50  0000 C CNN
+F 2 "" H 5650 4050 50  0000 C CNN
+F 3 "" H 5650 4050 50  0000 C CNN
+	1    5650 4050
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR012
+U 1 1 5AF9DB95
+P 5650 5050
+F 0 "#PWR012" H 5650 4900 50  0001 C CNN
+F 1 "-3.3V" H 5650 5190 50  0000 C CNN
+F 2 "" H 5650 5050 50  0000 C CNN
+F 3 "" H 5650 5050 50  0000 C CNN
+	1    5650 5050
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR013
+U 1 1 5AF9E243
+P 10500 2050
+F 0 "#PWR013" H 10500 1900 50  0001 C CNN
+F 1 "-3.3V" H 10500 2190 50  0000 C CNN
+F 2 "" H 10500 2050 50  0000 C CNN
+F 3 "" H 10500 2050 50  0000 C CNN
+	1    10500 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R28
+U 1 1 5AF9FD20
+P 8500 6000
+F 0 "R28" H 8350 6050 50  0000 C CNN
+F 1 "1M" H 8350 5950 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8430 6000 50  0001 C CNN
+F 3 "" H 8500 6000 50  0000 C CNN
+	1    8500 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR014
+U 1 1 5AFA0A97
+P 7200 6200
+F 0 "#PWR014" H 7200 6050 50  0001 C CNN
+F 1 "-3.3V" H 7200 6340 50  0000 C CNN
+F 2 "" H 7200 6200 50  0000 C CNN
+F 3 "" H 7200 6200 50  0000 C CNN
+	1    7200 6200
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:R R31
+U 1 1 5AF6EBC5
+P 8800 2800
+F 0 "R31" H 8950 2850 50  0000 C CNN
+F 1 "20K" H 8950 2750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8730 2800 50  0001 C CNN
+F 3 "" H 8800 2800 50  0000 C CNN
+	1    8800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R30
+U 1 1 5AF6EC44
+P 8800 2400
+F 0 "R30" H 8950 2450 50  0000 C CNN
+F 1 "12K" H 8950 2350 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8730 2400 50  0001 C CNN
+F 3 "" H 8800 2400 50  0000 C CNN
+	1    8800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:TL431 U5
+U 1 1 5AF6CA30
+P 8800 1700
+F 0 "U5" H 8950 1504 50  0000 C CNN
+F 1 "TLV431" H 9050 1900 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 8800 1700 50  0001 C CNN
+F 3 "" H 8800 1700 50  0000 C CNN
+	1    8800 1700
+	1    0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:R R29
+U 1 1 5AF7D669
+P 8800 1200
+F 0 "R29" H 8950 1250 50  0000 C CNN
+F 1 "10" H 8950 1150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8730 1200 50  0001 C CNN
+F 3 "" H 8800 1200 50  0000 C CNN
+	1    8800 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C15
+U 1 1 5AFA8704
+P 10500 2600
+F 0 "C15" H 10525 2700 50  0000 L CNN
+F 1 "1uF" H 10525 2500 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 10538 2450 50  0001 C CNN
+F 3 "" H 10500 2600 50  0000 C CNN
+	1    10500 2600
+	1    0    0    -1  
+$EndComp
+Text Notes 1500 5300 2    60   ~ 0
+up
+Text Notes 2400 5300 2    60   ~ 0
+down
+Text Notes 3250 5300 2    60   ~ 0
+menu
+$Comp
+L zonwering-rescue:PC817 U4
+U 1 1 5AFA9AD0
+P 7700 1050
+F 0 "U4" H 7500 1250 50  0000 L CNN
+F 1 "PC817" H 7700 1250 50  0000 L CNN
+F 2 "Opto-Devices:Optocoupler_SMD_HandSoldering_KPC357_LTV35x_PC357_SingleChannel" H 7500 850 50  0001 L CIN
+F 3 "" H 7700 1050 50  0000 L CNN
+	1    7700 1050
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:R R6
+U 1 1 5AF91C21
+P 2150 3350
+F 0 "R6" H 2300 3400 50  0000 C CNN
+F 1 "1M" H 2300 3300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 2080 3350 50  0001 C CNN
+F 3 "" H 2150 3350 50  0000 C CNN
+	1    2150 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:R R10
+U 1 1 5AF9F772
+P 3500 4200
+F 0 "R10" V 3300 4200 50  0000 C CNN
+F 1 "1M" V 3400 4200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 3430 4200 50  0001 C CNN
+F 3 "" H 3500 4200 50  0000 C CNN
+	1    3500 4200
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:-3.3V #PWR015
+U 1 1 5AF9F815
+P 3250 4200
+F 0 "#PWR015" H 3250 4050 50  0001 C CNN
+F 1 "-3.3V" H 3250 4340 50  0000 C CNN
+F 2 "" H 3250 4200 50  0000 C CNN
+F 3 "" H 3250 4200 50  0000 C CNN
+	1    3250 4200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L zonwering-rescue:R R23
+U 1 1 5AFC7262
+P 7450 5950
+F 0 "R23" H 7600 6000 50  0000 C CNN
+F 1 "1M" H 7600 5900 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7380 5950 50  0001 C CNN
+F 3 "" H 7450 5950 50  0000 C CNN
+	1    7450 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:GND #PWR016
+U 1 1 5AFC78BE
+P 8500 6250
+F 0 "#PWR016" H 8500 6000 50  0001 C CNN
+F 1 "GND" H 8500 6100 50  0000 C CNN
+F 2 "" H 8500 6250 50  0000 C CNN
+F 3 "" H 8500 6250 50  0000 C CNN
+	1    8500 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C10
+U 1 1 5AFC885D
+P 7000 6000
+F 0 "C10" H 7025 6100 50  0000 L CNN
+F 1 "100pF" H 7025 5900 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7038 5850 50  0001 C CNN
+F 3 "" H 7000 6000 50  0000 C CNN
+	1    7000 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:C C13
+U 1 1 5AFC99D2
+P 8800 5700
+F 0 "C13" V 8550 5650 50  0000 L CNN
+F 1 "100nF" V 8650 5600 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 8838 5550 50  0001 C CNN
+F 3 "" H 8800 5700 50  0000 C CNN
+	1    8800 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:R R25
+U 1 1 5AFCA372
+P 7750 5700
+F 0 "R25" V 7550 5700 50  0000 C CNN
+F 1 "100k" V 7650 5700 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206_HandSoldering" V 7680 5700 50  0001 C CNN
+F 3 "" H 7750 5700 50  0000 C CNN
+	1    7750 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L zonwering-rescue:Q_NMOS_GSD Q2
+U 1 1 5AFD3919
+P 5550 4800
+F 0 "Q2" H 5850 4850 50  0000 R CNN
+F 1 "BSS138" H 6050 4750 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 5750 4900 50  0001 C CNN
+F 3 "" H 5550 4800 50  0000 C CNN
+	1    5550 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:Q_NMOS_GSD Q1
+U 1 1 5AFD3A0C
+P 5550 3800
+F 0 "Q1" H 5850 3850 50  0000 R CNN
+F 1 "BSS138" H 6050 3750 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 5750 3900 50  0001 C CNN
+F 3 "" H 5550 3800 50  0000 C CNN
+	1    5550 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:Q_PMOS_GSD Q3
+U 1 1 5AFD43A2
+P 10350 4000
+F 0 "Q3" H 10650 4050 50  0000 R CNN
+F 1 "OA3401A" H 10900 3950 50  0000 R CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23_Handsoldering" H 10550 4100 50  0001 C CNN
+F 3 "" H 10350 4000 50  0000 C CNN
+	1    10350 4000
+	-1   0    0    1   
+$EndComp
+Text Notes 2600 6500 0    60   ~ 0
+VCC
+Text Notes 2600 6700 0    60   ~ 0
+GND
+$Comp
+L zonwering-rescue:CONN_01X01 P8
+U 1 1 5AFE1BC9
+P 8100 1950
+F 0 "P8" H 8100 2050 50  0000 C CNN
+F 1 "-3.3V" V 8200 1950 50  0000 C CNN
+F 2 "Connect:PINTST" H 8100 1950 50  0001 C CNN
+F 3 "" H 8100 1950 50  0000 C CNN
+	1    8100 1950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X01 P9
+U 1 1 5AFE1E3F
+P 10700 3050
+F 0 "P9" H 10700 3150 50  0000 C CNN
+F 1 "0V" H 10850 3050 50  0000 C CNN
+F 2 "Connect:PINTST" H 10700 3050 50  0001 C CNN
+F 3 "" H 10700 3050 50  0000 C CNN
+	1    10700 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X01 P7
+U 1 1 5AFE2F94
+P 6700 5500
+F 0 "P7" V 6700 5600 50  0000 C CNN
+F 1 "sense" V 6800 5500 50  0000 C CNN
+F 2 "Connect:PINTST" H 6700 5500 50  0001 C CNN
+F 3 "" H 6700 5500 50  0000 C CNN
+	1    6700 5500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X01 P4
+U 1 1 5AFE4C83
+P 3700 4550
+F 0 "P4" H 3700 4650 50  0000 C CNN
+F 1 "mains" H 3900 4550 50  0000 C CNN
+F 2 "Connect:PINTST" H 3700 4550 50  0001 C CNN
+F 3 "" H 3700 4550 50  0000 C CNN
+	1    3700 4550
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X01 P6
+U 1 1 5AFE4F3E
+P 4650 5250
+F 0 "P6" H 4650 5350 50  0000 C CNN
+F 1 "up" H 4750 5250 50  0000 C CNN
+F 2 "Connect:PINTST" H 4650 5250 50  0001 C CNN
+F 3 "" H 4650 5250 50  0000 C CNN
+	1    4650 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X01 P5
+U 1 1 5AFE4FE7
+P 4400 4300
+F 0 "P5" H 4400 4400 50  0000 C CNN
+F 1 "down" H 4550 4300 50  0000 C CNN
+F 2 "Connect:PINTST" H 4400 4300 50  0001 C CNN
+F 3 "" H 4400 4300 50  0000 C CNN
+	1    4400 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L zonwering-rescue:INDUCTOR L3
+U 1 1 5AFF0564
+P 9650 2150
+F 0 "L3" V 9600 2150 50  0000 C CNN
+F 1 "10uH" V 9750 2150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 9650 2150 50  0001 C CNN
+F 3 "" H 9650 2150 50  0000 C CNN
+	1    9650 2150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X01 P3
+U 1 1 5AFF2B46
+P 3400 5700
+F 0 "P3" H 3400 5800 50  0000 C CNN
+F 1 "key" H 3550 5700 50  0000 C CNN
+F 2 "Connect:PINTST" H 3400 5700 50  0001 C CNN
+F 3 "" H 3400 5700 50  0000 C CNN
+	1    3400 5700
+	-1   0    0    1   
+$EndComp
+$Comp
+L zonwering-rescue:CONN_01X07 P1
+U 1 1 5AFF2ED6
+P 1250 1950
+F 0 "P1" H 1250 2350 50  0000 C CNN
+F 1 "CONN_01X07" H 1100 1450 50  0000 C CNN
+F 2 "footprints:Power_connector_Straight_508_7pin" H 1250 1950 50  0001 C CNN
+F 3 "" H 1250 1950 50  0000 C CNN
+	1    1250 1950
+	-1   0    0    1   
+$EndComp
+Text Notes 1100 2100 2    60   ~ 0
+earth
+Text Notes 1100 2000 2    60   ~ 0
+earth
+Text Notes 1100 2200 2    60   ~ 0
+neutral
+Text Notes 1100 2300 2    60   ~ 0
+fase
+Text Notes 1100 1900 2    60   ~ 0
+neutral
+Text Notes 1100 1800 2    60   ~ 0
+down
+Text Notes 1100 1700 2    60   ~ 0
+up
+Text Notes 800  1250 0    60   ~ 0
+earth:    green / white\nneutral:  blue\nfase:     brown\ndown:    brown\nup:       black
+Wire Wire Line
+	4500 2450 4850 2450
+Wire Wire Line
+	3650 2450 3900 2450
+Wire Wire Line
+	4850 2650 4850 2450
+Connection ~ 4850 2450
+Wire Wire Line
+	5750 2650 5750 2450
+Connection ~ 5750 2450
+Wire Wire Line
+	5750 3050 5750 2950
+Connection ~ 5750 3050
+Wire Wire Line
+	4850 3050 4850 2950
+Connection ~ 4850 3050
+Wire Wire Line
+	7150 2000 7150 2150
+Wire Wire Line
+	7150 2150 7450 2150
+Connection ~ 7150 2350
+Connection ~ 7150 2250
+Connection ~ 7150 2150
+Wire Wire Line
+	7150 1500 7150 1700
+Wire Wire Line
+	6600 1500 7150 1500
+Wire Wire Line
+	6600 1150 6600 1500
+Wire Wire Line
+	5850 2150 5900 2150
+Wire Wire Line
+	2200 2450 2600 2450
+Wire Wire Line
+	1750 3050 2150 3050
+Wire Wire Line
+	5000 1650 5000 1250
+Wire Wire Line
+	2950 1650 3150 1650
+Wire Wire Line
+	3550 1250 3550 1650
+Wire Wire Line
+	2200 750  3550 750 
+Wire Wire Line
+	2050 650  5000 650 
+Wire Wire Line
+	5000 650  5000 750 
+Connection ~ 4600 1650
+Wire Wire Line
+	9500 4750 10250 4750
+Wire Wire Line
+	10250 4750 10250 4600
+Wire Wire Line
+	3150 1200 2950 1200
+Wire Wire Line
+	4600 1200 4450 1200
+Wire Wire Line
+	3350 6800 2950 6800
+Wire Wire Line
+	2950 6800 2950 6600
+Wire Wire Line
+	2950 6600 2550 6600
+Wire Wire Line
+	3350 6150 2850 6150
+Wire Wire Line
+	2850 5900 2850 6150
+Wire Wire Line
+	2850 6700 2850 7350
+Wire Wire Line
+	3350 6500 3050 6500
+Wire Wire Line
+	3050 6500 3050 6900
+Wire Wire Line
+	3050 6900 1750 6900
+Wire Wire Line
+	1750 6900 1750 6700
+Wire Wire Line
+	1750 6700 2050 6700
+Wire Wire Line
+	3350 6600 3150 6600
+Wire Wire Line
+	3150 6600 3150 7100
+Wire Wire Line
+	3150 7100 1500 7100
+Wire Wire Line
+	1500 6300 1500 6600
+Wire Wire Line
+	1500 7100 1500 7000
+Wire Wire Line
+	1500 6600 2050 6600
+Wire Wire Line
+	3350 6700 3250 6700
+Wire Wire Line
+	3250 6700 3250 7250
+Wire Wire Line
+	3250 7250 1300 7250
+Wire Wire Line
+	1300 7250 1300 6500
+Wire Wire Line
+	1300 6500 2050 6500
+Wire Wire Line
+	1750 5850 1750 5900
+Wire Wire Line
+	1100 5900 1500 5900
+Connection ~ 2850 6150
+Connection ~ 1750 5900
+Connection ~ 2850 7350
+Wire Wire Line
+	8100 4850 8100 4750
+Wire Wire Line
+	8100 4750 7950 4750
+Wire Wire Line
+	8100 4950 7950 4950
+Wire Wire Line
+	8100 5050 8100 5150
+Wire Wire Line
+	8100 5150 7950 5150
+Wire Wire Line
+	7550 3950 7700 3950
+Connection ~ 1300 7250
+Connection ~ 3900 2450
+Wire Wire Line
+	3900 3550 3900 3650
+Wire Wire Line
+	3900 2900 3900 3050
+Connection ~ 3900 3050
+Wire Wire Line
+	1500 6000 1500 5900
+Wire Wire Line
+	5450 7050 5550 7050
+Wire Wire Line
+	5550 7050 5550 6950
+Wire Wire Line
+	5550 6950 5750 6950
+Wire Wire Line
+	5450 7150 5750 7150
+Wire Wire Line
+	5450 7250 5550 7250
+Wire Wire Line
+	5550 7250 5550 7350
+Wire Wire Line
+	5550 7350 5750 7350
+Wire Wire Line
+	9600 4550 9600 5050
+Wire Wire Line
+	9600 3650 9600 4050
+Wire Wire Line
+	8500 3650 9050 3650
+Wire Wire Line
+	10250 3650 10250 3800
+Connection ~ 9600 4050
+Wire Wire Line
+	10250 4200 10250 4300
+Connection ~ 9050 3650
+Wire Wire Line
+	1100 5900 1100 5950
+Connection ~ 1500 5900
+Wire Wire Line
+	1100 6250 1100 6300
+Connection ~ 1500 6600
+Connection ~ 1500 7100
+Wire Wire Line
+	5550 6650 6700 6650
+Wire Wire Line
+	5550 6650 5550 6850
+Wire Wire Line
+	5550 6850 5450 6850
+Wire Wire Line
+	1250 4550 1450 4550
+Wire Wire Line
+	1250 4550 1250 4450
+Wire Wire Line
+	850  5150 750  5150
+Wire Wire Line
+	750  5150 750  5250
+Wire Wire Line
+	3150 4550 2850 4550
+Wire Wire Line
+	1950 4550 2300 4550
+Wire Wire Line
+	5450 6150 5550 6150
+Wire Wire Line
+	5550 6150 5550 5850
+Wire Wire Line
+	5550 5850 3600 5850
+Wire Wire Line
+	3600 5850 3600 5700
+Connection ~ 3150 5150
+Wire Wire Line
+	5750 5650 5750 5800
+Wire Wire Line
+	4200 5650 5750 5650
+Wire Wire Line
+	4200 3800 4200 4300
+Wire Wire Line
+	4200 3800 4550 3800
+Wire Wire Line
+	5450 6450 5850 6450
+Wire Wire Line
+	5850 6450 5850 5550
+Wire Wire Line
+	4450 5550 5850 5550
+Wire Wire Line
+	4450 4800 4450 5250
+Wire Wire Line
+	5350 4800 5250 4800
+Wire Wire Line
+	4950 4800 4850 4800
+Wire Wire Line
+	5650 4450 5850 4450
+Wire Wire Line
+	5650 4450 5650 4600
+Wire Wire Line
+	4850 3800 4950 3800
+Wire Wire Line
+	5250 3800 5350 3800
+Wire Wire Line
+	5850 3450 5650 3450
+Wire Wire Line
+	5650 3450 5650 3600
+Wire Wire Line
+	6350 3450 6150 3450
+Wire Wire Line
+	6150 4450 6350 4450
+Wire Wire Line
+	3900 5750 5650 5750
+Wire Wire Line
+	5650 5750 5650 6250
+Wire Wire Line
+	5650 6250 5450 6250
+Wire Wire Line
+	5750 6350 5450 6350
+Wire Wire Line
+	5650 5050 5650 5000
+Wire Wire Line
+	5650 4050 5650 4000
+Connection ~ 5850 5550
+Wire Wire Line
+	6000 5800 5750 5800
+Connection ~ 5750 5800
+Wire Wire Line
+	6300 5550 6400 5550
+Wire Wire Line
+	6400 5550 6400 5800
+Wire Wire Line
+	6300 5800 6400 5800
+Connection ~ 6400 5800
+Wire Wire Line
+	4450 4800 4550 4800
+Wire Wire Line
+	4600 1700 4600 1650
+Wire Wire Line
+	4600 2000 4600 2050
+Connection ~ 9600 3650
+Wire Wire Line
+	3700 3650 3900 3650
+Connection ~ 3900 3650
+Wire Wire Line
+	3400 3650 3250 3650
+Wire Wire Line
+	1750 3650 2150 3650
+Wire Wire Line
+	2150 3650 2150 3500
+Wire Wire Line
+	1750 3650 1750 3500
+Connection ~ 2150 3650
+Wire Wire Line
+	1750 2750 1750 3050
+Connection ~ 1750 3050
+Connection ~ 3100 3050
+Wire Wire Line
+	3100 2500 3100 2450
+Connection ~ 3100 2450
+Wire Wire Line
+	5350 650  5350 950 
+Connection ~ 5000 650 
+Wire Wire Line
+	3900 750  3900 950 
+Connection ~ 3550 750 
+Wire Wire Line
+	9500 5050 9600 5050
+Connection ~ 9600 5050
+Wire Wire Line
+	8350 5700 8500 5700
+Wire Wire Line
+	6700 6650 6700 5700
+Wire Wire Line
+	8000 1150 8450 1150
+Wire Wire Line
+	8800 950  8000 950 
+Wire Wire Line
+	5850 950  5850 2150
+Connection ~ 6600 1500
+Wire Wire Line
+	7450 2350 7450 2150
+Connection ~ 7450 2150
+Wire Wire Line
+	7450 3050 7450 2950
+Connection ~ 7450 3050
+Wire Wire Line
+	8100 3050 8100 2750
+Connection ~ 8100 3050
+Wire Wire Line
+	8100 2150 8100 2450
+Connection ~ 8100 2150
+Wire Wire Line
+	8450 1150 8450 3050
+Connection ~ 8450 3050
+Wire Wire Line
+	9200 1700 9200 2600
+Wire Wire Line
+	9200 2600 8800 2600
+Wire Wire Line
+	8800 2550 8800 2600
+Wire Wire Line
+	8800 3050 8800 2950
+Wire Wire Line
+	8800 2050 8800 2150
+Connection ~ 8800 2600
+Wire Wire Line
+	7900 2150 8100 2150
+Connection ~ 8800 2150
+Wire Wire Line
+	7400 950  5850 950 
+Wire Wire Line
+	7400 1150 6600 1150
+Wire Wire Line
+	3100 3000 3100 3050
+Connection ~ 2600 3650
+Wire Wire Line
+	6700 5700 7000 5700
+Wire Wire Line
+	7000 5700 7000 5850
+Connection ~ 7000 5700
+Wire Wire Line
+	8500 5850 8500 5700
+Connection ~ 8500 5700
+Wire Wire Line
+	8500 6150 8500 6250
+Wire Wire Line
+	7000 6200 7000 6150
+Wire Wire Line
+	9150 5700 8950 5700
+Wire Wire Line
+	8050 5700 7900 5700
+Wire Wire Line
+	5350 2050 5350 2000
+Connection ~ 4600 2050
+Connection ~ 2300 4550
+Connection ~ 1450 4550
+Wire Wire Line
+	9600 4050 9500 4050
+Wire Wire Line
+	7000 6200 7200 6200
+Wire Wire Line
+	7450 6200 7450 6100
+Wire Wire Line
+	7450 5800 7450 5700
+Connection ~ 7450 5700
+Wire Wire Line
+	3250 4200 3350 4200
+Wire Wire Line
+	3650 4200 3900 4200
+Connection ~ 3900 4200
+Wire Wire Line
+	5350 1700 5350 1250
+Wire Wire Line
+	3900 1700 3900 1250
+Wire Wire Line
+	3900 2000 3900 2050
+Wire Wire Line
+	2850 6700 2550 6700
+Wire Wire Line
+	2850 6500 2550 6500
+Connection ~ 8800 3050
+Wire Wire Line
+	2150 3200 2150 3050
+Connection ~ 2150 3050
+Wire Wire Line
+	2600 3500 2600 3650
+Wire Wire Line
+	10500 3050 10500 2750
+Wire Wire Line
+	10500 2050 10500 2150
+Wire Wire Line
+	9950 2150 10100 2150
+Connection ~ 10500 2150
+Connection ~ 4200 4300
+Connection ~ 3900 4550
+Connection ~ 3600 5700
+Connection ~ 6700 5700
+Connection ~ 10500 3050
+Wire Wire Line
+	1450 2250 1750 2250
+Wire Wire Line
+	1450 1950 1600 1950
+Wire Wire Line
+	1600 1950 1600 2050
+Wire Wire Line
+	1600 2050 1450 2050
+Wire Wire Line
+	1450 1750 2200 1750
+Wire Wire Line
+	2200 1750 2200 750 
+Wire Wire Line
+	1450 1650 2050 1650
+Wire Wire Line
+	2050 1650 2050 650 
+Wire Wire Line
+	1750 2250 1750 2450
+Wire Wire Line
+	1750 1850 1450 1850
+Wire Wire Line
+	1750 2150 1450 2150
+Wire Wire Line
+	2200 2000 2200 2450
+Wire Wire Line
+	1750 2000 2200 2000
+Wire Wire Line
+	1750 1850 1750 2000
+Text GLabel 5750 7350 2    60   Output ~ 0
+nRESET
+Text GLabel 7550 3950 0    60   Input ~ 0
+nRESET
+Wire Wire Line
+	10550 4000 10650 4000
+Wire Wire Line
+	10650 4000 10650 3300
+Wire Wire Line
+	10650 3300 7900 3300
+Wire Wire Line
+	7900 3300 7900 3650
+Wire Wire Line
+	7900 4250 8100 4250
+Wire Wire Line
+	7400 3650 7900 3650
+Connection ~ 7900 3650
+$Comp
+L zonwering-rescue:-3.3V #PWR017
+U 1 1 5B003C17
+P 7700 4400
+F 0 "#PWR017" H 7700 4250 50  0001 C CNN
+F 1 "-3.3V" H 7700 4540 50  0000 C CNN
+F 2 "" H 7700 4400 50  0000 C CNN
+F 3 "" H 7700 4400 50  0000 C CNN
+	1    7700 4400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7700 4400 7700 4350
+Wire Wire Line
+	7700 4050 7700 3950
+Connection ~ 7700 3950
+Wire Wire Line
+	8100 3950 8100 4050
+$Comp
+L zonwering-rescue:R R3
+U 1 1 5B0092EB
+P 1500 6850
+F 0 "R3" H 1350 6900 50  0000 C CNN
+F 1 "1k" H 1350 7000 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 1430 6850 50  0001 C CNN
+F 3 "" H 1500 6850 50  0000 C CNN
+	1    1500 6850
+	-1   0    0    1   
+$EndComp
+Connection ~ 1750 6700
+Text Notes 2150 5500 0    60   ~ 0
+1.05V\n327 count
+Text Notes 1350 5500 0    60   ~ 0
+3.3V\n1023 count
+Text Notes 3000 5500 0    60   ~ 0
+1.60V\n496 count
+$Comp
+L zonwering-rescue:ZENER D3
+U 1 1 5B015442
+P 10100 2600
+F 0 "D3" V 10100 2800 50  0000 C CNN
+F 1 "ZD 5W 4,7V" V 10000 2950 50  0000 C CNN
+F 2 "Diodes_ThroughHole:Diode_DO-201AD_Horizontal_RM15" H 10100 2600 50  0001 C CNN
+F 3 "" H 10100 2600 50  0000 C CNN
+	1    10100 2600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10100 2800 10100 3050
+Connection ~ 10100 3050
+Wire Wire Line
+	10100 2400 10100 2150
+Connection ~ 10100 2150
+Connection ~ 1750 2000
+Wire Wire Line
+	5600 2450 5750 2450
+Wire Wire Line
+	8800 1050 8800 950 
+Connection ~ 4450 5250
+Wire Wire Line
+	2850 7350 3350 7350
+Wire Wire Line
+	9050 3600 9050 3650
+$Comp
+L zonwering-rescue:R R33
+U 1 1 5B093B4D
+P 2600 2750
+F 0 "R33" H 2450 2850 50  0000 C CNN
+F 1 "100" H 2450 2750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 2530 2750 50  0001 C CNN
+F 3 "" H 2600 2750 50  0000 C CNN
+	1    2600 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2900 2600 3200
+Connection ~ 7200 6200
+Wire Wire Line
+	4850 2450 5000 2450
+Wire Wire Line
+	5750 2450 5900 2450
+Wire Wire Line
+	5750 3050 7450 3050
+Wire Wire Line
+	4850 3050 5750 3050
+Wire Wire Line
+	7150 2350 7150 2450
+Wire Wire Line
+	7150 2250 7150 2350
+Wire Wire Line
+	7150 2150 7150 2250
+Wire Wire Line
+	4600 1650 5000 1650
+Wire Wire Line
+	2850 6150 2850 6500
+Wire Wire Line
+	1750 5900 1750 6000
+Wire Wire Line
+	1750 5900 2850 5900
+Wire Wire Line
+	1300 7250 1150 7250
+Wire Wire Line
+	3900 2450 4200 2450
+Wire Wire Line
+	3900 2450 3900 2600
+Wire Wire Line
+	3900 3050 4850 3050
+Wire Wire Line
+	3900 3050 3900 3250
+Wire Wire Line
+	9600 4050 9600 4250
+Wire Wire Line
+	9050 3650 9600 3650
+Wire Wire Line
+	1500 5900 1750 5900
+Wire Wire Line
+	1500 6600 1500 6700
+Wire Wire Line
+	1500 7100 1150 7100
+Wire Wire Line
+	3150 5150 3600 5150
+Wire Wire Line
+	5850 5550 6000 5550
+Wire Wire Line
+	5750 5800 5750 6350
+Wire Wire Line
+	6400 5800 6400 5950
+Wire Wire Line
+	3550 1650 4600 1650
+Wire Wire Line
+	9600 3650 10250 3650
+Wire Wire Line
+	3900 3650 3900 4200
+Wire Wire Line
+	2150 3650 2600 3650
+Wire Wire Line
+	1750 3050 1750 3200
+Wire Wire Line
+	3100 3050 3900 3050
+Wire Wire Line
+	3100 2450 3350 2450
+Wire Wire Line
+	5000 650  5350 650 
+Wire Wire Line
+	3550 750  3900 750 
+Wire Wire Line
+	9600 5050 9600 5150
+Wire Wire Line
+	6600 1500 6600 1600
+Wire Wire Line
+	7450 2150 7600 2150
+Wire Wire Line
+	7450 3050 8100 3050
+Wire Wire Line
+	8100 3050 8450 3050
+Wire Wire Line
+	8100 2150 8800 2150
+Wire Wire Line
+	8450 3050 8800 3050
+Wire Wire Line
+	8800 2600 8800 2650
+Wire Wire Line
+	8800 2150 8800 2250
+Wire Wire Line
+	8800 2150 9350 2150
+Wire Wire Line
+	2600 3650 2950 3650
+Wire Wire Line
+	7000 5700 7450 5700
+Wire Wire Line
+	8500 5700 8650 5700
+Wire Wire Line
+	4600 2050 5350 2050
+Wire Wire Line
+	2300 5150 3150 5150
+Wire Wire Line
+	2300 4550 2550 4550
+Wire Wire Line
+	1450 4550 1650 4550
+Wire Wire Line
+	7450 5700 7600 5700
+Wire Wire Line
+	3900 4200 3900 4550
+Wire Wire Line
+	8800 3050 10100 3050
+Wire Wire Line
+	2150 3050 3100 3050
+Wire Wire Line
+	10500 2150 10500 2450
+Wire Wire Line
+	4200 4300 4200 5650
+Wire Wire Line
+	3900 4550 3900 5750
+Wire Wire Line
+	3600 5700 3600 5150
+Wire Wire Line
+	7900 3650 7900 4250
+Wire Wire Line
+	7900 3650 8200 3650
+Wire Wire Line
+	7700 3950 8100 3950
+Wire Wire Line
+	1750 6700 1750 6300
+Wire Wire Line
+	10100 3050 10500 3050
+Wire Wire Line
+	10100 2150 10500 2150
+Wire Wire Line
+	1750 2000 1750 2150
+Wire Wire Line
+	4450 5250 4450 5550
+Wire Wire Line
+	7200 6200 7450 6200
+$Comp
+L Device:R R35
+U 1 1 5DACFF1D
+P 4600 1400
+F 0 "R35" H 4670 1446 50  0000 L CNN
+F 1 "4,7k" H 4670 1355 50  0000 L CNN
+F 2 "" V 4530 1400 50  0001 C CNN
+F 3 "~" H 4600 1400 50  0001 C CNN
+	1    4600 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R34
+U 1 1 5DAD0B91
+P 3150 1400
+F 0 "R34" H 3220 1446 50  0000 L CNN
+F 1 "4,7k" H 3220 1355 50  0000 L CNN
+F 2 "" V 3080 1400 50  0001 C CNN
+F 3 "~" H 3150 1400 50  0001 C CNN
+	1    3150 1400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1250 4600 1200
+Connection ~ 4600 1200
+Connection ~ 3550 1650
+Wire Wire Line
+	3900 2050 4600 2050
+Wire Wire Line
+	3150 1250 3150 1200
+Connection ~ 3150 1200
+Wire Wire Line
+	3150 1550 3150 1650
+Connection ~ 3150 1650
+Wire Wire Line
+	3150 1650 3550 1650
+Wire Wire Line
+	4600 1550 4600 1650
+Wire Wire Line
+	2300 5150 1450 5150
+Connection ~ 2300 5150
+Connection ~ 1450 5150
+Wire Wire Line
+	1450 5150 1250 5150
+Wire Wire Line
+	1250 4900 1250 5150
+Connection ~ 1250 5150
+Wire Wire Line
+	1250 5150 1150 5150
+Wire Wire Line
+	750  5150 750  4900
+Wire Wire Line
+	750  4900 850  4900
+Connection ~ 750  5150
+Wire Wire Line
+	1150 4900 1250 4900
+$Comp
+L Device:C C?
+U 1 1 5DD10B31
+P 1000 4900
+F 0 "C?" V 748 4900 50  0000 C CNN
+F 1 "10nF" V 839 4900 50  0000 C CNN
+F 2 "" H 1038 4750 50  0001 C CNN
+F 3 "~" H 1000 4900 50  0001 C CNN
+	1    1000 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 2600 2600 2450
+Connection ~ 2600 2450
+Wire Wire Line
+	2600 2450 3100 2450
+$EndSCHEMATC

@@ -1,0 +1,4431 @@
+
+build/zonwering.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001650  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000002  00800060  00001650  00001704  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000013e  00800062  00800062  00001706  2**0
+                  ALLOC
+  3 .eeprom       0000009b  00810000  00810000  00001706  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .stab         00004aac  00000000  00000000  000017a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  5 .stabstr      00001c14  00000000  00000000  00006250  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .comment      00000011  00000000  00000000  00007e64  2**0
+                  CONTENTS, READONLY
+  7 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00007e78  2**2
+                  CONTENTS, READONLY
+  8 .avr.prop     0000001f  00000000  00000000  00007eb4  2**0
+                  CONTENTS, READONLY
+  9 .debug_info   00000420  00000000  00000000  00007ed3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_abbrev 000003e8  00000000  00000000  000082f3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_line   0000001a  00000000  00000000  000086db  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_str    00000173  00000000  00000000  000086f5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	ad c1       	rjmp	.+858    	; 0x35c <__ctors_end>
+       2:	c7 c1       	rjmp	.+910    	; 0x392 <__bad_interrupt>
+       4:	c6 c1       	rjmp	.+908    	; 0x392 <__bad_interrupt>
+       6:	c5 c1       	rjmp	.+906    	; 0x392 <__bad_interrupt>
+       8:	c4 c1       	rjmp	.+904    	; 0x392 <__bad_interrupt>
+       a:	c3 c1       	rjmp	.+902    	; 0x392 <__bad_interrupt>
+       c:	c2 c1       	rjmp	.+900    	; 0x392 <__bad_interrupt>
+       e:	c1 c1       	rjmp	.+898    	; 0x392 <__bad_interrupt>
+      10:	c0 c1       	rjmp	.+896    	; 0x392 <__bad_interrupt>
+      12:	9f c3       	rjmp	.+1854   	; 0x752 <__vector_9>
+      14:	be c1       	rjmp	.+892    	; 0x392 <__bad_interrupt>
+      16:	bd c1       	rjmp	.+890    	; 0x392 <__bad_interrupt>
+      18:	bc c1       	rjmp	.+888    	; 0x392 <__bad_interrupt>
+      1a:	61 c4       	rjmp	.+2242   	; 0x8de <__vector_13>
+      1c:	ba c1       	rjmp	.+884    	; 0x392 <__bad_interrupt>
+      1e:	b9 c1       	rjmp	.+882    	; 0x392 <__bad_interrupt>
+      20:	b8 c1       	rjmp	.+880    	; 0x392 <__bad_interrupt>
+      22:	08 ca       	rjmp	.-3056   	; 0xfffff434 <__eeprom_end+0xff7ef399>
+      24:	1c ca       	rjmp	.-3016   	; 0xfffff45e <__eeprom_end+0xff7ef3c3>
+      26:	34 ca       	rjmp	.-2968   	; 0xfffff490 <__eeprom_end+0xff7ef3f5>
+      28:	44 ca       	rjmp	.-2936   	; 0xfffff4b2 <__eeprom_end+0xff7ef417>
+      2a:	c3 ca       	rjmp	.-2682   	; 0xfffff5b2 <__eeprom_end+0xff7ef517>
+      2c:	46 ca       	rjmp	.-2932   	; 0xfffff4ba <__eeprom_end+0xff7ef41f>
+      2e:	c1 ca       	rjmp	.-2686   	; 0xfffff5b2 <__eeprom_end+0xff7ef517>
+      30:	49 ca       	rjmp	.-2926   	; 0xfffff4c4 <__eeprom_end+0xff7ef429>
+      32:	62 ca       	rjmp	.-2876   	; 0xfffff4f8 <__eeprom_end+0xff7ef45d>
+      34:	6a ca       	rjmp	.-2860   	; 0xfffff50a <__eeprom_end+0xff7ef46f>
+      36:	71 ca       	rjmp	.-2846   	; 0xfffff51a <__eeprom_end+0xff7ef47f>
+      38:	78 ca       	rjmp	.-2832   	; 0xfffff52a <__eeprom_end+0xff7ef48f>
+      3a:	7f ca       	rjmp	.-2818   	; 0xfffff53a <__eeprom_end+0xff7ef49f>
+      3c:	86 ca       	rjmp	.-2804   	; 0xfffff54a <__eeprom_end+0xff7ef4af>
+      3e:	8d ca       	rjmp	.-2790   	; 0xfffff55a <__eeprom_end+0xff7ef4bf>
+      40:	94 ca       	rjmp	.-2776   	; 0xfffff56a <__eeprom_end+0xff7ef4cf>
+
+00000042 <__trampolines_end>:
+      42:	0c 0a       	sbc	r0, r28
+      44:	20 0c       	add	r2, r0
+	...
+      52:	2e 08       	sbc	r2, r14
+      54:	80 01       	movw	r16, r0
+      56:	80 01       	movw	r16, r0
+      58:	00 00       	nop
+      5a:	00 00       	nop
+      5c:	30 10       	cpse	r3, r0
+      5e:	fc 00       	.word	0x00fc	; ????
+      60:	02 01       	movw	r0, r4
+      62:	01 02       	muls	r16, r17
+      64:	01 02       	muls	r16, r17
+      66:	02 01       	movw	r0, r4
+      68:	fc 00       	.word	0x00fc	; ????
+      6a:	00 00       	nop
+      6c:	00 00       	nop
+      6e:	31 0e       	add	r3, r17
+      70:	00 00       	nop
+      72:	04 00       	.word	0x0004	; ????
+      74:	02 00       	.word	0x0002	; ????
+      76:	ff 03       	fmulsu	r23, r23
+      78:	00 00       	nop
+      7a:	00 00       	nop
+      7c:	00 00       	nop
+      7e:	32 10       	cpse	r3, r2
+      80:	82 03       	fmuls	r16, r18
+      82:	41 02       	muls	r20, r17
+      84:	21 02       	muls	r18, r17
+      86:	11 02       	muls	r17, r17
+      88:	09 02       	muls	r16, r25
+      8a:	06 02       	muls	r16, r22
+      8c:	00 00       	nop
+      8e:	00 00       	nop
+      90:	33 10       	cpse	r3, r3
+      92:	02 01       	movw	r0, r4
+      94:	01 02       	muls	r16, r17
+      96:	11 02       	muls	r17, r17
+      98:	11 02       	muls	r17, r17
+      9a:	2a 01       	movw	r4, r20
+      9c:	c4 00       	.word	0x00c4	; ????
+      9e:	00 00       	nop
+      a0:	00 00       	nop
+      a2:	34 10       	cpse	r3, r4
+      a4:	60 00       	.word	0x0060	; ????
+      a6:	58 00       	.word	0x0058	; ????
+      a8:	46 00       	.word	0x0046	; ????
+      aa:	41 00       	.word	0x0041	; ????
+      ac:	ff 03       	fmulsu	r23, r23
+      ae:	40 00       	.word	0x0040	; ????
+      b0:	00 00       	nop
+      b2:	00 00       	nop
+      b4:	35 10       	cpse	r3, r5
+      b6:	1f 01       	movw	r2, r30
+      b8:	11 02       	muls	r17, r17
+      ba:	11 02       	muls	r17, r17
+      bc:	11 02       	muls	r17, r17
+      be:	21 01       	movw	r4, r2
+      c0:	c0 00       	.word	0x00c0	; ????
+      c2:	00 00       	nop
+      c4:	00 00       	nop
+      c6:	36 10       	cpse	r3, r6
+      c8:	fc 00       	.word	0x00fc	; ????
+      ca:	12 01       	movw	r2, r4
+      cc:	11 02       	muls	r17, r17
+      ce:	11 02       	muls	r17, r17
+      d0:	21 01       	movw	r4, r2
+      d2:	c2 00       	.word	0x00c2	; ????
+      d4:	00 00       	nop
+      d6:	00 00       	nop
+      d8:	37 10       	cpse	r3, r7
+      da:	02 00       	.word	0x0002	; ????
+      dc:	01 00       	.word	0x0001	; ????
+      de:	01 00       	.word	0x0001	; ????
+      e0:	c1 03       	fmuls	r20, r17
+      e2:	31 00       	.word	0x0031	; ????
+      e4:	0f 00       	.word	0x000f	; ????
+      e6:	00 00       	nop
+      e8:	00 00       	nop
+      ea:	38 12       	cpse	r3, r24
+      ec:	c4 00       	.word	0x00c4	; ????
+      ee:	2a 01       	movw	r4, r20
+      f0:	11 02       	muls	r17, r17
+      f2:	11 02       	muls	r17, r17
+      f4:	11 02       	muls	r17, r17
+      f6:	2a 01       	movw	r4, r20
+      f8:	c4 00       	.word	0x00c4	; ????
+      fa:	00 00       	nop
+      fc:	00 00       	nop
+      fe:	39 10       	cpse	r3, r9
+     100:	0c 01       	movw	r0, r24
+     102:	12 02       	muls	r17, r18
+     104:	21 02       	muls	r18, r17
+     106:	21 02       	muls	r18, r17
+     108:	22 01       	movw	r4, r4
+     10a:	dc 00       	.word	0x00dc	; ????
+     10c:	00 00       	nop
+	...
+
+00000110 <lines5x12>:
+     110:	05 0c 20 02 01 08 2f 02 fd 0b 3d 0a 01 08 01 08     .. .../...=.....
+     120:	01 08 01 08 01 08 5b 0a ff 0f 01 08 01 08 01 08     ......[.........
+     130:	01 08 5d 0a 01 08 01 08 01 08 01 08 ff 0f           ..]...........
+
+0000013e <font5x8>:
+     13e:	48 08 20 04 00 00 00 00 21 04 06 5f 06 00 2b 06     H. .....!.._..+.
+     14e:	08 08 3e 08 08 00 2c 03 e0 60 00 2d 06 08 08 08     ..>...,..`.-....
+     15e:	08 08 00 2e 03 60 60 00 30 06 3e 51 49 45 3e 00     .....``.0.>QIE>.
+     16e:	31 04 42 7f 40 00 32 06 62 51 49 49 46 00 33 06     1.B.@.2.bQIIF.3.
+     17e:	22 49 49 49 36 00 34 06 18 14 12 7f 10 00 35 06     "III6.4.......5.
+     18e:	2f 49 49 49 31 00 36 06 3c 4a 49 49 30 00 37 06     /III1.6.<JII0.7.
+     19e:	01 71 09 05 03 00 38 06 36 49 49 49 36 00 39 06     .q....8.6III6.9.
+     1ae:	06 49 49 29 1e 00 3a 03 6c 6c 00 3d 06 24 24 24     .II)..:.ll.=.$$$
+     1be:	24 24 00 3f 06 02 01 59 09 06 00 41 06 7e 11 11     $$.?...Y...A.~..
+     1ce:	11 7e 00 42 06 7f 49 49 49 36 00 43 06 3e 41 41     .~.B..III6.C.>AA
+     1de:	41 22 00 44 06 7f 41 41 41 3e 00 45 06 7f 49 49     A".D..AAA>.E..II
+     1ee:	49 41 00 46 06 7f 09 09 09 01 00 47 06 3e 41 49     IA.F.......G.>AI
+     1fe:	49 7a 00 48 06 7f 08 08 08 7f 00 49 04 41 7f 41     Iz.H.......I.A.A
+     20e:	00 4a 06 30 40 40 40 3f 00 4b 06 7f 08 14 22 41     .J.0@@@?.K...."A
+     21e:	00 4c 06 7f 40 40 40 40 00 4d 06 7f 02 04 02 7f     .L..@@@@.M......
+     22e:	00 4e 06 7f 02 04 08 7f 00 4f 06 3e 41 41 41 3e     .N.......O.>AAA>
+     23e:	00 50 06 7f 09 09 09 06 00 51 06 3e 41 51 21 5e     .P.......Q.>AQ!^
+     24e:	00 52 06 7f 09 09 19 66 00 53 06 26 49 49 49 32     .R.....f.S.&III2
+     25e:	00 54 06 01 01 7f 01 01 00 55 06 3f 40 40 40 3f     .T.......U.?@@@?
+     26e:	00 56 06 1f 20 40 20 1f 00 57 06 3f 40 3c 40 3f     .V.. @ ..W.?@<@?
+     27e:	00 58 06 63 14 08 14 63 00 59 06 07 08 70 08 07     .X.c...c.Y...p..
+     28e:	00 5a 05 71 49 45 43 00 5f 05 01 01 01 01 01 61     .Z.qIEC._......a
+     29e:	06 20 54 54 54 78 00 62 06 7f 44 44 44 38 00 63     . TTTx.b..DDD8.c
+     2ae:	06 38 44 44 44 28 00 64 06 38 44 44 44 7f 00 65     .8DDD(.d.8DDD..e
+     2be:	06 38 54 54 54 08 00 66 05 08 7e 09 09 00 67 06     .8TTT..f..~...g.
+     2ce:	18 a4 a4 a4 7c 00 68 05 7f 04 04 78 00 69 03 7d     ....|.h....x.i.}
+     2de:	40 00 6a 05 40 80 84 7d 00 6b 05 7f 10 28 44 00     @.j.@..}.k...(D.
+     2ee:	6c 04 7f 40 40 00 6d 06 7c 04 18 04 78 00 6e 05     l..@@.m.|...x.n.
+     2fe:	7c 04 04 78 00 6f 06 38 44 44 44 38 00 70 05 fc     |..x.o.8DDD8.p..
+     30e:	44 44 38 00 71 05 38 44 44 fc 00 72 06 44 78 44     DD8.q.8DD..r.DxD
+     31e:	04 08 00 73 06 08 54 54 54 20 00 74 05 04 3e 44     ...s..TTT .t..>D
+     32e:	24 00 75 05 3c 40 20 7c 00 76 06 1c 20 40 20 1c     $.u.<@ |.v.. @ .
+     33e:	00 77 06 3c 60 30 60 3c 00 78 05 6c 10 10 6c 00     .w.<`0`<.x.l..l.
+     34e:	79 05 9c a0 60 3c 00 7a 05 64 54 54 4c 00           y...`<.z.dTTL.
+
+0000035c <__ctors_end>:
+     35c:	11 24       	eor	r1, r1
+     35e:	1f be       	out	0x3f, r1	; 63
+     360:	cf e5       	ldi	r28, 0x5F	; 95
+     362:	d2 e0       	ldi	r29, 0x02	; 2
+     364:	de bf       	out	0x3e, r29	; 62
+     366:	cd bf       	out	0x3d, r28	; 61
+
+00000368 <__do_copy_data>:
+     368:	10 e0       	ldi	r17, 0x00	; 0
+     36a:	a0 e6       	ldi	r26, 0x60	; 96
+     36c:	b0 e0       	ldi	r27, 0x00	; 0
+     36e:	e0 e5       	ldi	r30, 0x50	; 80
+     370:	f6 e1       	ldi	r31, 0x16	; 22
+     372:	02 c0       	rjmp	.+4      	; 0x378 <__do_copy_data+0x10>
+     374:	05 90       	lpm	r0, Z+
+     376:	0d 92       	st	X+, r0
+     378:	a2 36       	cpi	r26, 0x62	; 98
+     37a:	b1 07       	cpc	r27, r17
+     37c:	d9 f7       	brne	.-10     	; 0x374 <__do_copy_data+0xc>
+
+0000037e <__do_clear_bss>:
+     37e:	21 e0       	ldi	r18, 0x01	; 1
+     380:	a2 e6       	ldi	r26, 0x62	; 98
+     382:	b0 e0       	ldi	r27, 0x00	; 0
+     384:	01 c0       	rjmp	.+2      	; 0x388 <.do_clear_bss_start>
+
+00000386 <.do_clear_bss_loop>:
+     386:	1d 92       	st	X+, r1
+
+00000388 <.do_clear_bss_start>:
+     388:	a0 3a       	cpi	r26, 0xA0	; 160
+     38a:	b2 07       	cpc	r27, r18
+     38c:	e1 f7       	brne	.-8      	; 0x386 <.do_clear_bss_loop>
+     38e:	02 d0       	rcall	.+4      	; 0x394 <main>
+     390:	5d c9       	rjmp	.-3398   	; 0xfffff64c <__eeprom_end+0xff7ef5b1>
+
+00000392 <__bad_interrupt>:
+     392:	36 ce       	rjmp	.-916    	; 0x0 <__vectors>
+
+00000394 <main>:
+}
+#endif
+
+int main (void)
+{
+   KernelSetup();
+     394:	9d d0       	rcall	.+314    	; 0x4d0 <KernelSetup>
+   DigitalOutputSetup();
+     396:	28 d7       	rcall	.+3664   	; 0x11e8 <DigitalOutputSetup>
+   DisplaySetup();
+     398:	2a d8       	rcall	.-4012   	; 0xfffff3ee <__eeprom_end+0xff7ef353>
+   AdcSetup();
+     39a:	8e d2       	rcall	.+1308   	; 0x8b8 <AdcSetup>
+   MotorSetup();
+     39c:	14 d9       	rcall	.-3544   	; 0xfffff5c6 <__eeprom_end+0xff7ef52b>
+
+#ifdef test
+   InitTask(TESTSTACKSIZE, testStack, TestTask);
+#else
+   InitTask(DISPLAYSTACKSIZE, displayStack, DisplayTask);
+     39e:	4f ef       	ldi	r20, 0xFF	; 255
+     3a0:	59 e0       	ldi	r21, 0x09	; 9
+     3a2:	67 ec       	ldi	r22, 0xC7	; 199
+     3a4:	70 e0       	ldi	r23, 0x00	; 0
+     3a6:	8f e4       	ldi	r24, 0x4F	; 79
+     3a8:	90 e0       	ldi	r25, 0x00	; 0
+     3aa:	1b d0       	rcall	.+54     	; 0x3e2 <InitTask>
+   InitTask(MOTORSTACKSIZE, motorStack, MotorTask);
+     3ac:	44 ee       	ldi	r20, 0xE4	; 228
+     3ae:	5a e0       	ldi	r21, 0x0A	; 10
+     3b0:	6b e6       	ldi	r22, 0x6B	; 107
+     3b2:	70 e0       	ldi	r23, 0x00	; 0
+     3b4:	89 e2       	ldi	r24, 0x29	; 41
+     3b6:	90 e0       	ldi	r25, 0x00	; 0
+     3b8:	14 d0       	rcall	.+40     	; 0x3e2 <InitTask>
+   InitTask(BUTTONSTACKSIZE, buttonStack, ButtonTask);
+     3ba:	42 e1       	ldi	r20, 0x12	; 18
+     3bc:	59 e0       	ldi	r21, 0x09	; 9
+     3be:	66 e1       	ldi	r22, 0x16	; 22
+     3c0:	71 e0       	ldi	r23, 0x01	; 1
+     3c2:	89 e2       	ldi	r24, 0x29	; 41
+     3c4:	90 e0       	ldi	r25, 0x00	; 0
+     3c6:	0d d0       	rcall	.+26     	; 0x3e2 <InitTask>
+   InitTask(DIGITALOUTPUTSTACKSIZE, digitalOutputStack, DigitalOutputTask);
+     3c8:	4b e0       	ldi	r20, 0x0B	; 11
+     3ca:	59 e0       	ldi	r21, 0x09	; 9
+     3cc:	64 e9       	ldi	r22, 0x94	; 148
+     3ce:	70 e0       	ldi	r23, 0x00	; 0
+     3d0:	83 e3       	ldi	r24, 0x33	; 51
+     3d2:	90 e0       	ldi	r25, 0x00	; 0
+     3d4:	06 d0       	rcall	.+12     	; 0x3e2 <InitTask>
+#endif
+
+   StartKernel(NULL);
+     3d6:	80 e0       	ldi	r24, 0x00	; 0
+     3d8:	90 e0       	ldi	r25, 0x00	; 0
+     3da:	a0 d1       	rcall	.+832    	; 0x71c <StartKernel>
+}
+     3dc:	80 e0       	ldi	r24, 0x00	; 0
+     3de:	90 e0       	ldi	r25, 0x00	; 0
+     3e0:	08 95       	ret
+
+000003e2 <InitTask>:
+   InitTask(sizeof(IdleTaskStack), IdleTaskStack, IdleTask);
+}
+
+uint8_t InitTask(uint16_t stackSize, uint8_t* stackBuffer, TaskFunction function)
+{
+   uint8_t* stackptr = stackBuffer + stackSize - 1;
+     3e2:	dc 01       	movw	r26, r24
+     3e4:	11 97       	sbiw	r26, 0x01	; 1
+     3e6:	a6 0f       	add	r26, r22
+     3e8:	b7 1f       	adc	r27, r23
+   
+   *stackptr-- = (uint16_t)function & 0x00ff;
+     3ea:	4c 93       	st	X, r20
+   *stackptr-- = (uint16_t)function >> 8;
+     3ec:	fd 01       	movw	r30, r26
+     3ee:	31 97       	sbiw	r30, 0x01	; 1
+     3f0:	50 83       	st	Z, r21
+   *stackptr-- = 0x00;                                         // register R0
+     3f2:	31 97       	sbiw	r30, 0x01	; 1
+     3f4:	10 82       	st	Z, r1
+   *stackptr-- = 0x00; nrTasks == 0 ? 0x00 : 0x80;             // status register; interrupt will be enabled later
+     3f6:	31 97       	sbiw	r30, 0x01	; 1
+     3f8:	10 82       	st	Z, r1
+     3fa:	20 91 9e 01 	lds	r18, 0x019E	; 0x80019e <nrTasks>
+
+   tasks[nrTasks].stackbuffer = stackBuffer;
+     3fe:	20 91 9e 01 	lds	r18, 0x019E	; 0x80019e <nrTasks>
+     402:	30 e0       	ldi	r19, 0x00	; 0
+     404:	f9 01       	movw	r30, r18
+     406:	ee 0f       	add	r30, r30
+     408:	ff 1f       	adc	r31, r31
+     40a:	ee 0f       	add	r30, r30
+     40c:	ff 1f       	adc	r31, r31
+     40e:	e2 0f       	add	r30, r18
+     410:	f3 1f       	adc	r31, r19
+     412:	ee 0f       	add	r30, r30
+     414:	ff 1f       	adc	r31, r31
+     416:	ef 5b       	subi	r30, 0xBF	; 191
+     418:	fe 4f       	sbci	r31, 0xFE	; 254
+     41a:	71 83       	std	Z+1, r23	; 0x01
+     41c:	60 83       	st	Z, r22
+   tasks[nrTasks].StackPointer = (uint16_t)stackptr - 31;      // store stack pointer
+     41e:	20 91 9e 01 	lds	r18, 0x019E	; 0x80019e <nrTasks>
+     422:	30 e0       	ldi	r19, 0x00	; 0
+     424:	93 97       	sbiw	r26, 0x23	; 35
+     426:	f9 01       	movw	r30, r18
+     428:	ee 0f       	add	r30, r30
+     42a:	ff 1f       	adc	r31, r31
+     42c:	ee 0f       	add	r30, r30
+     42e:	ff 1f       	adc	r31, r31
+     430:	e2 0f       	add	r30, r18
+     432:	f3 1f       	adc	r31, r19
+     434:	ee 0f       	add	r30, r30
+     436:	ff 1f       	adc	r31, r31
+     438:	ef 5b       	subi	r30, 0xBF	; 191
+     43a:	fe 4f       	sbci	r31, 0xFE	; 254
+     43c:	b3 83       	std	Z+3, r27	; 0x03
+     43e:	a2 83       	std	Z+2, r26	; 0x02
+   tasks[nrTasks].StackSize = stackSize;
+     440:	20 91 9e 01 	lds	r18, 0x019E	; 0x80019e <nrTasks>
+     444:	30 e0       	ldi	r19, 0x00	; 0
+     446:	f9 01       	movw	r30, r18
+     448:	ee 0f       	add	r30, r30
+     44a:	ff 1f       	adc	r31, r31
+     44c:	ee 0f       	add	r30, r30
+     44e:	ff 1f       	adc	r31, r31
+     450:	e2 0f       	add	r30, r18
+     452:	f3 1f       	adc	r31, r19
+     454:	ee 0f       	add	r30, r30
+     456:	ff 1f       	adc	r31, r31
+     458:	ef 5b       	subi	r30, 0xBF	; 191
+     45a:	fe 4f       	sbci	r31, 0xFE	; 254
+     45c:	95 83       	std	Z+5, r25	; 0x05
+     45e:	84 83       	std	Z+4, r24	; 0x04
+   tasks[nrTasks].Handle = nrTasks;
+     460:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     464:	90 e0       	ldi	r25, 0x00	; 0
+     466:	20 91 9e 01 	lds	r18, 0x019E	; 0x80019e <nrTasks>
+     46a:	fc 01       	movw	r30, r24
+     46c:	ee 0f       	add	r30, r30
+     46e:	ff 1f       	adc	r31, r31
+     470:	ee 0f       	add	r30, r30
+     472:	ff 1f       	adc	r31, r31
+     474:	e8 0f       	add	r30, r24
+     476:	f9 1f       	adc	r31, r25
+     478:	ee 0f       	add	r30, r30
+     47a:	ff 1f       	adc	r31, r31
+     47c:	ef 5b       	subi	r30, 0xBF	; 191
+     47e:	fe 4f       	sbci	r31, 0xFE	; 254
+     480:	26 83       	std	Z+6, r18	; 0x06
+   tasks[nrTasks].TaskState = StateRunable;
+     482:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     486:	90 e0       	ldi	r25, 0x00	; 0
+     488:	fc 01       	movw	r30, r24
+     48a:	ee 0f       	add	r30, r30
+     48c:	ff 1f       	adc	r31, r31
+     48e:	ee 0f       	add	r30, r30
+     490:	ff 1f       	adc	r31, r31
+     492:	e8 0f       	add	r30, r24
+     494:	f9 1f       	adc	r31, r25
+     496:	ee 0f       	add	r30, r30
+     498:	ff 1f       	adc	r31, r31
+     49a:	ef 5b       	subi	r30, 0xBF	; 191
+     49c:	fe 4f       	sbci	r31, 0xFE	; 254
+     49e:	80 e4       	ldi	r24, 0x40	; 64
+     4a0:	87 83       	std	Z+7, r24	; 0x07
+   tasks[nrTasks].NextRunTime = 0;
+     4a2:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     4a6:	90 e0       	ldi	r25, 0x00	; 0
+     4a8:	fc 01       	movw	r30, r24
+     4aa:	ee 0f       	add	r30, r30
+     4ac:	ff 1f       	adc	r31, r31
+     4ae:	ee 0f       	add	r30, r30
+     4b0:	ff 1f       	adc	r31, r31
+     4b2:	e8 0f       	add	r30, r24
+     4b4:	f9 1f       	adc	r31, r25
+     4b6:	ee 0f       	add	r30, r30
+     4b8:	ff 1f       	adc	r31, r31
+     4ba:	ef 5b       	subi	r30, 0xBF	; 191
+     4bc:	fe 4f       	sbci	r31, 0xFE	; 254
+     4be:	11 86       	std	Z+9, r1	; 0x09
+     4c0:	10 86       	std	Z+8, r1	; 0x08
+
+   return nrTasks++;
+     4c2:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     4c6:	91 e0       	ldi	r25, 0x01	; 1
+     4c8:	98 0f       	add	r25, r24
+     4ca:	90 93 9e 01 	sts	0x019E, r25	; 0x80019e <nrTasks>
+}
+     4ce:	08 95       	ret
+
+000004d0 <KernelSetup>:
+}
+
+void KernelSetup()
+{
+   // timer / counter 0 is used to generate the 1 ms timing
+   KernelTimerCounter = 0;
+     4d0:	10 92 74 01 	sts	0x0174, r1	; 0x800174 <KernelTimerCounter+0x1>
+     4d4:	10 92 73 01 	sts	0x0173, r1	; 0x800173 <KernelTimerCounter>
+   TCCR0A = (1<<WGM01);            // CTC mode
+     4d8:	82 e0       	ldi	r24, 0x02	; 2
+     4da:	80 bf       	out	0x30, r24	; 48
+   TCCR0B = (1<<CS01);             // 8 MHz divide by 64 prescaler produces 125 KHz clock source
+     4dc:	83 bf       	out	0x33, r24	; 51
+   OCR0A = 124;                    // 125 - 1 gives 1 ms compare match interrupts used for task switching
+     4de:	8c e7       	ldi	r24, 0x7C	; 124
+     4e0:	86 bf       	out	0x36, r24	; 54
+
+   nrTasks = 0;
+     4e2:	10 92 9e 01 	sts	0x019E, r1	; 0x80019e <nrTasks>
+   InitTask(sizeof(IdleTaskStack), IdleTaskStack, IdleTask);
+     4e6:	4d e5       	ldi	r20, 0x5D	; 93
+     4e8:	53 e0       	ldi	r21, 0x03	; 3
+     4ea:	65 e7       	ldi	r22, 0x75	; 117
+     4ec:	71 e0       	ldi	r23, 0x01	; 1
+     4ee:	87 e2       	ldi	r24, 0x27	; 39
+     4f0:	90 e0       	ldi	r25, 0x00	; 0
+     4f2:	77 df       	rcall	.-274    	; 0x3e2 <InitTask>
+     4f4:	08 95       	ret
+
+000004f6 <TaskSleep>:
+}
+
+void TaskSleep(uint16_t time)
+{
+   // store context of current task
+   __asm volatile(
+     4f6:	f8 94       	cli
+     4f8:	0f 92       	push	r0
+     4fa:	0f b6       	in	r0, 0x3f	; 63
+     4fc:	0f 92       	push	r0
+     4fe:	1f 92       	push	r1
+     500:	2f 92       	push	r2
+     502:	3f 92       	push	r3
+     504:	4f 92       	push	r4
+     506:	5f 92       	push	r5
+     508:	6f 92       	push	r6
+     50a:	7f 92       	push	r7
+     50c:	8f 92       	push	r8
+     50e:	9f 92       	push	r9
+     510:	af 92       	push	r10
+     512:	bf 92       	push	r11
+     514:	cf 92       	push	r12
+     516:	df 92       	push	r13
+     518:	ef 92       	push	r14
+     51a:	ff 92       	push	r15
+     51c:	0f 93       	push	r16
+     51e:	1f 93       	push	r17
+     520:	2f 93       	push	r18
+     522:	3f 93       	push	r19
+     524:	4f 93       	push	r20
+     526:	5f 93       	push	r21
+     528:	6f 93       	push	r22
+     52a:	7f 93       	push	r23
+     52c:	8f 93       	push	r24
+     52e:	9f 93       	push	r25
+     530:	af 93       	push	r26
+     532:	bf 93       	push	r27
+     534:	cf 93       	push	r28
+     536:	df 93       	push	r29
+     538:	ef 93       	push	r30
+     53a:	ff 93       	push	r31
+     53c:	11 24       	eor	r1, r1
+      "              push r30          \n\t"
+      "              push r31          \n\t"
+      "              clr r1            \n\t" // reset the "zero" register
+   ::);
+   
+   tasks[TaskIndex].StackPointer = SP;
+     53e:	20 91 9d 01 	lds	r18, 0x019D	; 0x80019d <TaskIndex>
+     542:	30 e0       	ldi	r19, 0x00	; 0
+     544:	4d b7       	in	r20, 0x3d	; 61
+     546:	5e b7       	in	r21, 0x3e	; 62
+     548:	f9 01       	movw	r30, r18
+     54a:	ee 0f       	add	r30, r30
+     54c:	ff 1f       	adc	r31, r31
+     54e:	ee 0f       	add	r30, r30
+     550:	ff 1f       	adc	r31, r31
+     552:	e2 0f       	add	r30, r18
+     554:	f3 1f       	adc	r31, r19
+     556:	ee 0f       	add	r30, r30
+     558:	ff 1f       	adc	r31, r31
+     55a:	ef 5b       	subi	r30, 0xBF	; 191
+     55c:	fe 4f       	sbci	r31, 0xFE	; 254
+     55e:	53 83       	std	Z+3, r21	; 0x03
+     560:	42 83       	std	Z+2, r20	; 0x02
+
+   if (time > 0)
+     562:	00 97       	sbiw	r24, 0x00	; 0
+     564:	31 f1       	breq	.+76     	; 0x5b2 <TaskSleep+0xbc>
+   {
+      tasks[TaskIndex].TaskState = StateWaiting;
+     566:	20 91 9d 01 	lds	r18, 0x019D	; 0x80019d <TaskIndex>
+     56a:	30 e0       	ldi	r19, 0x00	; 0
+     56c:	f9 01       	movw	r30, r18
+     56e:	ee 0f       	add	r30, r30
+     570:	ff 1f       	adc	r31, r31
+     572:	ee 0f       	add	r30, r30
+     574:	ff 1f       	adc	r31, r31
+     576:	e2 0f       	add	r30, r18
+     578:	f3 1f       	adc	r31, r19
+     57a:	ee 0f       	add	r30, r30
+     57c:	ff 1f       	adc	r31, r31
+     57e:	ef 5b       	subi	r30, 0xBF	; 191
+     580:	fe 4f       	sbci	r31, 0xFE	; 254
+     582:	20 e2       	ldi	r18, 0x20	; 32
+     584:	27 83       	std	Z+7, r18	; 0x07
+      tasks[TaskIndex].NextRunTime = KernelTimerCounter + time;
+     586:	20 91 9d 01 	lds	r18, 0x019D	; 0x80019d <TaskIndex>
+     58a:	30 e0       	ldi	r19, 0x00	; 0
+     58c:	40 91 73 01 	lds	r20, 0x0173	; 0x800173 <KernelTimerCounter>
+     590:	50 91 74 01 	lds	r21, 0x0174	; 0x800174 <KernelTimerCounter+0x1>
+     594:	84 0f       	add	r24, r20
+     596:	95 1f       	adc	r25, r21
+     598:	f9 01       	movw	r30, r18
+     59a:	ee 0f       	add	r30, r30
+     59c:	ff 1f       	adc	r31, r31
+     59e:	ee 0f       	add	r30, r30
+     5a0:	ff 1f       	adc	r31, r31
+     5a2:	e2 0f       	add	r30, r18
+     5a4:	f3 1f       	adc	r31, r19
+     5a6:	ee 0f       	add	r30, r30
+     5a8:	ff 1f       	adc	r31, r31
+     5aa:	ef 5b       	subi	r30, 0xBF	; 191
+     5ac:	fe 4f       	sbci	r31, 0xFE	; 254
+     5ae:	91 87       	std	Z+9, r25	; 0x09
+     5b0:	80 87       	std	Z+8, r24	; 0x08
+   }
+
+   // find new task to run
+   if (TaskIndex == 0) TaskIndex++;
+     5b2:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <TaskIndex>
+     5b6:	81 11       	cpse	r24, r1
+     5b8:	05 c0       	rjmp	.+10     	; 0x5c4 <TaskSleep+0xce>
+     5ba:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <TaskIndex>
+     5be:	8f 5f       	subi	r24, 0xFF	; 255
+     5c0:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <TaskIndex>
+   TaskIterator = TaskIndex;
+     5c4:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <TaskIndex>
+     5c8:	80 93 9c 01 	sts	0x019C, r24	; 0x80019c <TaskIterator>
+   do
+   {
+      TaskIterator = TaskIterator >= nrTasks - 1 ? 1 : TaskIterator + 1;
+     5cc:	41 e0       	ldi	r20, 0x01	; 1
+     5ce:	20 91 9c 01 	lds	r18, 0x019C	; 0x80019c <TaskIterator>
+     5d2:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     5d6:	30 e0       	ldi	r19, 0x00	; 0
+     5d8:	90 e0       	ldi	r25, 0x00	; 0
+     5da:	01 97       	sbiw	r24, 0x01	; 1
+     5dc:	28 17       	cp	r18, r24
+     5de:	39 07       	cpc	r19, r25
+     5e0:	24 f4       	brge	.+8      	; 0x5ea <TaskSleep+0xf4>
+     5e2:	80 91 9c 01 	lds	r24, 0x019C	; 0x80019c <TaskIterator>
+     5e6:	8f 5f       	subi	r24, 0xFF	; 255
+     5e8:	01 c0       	rjmp	.+2      	; 0x5ec <TaskSleep+0xf6>
+     5ea:	84 2f       	mov	r24, r20
+     5ec:	80 93 9c 01 	sts	0x019C, r24	; 0x80019c <TaskIterator>
+   }
+   while ((TaskIterator != TaskIndex) && (tasks[TaskIterator].TaskState != StateRunable));
+     5f0:	90 91 9c 01 	lds	r25, 0x019C	; 0x80019c <TaskIterator>
+     5f4:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <TaskIndex>
+     5f8:	98 17       	cp	r25, r24
+     5fa:	89 f0       	breq	.+34     	; 0x61e <TaskSleep+0x128>
+     5fc:	80 91 9c 01 	lds	r24, 0x019C	; 0x80019c <TaskIterator>
+     600:	90 e0       	ldi	r25, 0x00	; 0
+     602:	fc 01       	movw	r30, r24
+     604:	ee 0f       	add	r30, r30
+     606:	ff 1f       	adc	r31, r31
+     608:	ee 0f       	add	r30, r30
+     60a:	ff 1f       	adc	r31, r31
+     60c:	e8 0f       	add	r30, r24
+     60e:	f9 1f       	adc	r31, r25
+     610:	ee 0f       	add	r30, r30
+     612:	ff 1f       	adc	r31, r31
+     614:	ef 5b       	subi	r30, 0xBF	; 191
+     616:	fe 4f       	sbci	r31, 0xFE	; 254
+     618:	87 81       	ldd	r24, Z+7	; 0x07
+     61a:	80 34       	cpi	r24, 0x40	; 64
+     61c:	c1 f6       	brne	.-80     	; 0x5ce <TaskSleep+0xd8>
+
+   TaskIndex = tasks[TaskIterator].TaskState == StateRunable ? TaskIterator : 0;
+     61e:	80 91 9c 01 	lds	r24, 0x019C	; 0x80019c <TaskIterator>
+     622:	90 e0       	ldi	r25, 0x00	; 0
+     624:	fc 01       	movw	r30, r24
+     626:	ee 0f       	add	r30, r30
+     628:	ff 1f       	adc	r31, r31
+     62a:	ee 0f       	add	r30, r30
+     62c:	ff 1f       	adc	r31, r31
+     62e:	e8 0f       	add	r30, r24
+     630:	f9 1f       	adc	r31, r25
+     632:	ee 0f       	add	r30, r30
+     634:	ff 1f       	adc	r31, r31
+     636:	ef 5b       	subi	r30, 0xBF	; 191
+     638:	fe 4f       	sbci	r31, 0xFE	; 254
+     63a:	87 81       	ldd	r24, Z+7	; 0x07
+     63c:	80 34       	cpi	r24, 0x40	; 64
+     63e:	19 f4       	brne	.+6      	; 0x646 <TaskSleep+0x150>
+     640:	80 91 9c 01 	lds	r24, 0x019C	; 0x80019c <TaskIterator>
+     644:	01 c0       	rjmp	.+2      	; 0x648 <TaskSleep+0x152>
+     646:	80 e0       	ldi	r24, 0x00	; 0
+     648:	80 93 9d 01 	sts	0x019D, r24	; 0x80019d <TaskIndex>
+
+   // retrieve context of next task to run
+   SP = tasks[TaskIndex].StackPointer;
+     64c:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <TaskIndex>
+     650:	90 e0       	ldi	r25, 0x00	; 0
+     652:	fc 01       	movw	r30, r24
+     654:	ee 0f       	add	r30, r30
+     656:	ff 1f       	adc	r31, r31
+     658:	ee 0f       	add	r30, r30
+     65a:	ff 1f       	adc	r31, r31
+     65c:	e8 0f       	add	r30, r24
+     65e:	f9 1f       	adc	r31, r25
+     660:	ee 0f       	add	r30, r30
+     662:	ff 1f       	adc	r31, r31
+     664:	ef 5b       	subi	r30, 0xBF	; 191
+     666:	fe 4f       	sbci	r31, 0xFE	; 254
+     668:	82 81       	ldd	r24, Z+2	; 0x02
+     66a:	93 81       	ldd	r25, Z+3	; 0x03
+     66c:	9e bf       	out	0x3e, r25	; 62
+     66e:	8d bf       	out	0x3d, r24	; 61
+
+00000670 <start>:
+
+   __asm volatile(
+     670:	ff 91       	pop	r31
+     672:	ef 91       	pop	r30
+     674:	df 91       	pop	r29
+     676:	cf 91       	pop	r28
+     678:	bf 91       	pop	r27
+     67a:	af 91       	pop	r26
+     67c:	9f 91       	pop	r25
+     67e:	8f 91       	pop	r24
+     680:	7f 91       	pop	r23
+     682:	6f 91       	pop	r22
+     684:	5f 91       	pop	r21
+     686:	4f 91       	pop	r20
+     688:	3f 91       	pop	r19
+     68a:	2f 91       	pop	r18
+     68c:	1f 91       	pop	r17
+     68e:	0f 91       	pop	r16
+     690:	ff 90       	pop	r15
+     692:	ef 90       	pop	r14
+     694:	df 90       	pop	r13
+     696:	cf 90       	pop	r12
+     698:	bf 90       	pop	r11
+     69a:	af 90       	pop	r10
+     69c:	9f 90       	pop	r9
+     69e:	8f 90       	pop	r8
+     6a0:	7f 90       	pop	r7
+     6a2:	6f 90       	pop	r6
+     6a4:	5f 90       	pop	r5
+     6a6:	4f 90       	pop	r4
+     6a8:	3f 90       	pop	r3
+     6aa:	2f 90       	pop	r2
+     6ac:	1f 90       	pop	r1
+     6ae:	0f 90       	pop	r0
+     6b0:	0f be       	out	0x3f, r0	; 63
+     6b2:	0f 90       	pop	r0
+     6b4:	78 94       	sei
+     6b6:	08 95       	ret
+     6b8:	08 95       	ret
+
+000006ba <IdleTask>:
+
+void IdleTask(void);
+
+void IdleTask(void)
+{
+   if (initFunction != NULL)
+     6ba:	e0 91 3f 01 	lds	r30, 0x013F	; 0x80013f <initFunction>
+     6be:	f0 91 40 01 	lds	r31, 0x0140	; 0x800140 <initFunction+0x1>
+     6c2:	30 97       	sbiw	r30, 0x00	; 0
+     6c4:	09 f0       	breq	.+2      	; 0x6c8 <IdleTask+0xe>
+   {
+      initFunction();
+     6c6:	09 95       	icall
+   }
+
+   while(true)
+   {
+      TaskSleep(0);
+     6c8:	80 e0       	ldi	r24, 0x00	; 0
+     6ca:	90 e0       	ldi	r25, 0x00	; 0
+     6cc:	14 df       	rcall	.-472    	; 0x4f6 <TaskSleep>
+     6ce:	fc cf       	rjmp	.-8      	; 0x6c8 <IdleTask+0xe>
+
+000006d0 <TaskStart>:
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     6d0:	f8 94       	cli
+
+void TaskStart(uint8_t index)
+{
+   ATOMIC_BLOCK(ATOMIC_FORCEON)
+   {
+      tasks[index].TaskState = StateRunable;
+     6d2:	90 e0       	ldi	r25, 0x00	; 0
+     6d4:	fc 01       	movw	r30, r24
+     6d6:	ee 0f       	add	r30, r30
+     6d8:	ff 1f       	adc	r31, r31
+     6da:	ee 0f       	add	r30, r30
+     6dc:	ff 1f       	adc	r31, r31
+     6de:	e8 0f       	add	r30, r24
+     6e0:	f9 1f       	adc	r31, r25
+     6e2:	ee 0f       	add	r30, r30
+     6e4:	ff 1f       	adc	r31, r31
+     6e6:	ef 5b       	subi	r30, 0xBF	; 191
+     6e8:	fe 4f       	sbci	r31, 0xFE	; 254
+     6ea:	80 e4       	ldi	r24, 0x40	; 64
+     6ec:	87 83       	std	Z+7, r24	; 0x07
+    return 1;
+}
+
+static __inline__ void __iSeiParam(const uint8_t *__s)
+{
+    sei();
+     6ee:	78 94       	sei
+    __asm__ volatile ("" ::: "memory");
+     6f0:	08 95       	ret
+
+000006f2 <TaskStop>:
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     6f2:	f8 94       	cli
+
+void TaskStop(uint8_t index)
+{
+   ATOMIC_BLOCK(ATOMIC_FORCEON)
+   {
+      tasks[index].TaskState = StateStopped;
+     6f4:	90 e0       	ldi	r25, 0x00	; 0
+     6f6:	fc 01       	movw	r30, r24
+     6f8:	ee 0f       	add	r30, r30
+     6fa:	ff 1f       	adc	r31, r31
+     6fc:	ee 0f       	add	r30, r30
+     6fe:	ff 1f       	adc	r31, r31
+     700:	e8 0f       	add	r30, r24
+     702:	f9 1f       	adc	r31, r25
+     704:	ee 0f       	add	r30, r30
+     706:	ff 1f       	adc	r31, r31
+     708:	ef 5b       	subi	r30, 0xBF	; 191
+     70a:	fe 4f       	sbci	r31, 0xFE	; 254
+     70c:	80 e1       	ldi	r24, 0x10	; 16
+     70e:	87 83       	std	Z+7, r24	; 0x07
+    return 1;
+}
+
+static __inline__ void __iSeiParam(const uint8_t *__s)
+{
+    sei();
+     710:	78 94       	sei
+    __asm__ volatile ("" ::: "memory");
+     712:	08 95       	ret
+
+00000714 <EnableTaskSwitching>:
+   }
+}
+
+void EnableTaskSwitching(void)
+{
+   TIMSK0 |= (1<<OCIE0A);           // enable timer 0 compare match interrupt
+     714:	89 b7       	in	r24, 0x39	; 57
+     716:	82 60       	ori	r24, 0x02	; 2
+     718:	89 bf       	out	0x39, r24	; 57
+     71a:	08 95       	ret
+
+0000071c <StartKernel>:
+   return nrTasks++;
+}
+
+void StartKernel(TaskFunction function)
+{
+   TaskIndex = 0;
+     71c:	10 92 9d 01 	sts	0x019D, r1	; 0x80019d <TaskIndex>
+   initFunction = function;
+     720:	90 93 40 01 	sts	0x0140, r25	; 0x800140 <initFunction+0x1>
+     724:	80 93 3f 01 	sts	0x013F, r24	; 0x80013f <initFunction>
+   
+   EnableTaskSwitching();
+     728:	f5 df       	rcall	.-22     	; 0x714 <EnableTaskSwitching>
+   SP = tasks[TaskIndex].StackPointer;
+     72a:	80 91 9d 01 	lds	r24, 0x019D	; 0x80019d <TaskIndex>
+     72e:	90 e0       	ldi	r25, 0x00	; 0
+     730:	fc 01       	movw	r30, r24
+     732:	ee 0f       	add	r30, r30
+     734:	ff 1f       	adc	r31, r31
+     736:	ee 0f       	add	r30, r30
+     738:	ff 1f       	adc	r31, r31
+     73a:	e8 0f       	add	r30, r24
+     73c:	f9 1f       	adc	r31, r25
+     73e:	ee 0f       	add	r30, r30
+     740:	ff 1f       	adc	r31, r31
+     742:	ef 5b       	subi	r30, 0xBF	; 191
+     744:	fe 4f       	sbci	r31, 0xFE	; 254
+     746:	82 81       	ldd	r24, Z+2	; 0x02
+     748:	93 81       	ldd	r25, Z+3	; 0x03
+     74a:	9e bf       	out	0x3e, r25	; 62
+     74c:	8d bf       	out	0x3d, r24	; 61
+
+   __asm volatile(
+     74e:	90 cf       	rjmp	.-224    	; 0x670 <start>
+     750:	08 95       	ret
+
+00000752 <__vector_9>:
+{
+   TIMSK0 |= (1<<OCIE0A);           // enable timer 0 compare match interrupt
+}
+
+ISR (TIM0_COMPA_vect)
+{
+     752:	1f 92       	push	r1
+     754:	0f 92       	push	r0
+     756:	0f b6       	in	r0, 0x3f	; 63
+     758:	0f 92       	push	r0
+     75a:	11 24       	eor	r1, r1
+     75c:	2f 93       	push	r18
+     75e:	3f 93       	push	r19
+     760:	4f 93       	push	r20
+     762:	5f 93       	push	r21
+     764:	6f 93       	push	r22
+     766:	7f 93       	push	r23
+     768:	8f 93       	push	r24
+     76a:	9f 93       	push	r25
+     76c:	ef 93       	push	r30
+     76e:	ff 93       	push	r31
+   static uint8_t delay = 0;
+   static uint8_t i;
+   
+   sei(); // allow other interrupts (ADC)
+     770:	78 94       	sei
+   
+   delay++;
+     772:	80 91 63 00 	lds	r24, 0x0063	; 0x800063 <delay.1574>
+     776:	8f 5f       	subi	r24, 0xFF	; 255
+   if (delay == 10)
+     778:	8a 30       	cpi	r24, 0x0A	; 10
+     77a:	19 f0       	breq	.+6      	; 0x782 <__vector_9+0x30>
+   static uint8_t delay = 0;
+   static uint8_t i;
+   
+   sei(); // allow other interrupts (ADC)
+   
+   delay++;
+     77c:	80 93 63 00 	sts	0x0063, r24	; 0x800063 <delay.1574>
+     780:	4a c0       	rjmp	.+148    	; 0x816 <__vector_9+0xc4>
+   if (delay == 10)
+   {
+      delay = 0;
+     782:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <delay.1574>
+      KernelTimerCounter++;
+     786:	80 91 73 01 	lds	r24, 0x0173	; 0x800173 <KernelTimerCounter>
+     78a:	90 91 74 01 	lds	r25, 0x0174	; 0x800174 <KernelTimerCounter+0x1>
+     78e:	01 96       	adiw	r24, 0x01	; 1
+     790:	90 93 74 01 	sts	0x0174, r25	; 0x800174 <KernelTimerCounter+0x1>
+     794:	80 93 73 01 	sts	0x0173, r24	; 0x800173 <KernelTimerCounter>
+
+      // update status of each task
+      for (i = 0; i < nrTasks; i++)
+     798:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <__data_end>
+     79c:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     7a0:	88 23       	and	r24, r24
+     7a2:	c9 f1       	breq	.+114    	; 0x816 <__vector_9+0xc4>
+     7a4:	20 e0       	ldi	r18, 0x00	; 0
+      {
+         if ((tasks[i].NextRunTime == KernelTimerCounter) &&
+            (tasks[i].TaskState != StateStopped))
+         {
+            tasks[i].TaskState = StateRunable;
+     7a6:	30 e4       	ldi	r19, 0x40	; 64
+      KernelTimerCounter++;
+
+      // update status of each task
+      for (i = 0; i < nrTasks; i++)
+      {
+         if ((tasks[i].NextRunTime == KernelTimerCounter) &&
+     7a8:	82 2f       	mov	r24, r18
+     7aa:	90 e0       	ldi	r25, 0x00	; 0
+     7ac:	fc 01       	movw	r30, r24
+     7ae:	ee 0f       	add	r30, r30
+     7b0:	ff 1f       	adc	r31, r31
+     7b2:	ee 0f       	add	r30, r30
+     7b4:	ff 1f       	adc	r31, r31
+     7b6:	e8 0f       	add	r30, r24
+     7b8:	f9 1f       	adc	r31, r25
+     7ba:	ee 0f       	add	r30, r30
+     7bc:	ff 1f       	adc	r31, r31
+     7be:	ef 5b       	subi	r30, 0xBF	; 191
+     7c0:	fe 4f       	sbci	r31, 0xFE	; 254
+     7c2:	60 85       	ldd	r22, Z+8	; 0x08
+     7c4:	71 85       	ldd	r23, Z+9	; 0x09
+     7c6:	40 91 73 01 	lds	r20, 0x0173	; 0x800173 <KernelTimerCounter>
+     7ca:	50 91 74 01 	lds	r21, 0x0174	; 0x800174 <KernelTimerCounter+0x1>
+     7ce:	64 17       	cp	r22, r20
+     7d0:	75 07       	cpc	r23, r21
+     7d2:	d1 f4       	brne	.+52     	; 0x808 <__vector_9+0xb6>
+            (tasks[i].TaskState != StateStopped))
+     7d4:	fc 01       	movw	r30, r24
+     7d6:	ee 0f       	add	r30, r30
+     7d8:	ff 1f       	adc	r31, r31
+     7da:	ee 0f       	add	r30, r30
+     7dc:	ff 1f       	adc	r31, r31
+     7de:	e8 0f       	add	r30, r24
+     7e0:	f9 1f       	adc	r31, r25
+     7e2:	ee 0f       	add	r30, r30
+     7e4:	ff 1f       	adc	r31, r31
+     7e6:	ef 5b       	subi	r30, 0xBF	; 191
+     7e8:	fe 4f       	sbci	r31, 0xFE	; 254
+     7ea:	47 81       	ldd	r20, Z+7	; 0x07
+      KernelTimerCounter++;
+
+      // update status of each task
+      for (i = 0; i < nrTasks; i++)
+      {
+         if ((tasks[i].NextRunTime == KernelTimerCounter) &&
+     7ec:	40 31       	cpi	r20, 0x10	; 16
+     7ee:	61 f0       	breq	.+24     	; 0x808 <__vector_9+0xb6>
+            (tasks[i].TaskState != StateStopped))
+         {
+            tasks[i].TaskState = StateRunable;
+     7f0:	fc 01       	movw	r30, r24
+     7f2:	ee 0f       	add	r30, r30
+     7f4:	ff 1f       	adc	r31, r31
+     7f6:	ee 0f       	add	r30, r30
+     7f8:	ff 1f       	adc	r31, r31
+     7fa:	e8 0f       	add	r30, r24
+     7fc:	f9 1f       	adc	r31, r25
+     7fe:	ee 0f       	add	r30, r30
+     800:	ff 1f       	adc	r31, r31
+     802:	ef 5b       	subi	r30, 0xBF	; 191
+     804:	fe 4f       	sbci	r31, 0xFE	; 254
+     806:	37 83       	std	Z+7, r19	; 0x07
+   {
+      delay = 0;
+      KernelTimerCounter++;
+
+      // update status of each task
+      for (i = 0; i < nrTasks; i++)
+     808:	2f 5f       	subi	r18, 0xFF	; 255
+     80a:	80 91 9e 01 	lds	r24, 0x019E	; 0x80019e <nrTasks>
+     80e:	28 17       	cp	r18, r24
+     810:	58 f2       	brcs	.-106    	; 0x7a8 <__vector_9+0x56>
+     812:	20 93 62 00 	sts	0x0062, r18	; 0x800062 <__data_end>
+         {
+            tasks[i].TaskState = StateRunable;
+         }
+      }
+   }
+}
+     816:	ff 91       	pop	r31
+     818:	ef 91       	pop	r30
+     81a:	9f 91       	pop	r25
+     81c:	8f 91       	pop	r24
+     81e:	7f 91       	pop	r23
+     820:	6f 91       	pop	r22
+     822:	5f 91       	pop	r21
+     824:	4f 91       	pop	r20
+     826:	3f 91       	pop	r19
+     828:	2f 91       	pop	r18
+     82a:	0f 90       	pop	r0
+     82c:	0f be       	out	0x3f, r0	; 63
+     82e:	0f 90       	pop	r0
+     830:	1f 90       	pop	r1
+     832:	18 95       	reti
+
+00000834 <GetVoltage>:
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     834:	f8 94       	cli
+int16_t GetVoltage(void)
+{
+   int16_t value;
+   ATOMIC_BLOCK(ATOMIC_FORCEON)
+   {
+      value = button; //voltage;
+     836:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     83a:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+    return 1;
+}
+
+static __inline__ void __iSeiParam(const uint8_t *__s)
+{
+    sei();
+     83e:	78 94       	sei
+   }
+   return value; // * 4 / 3;
+}
+     840:	08 95       	ret
+
+00000842 <GetAdcButton>:
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     842:	f8 94       	cli
+{
+   enum ButtonAdc value;
+
+   ATOMIC_BLOCK(ATOMIC_FORCEON)
+   {
+      if ((button >= 480) && (button <= 520))        value = ButtonAdcMenu;  // 1.60V, cnt=500
+     844:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     848:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+     84c:	80 3e       	cpi	r24, 0xE0	; 224
+     84e:	91 40       	sbci	r25, 0x01	; 1
+     850:	3c f0       	brlt	.+14     	; 0x860 <GetAdcButton+0x1e>
+     852:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     856:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+     85a:	89 30       	cpi	r24, 0x09	; 9
+     85c:	92 40       	sbci	r25, 0x02	; 2
+     85e:	f4 f0       	brlt	.+60     	; 0x89c <GetAdcButton+0x5a>
+      else if ((button >= 658) && (button <= 698))   value = ButtonAdcDown;  // 1.05V, cnt=680
+     860:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     864:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+     868:	82 39       	cpi	r24, 0x92	; 146
+     86a:	92 40       	sbci	r25, 0x02	; 2
+     86c:	3c f0       	brlt	.+14     	; 0x87c <GetAdcButton+0x3a>
+     86e:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     872:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+     876:	8b 3b       	cpi	r24, 0xBB	; 187
+     878:	92 40       	sbci	r25, 0x02	; 2
+     87a:	94 f0       	brlt	.+36     	; 0x8a0 <GetAdcButton+0x5e>
+      else if ((button >= 1000) && (button <= 1040)) value = ButtonAdcUp;    // 3.30V, cnt=1023
+     87c:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     880:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+     884:	88 3e       	cpi	r24, 0xE8	; 232
+     886:	93 40       	sbci	r25, 0x03	; 3
+     888:	6c f0       	brlt	.+26     	; 0x8a4 <GetAdcButton+0x62>
+     88a:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <button>
+     88e:	90 91 65 00 	lds	r25, 0x0065	; 0x800065 <button+0x1>
+     892:	81 31       	cpi	r24, 0x11	; 17
+     894:	94 40       	sbci	r25, 0x04	; 4
+     896:	44 f4       	brge	.+16     	; 0x8a8 <GetAdcButton+0x66>
+     898:	82 e0       	ldi	r24, 0x02	; 2
+     89a:	07 c0       	rjmp	.+14     	; 0x8aa <GetAdcButton+0x68>
+{
+   enum ButtonAdc value;
+
+   ATOMIC_BLOCK(ATOMIC_FORCEON)
+   {
+      if ((button >= 480) && (button <= 520))        value = ButtonAdcMenu;  // 1.60V, cnt=500
+     89c:	83 e0       	ldi	r24, 0x03	; 3
+     89e:	05 c0       	rjmp	.+10     	; 0x8aa <GetAdcButton+0x68>
+      else if ((button >= 658) && (button <= 698))   value = ButtonAdcDown;  // 1.05V, cnt=680
+     8a0:	81 e0       	ldi	r24, 0x01	; 1
+     8a2:	03 c0       	rjmp	.+6      	; 0x8aa <GetAdcButton+0x68>
+      else if ((button >= 1000) && (button <= 1040)) value = ButtonAdcUp;    // 3.30V, cnt=1023
+      else value = ButtonAdcNone;
+     8a4:	80 e0       	ldi	r24, 0x00	; 0
+     8a6:	01 c0       	rjmp	.+2      	; 0x8aa <GetAdcButton+0x68>
+     8a8:	80 e0       	ldi	r24, 0x00	; 0
+    return 1;
+}
+
+static __inline__ void __iSeiParam(const uint8_t *__s)
+{
+    sei();
+     8aa:	78 94       	sei
+   }
+   return value;
+}
+     8ac:	08 95       	ret
+
+000008ae <GetNrSamples>:
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+     8ae:	f8 94       	cli
+uint16_t GetNrSamples(void)
+{
+   uint16_t value;
+   ATOMIC_BLOCK(ATOMIC_FORCEON)
+   {
+      value = OCR1A;
+     8b0:	8a b5       	in	r24, 0x2a	; 42
+     8b2:	9b b5       	in	r25, 0x2b	; 43
+    return 1;
+}
+
+static __inline__ void __iSeiParam(const uint8_t *__s)
+{
+    sei();
+     8b4:	78 94       	sei
+   }
+   return value;
+}
+     8b6:	08 95       	ret
+
+000008b8 <AdcSetup>:
+
+void AdcSetup(void)
+{
+   /* ADC setup */
+   DIDR0 = (1 << ADC0D) | (1 << ADC1D);                     // disable digital buffer for ADC0 and ADC1
+     8b8:	83 e0       	ldi	r24, 0x03	; 3
+     8ba:	81 b9       	out	0x01, r24	; 1
+   ADMUX = 0;                                               // next digitize buttons and 5V reference
+     8bc:	17 b8       	out	0x07, r1	; 7
+
+   ADCSRB = (1 << ADTS2) | (1 << ADTS0);                    // start conversion on timer 1 compare B
+     8be:	85 e0       	ldi	r24, 0x05	; 5
+     8c0:	83 b9       	out	0x03, r24	; 3
+   ADCSRA = (1 << ADEN) |                                   // enable ADC
+     8c2:	8e ef       	ldi	r24, 0xFE	; 254
+     8c4:	86 b9       	out	0x06, r24	; 6
+            (1 << ADPS2) | (1 << ADPS1) | (0 << ADPS0) |    // 125KHz ADC clock
+            (1 << ADIE) |                                   // generate interrupt when ready
+            (1 << ADATE);                                   // use interrupt source to start ADC
+
+   /* timer 1 setup */
+   TCCR1A = 0;                         // CTC mode
+     8c6:	1f bc       	out	0x2f, r1	; 47
+   OCR1A = COUNTER_TIME_50HZ;          // 2500 - 1 gives 20 ms delay time
+     8c8:	83 ec       	ldi	r24, 0xC3	; 195
+     8ca:	99 e0       	ldi	r25, 0x09	; 9
+     8cc:	9b bd       	out	0x2b, r25	; 43
+     8ce:	8a bd       	out	0x2a, r24	; 42
+   OCR1B = COUNTER_DELAY_BUTTON;       // OCR1B is used to trigger the ADC. The ADC is used for buttons and zero detection
+     8d0:	87 ee       	ldi	r24, 0xE7	; 231
+     8d2:	93 e0       	ldi	r25, 0x03	; 3
+     8d4:	99 bd       	out	0x29, r25	; 41
+     8d6:	88 bd       	out	0x28, r24	; 40
+   TCCR1B = (1 << WGM12) | (1 << CS11) | (1 << CS10); // CTC mode and 8 MHz divide by 64 prescaler produces 125 KHz clock source
+     8d8:	8b e0       	ldi	r24, 0x0B	; 11
+     8da:	8e bd       	out	0x2e, r24	; 46
+     8dc:	08 95       	ret
+
+000008de <__vector_13>:
+}
+
+ISR (ADC_vect)
+{
+     8de:	1f 92       	push	r1
+     8e0:	0f 92       	push	r0
+     8e2:	0f b6       	in	r0, 0x3f	; 63
+     8e4:	0f 92       	push	r0
+     8e6:	11 24       	eor	r1, r1
+     8e8:	2f 93       	push	r18
+     8ea:	3f 93       	push	r19
+     8ec:	4f 93       	push	r20
+     8ee:	5f 93       	push	r21
+     8f0:	6f 93       	push	r22
+     8f2:	7f 93       	push	r23
+     8f4:	8f 93       	push	r24
+     8f6:	9f 93       	push	r25
+     8f8:	af 93       	push	r26
+     8fa:	bf 93       	push	r27
+     8fc:	ef 93       	push	r30
+     8fe:	ff 93       	push	r31
+   static uint16_t average = COUNTER_TIME_50HZ;
+
+   if (OCR1B == COUNTER_DELAY_BUTTON)
+     900:	88 b5       	in	r24, 0x28	; 40
+     902:	99 b5       	in	r25, 0x29	; 41
+     904:	87 3e       	cpi	r24, 0xE7	; 231
+     906:	93 40       	sbci	r25, 0x03	; 3
+     908:	69 f4       	brne	.+26     	; 0x924 <__vector_13+0x46>
+   {
+      // buttons
+      button = ADC;
+     90a:	84 b1       	in	r24, 0x04	; 4
+     90c:	95 b1       	in	r25, 0x05	; 5
+     90e:	90 93 65 00 	sts	0x0065, r25	; 0x800065 <button+0x1>
+     912:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <button>
+
+      // next adc measurement will be zero crossing
+      ADMUX = 1;
+     916:	81 e0       	ldi	r24, 0x01	; 1
+     918:	87 b9       	out	0x07, r24	; 7
+      OCR1B = 0;
+     91a:	19 bc       	out	0x29, r1	; 41
+     91c:	18 bc       	out	0x28, r1	; 40
+      MotorDirection(DIRECTION_STOP);
+     91e:	80 e0       	ldi	r24, 0x00	; 0
+     920:	6a d4       	rcall	.+2260   	; 0x11f6 <MotorDirection>
+     922:	42 c0       	rjmp	.+132    	; 0x9a8 <__vector_13+0xca>
+   }
+   else
+   {
+      // zero crossing
+      MotorDirection(DIRECTION_UP);//GetMotorDirection());
+     924:	81 e0       	ldi	r24, 0x01	; 1
+     926:	67 d4       	rcall	.+2254   	; 0x11f6 <MotorDirection>
+//      else if ((OCR1A > COUNTER_TIME_50HZ - COUNTER_DELTA) && (ADC > 465))
+//      {
+//         OCR1A = OCR1A - 1 - step;
+//         OCR1A = OCR1A - 1 - (ADC - 465) / 2;
+//      }
+      OCR1A = average + (465 - ADC);
+     928:	24 b1       	in	r18, 0x04	; 4
+     92a:	35 b1       	in	r19, 0x05	; 5
+     92c:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__data_start>
+     930:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__data_start+0x1>
+     934:	8f 52       	subi	r24, 0x2F	; 47
+     936:	9e 4f       	sbci	r25, 0xFE	; 254
+     938:	82 1b       	sub	r24, r18
+     93a:	93 0b       	sbc	r25, r19
+     93c:	9b bd       	out	0x2b, r25	; 43
+     93e:	8a bd       	out	0x2a, r24	; 42
+      average = (average * 9 + OCR1A) / 10;
+     940:	4a b5       	in	r20, 0x2a	; 42
+     942:	5b b5       	in	r21, 0x2b	; 43
+     944:	20 91 60 00 	lds	r18, 0x0060	; 0x800060 <__data_start>
+     948:	30 91 61 00 	lds	r19, 0x0061	; 0x800061 <__data_start+0x1>
+     94c:	c9 01       	movw	r24, r18
+     94e:	88 0f       	add	r24, r24
+     950:	99 1f       	adc	r25, r25
+     952:	88 0f       	add	r24, r24
+     954:	99 1f       	adc	r25, r25
+     956:	88 0f       	add	r24, r24
+     958:	99 1f       	adc	r25, r25
+     95a:	28 0f       	add	r18, r24
+     95c:	39 1f       	adc	r19, r25
+     95e:	c9 01       	movw	r24, r18
+     960:	84 0f       	add	r24, r20
+     962:	95 1f       	adc	r25, r21
+     964:	6a e0       	ldi	r22, 0x0A	; 10
+     966:	70 e0       	ldi	r23, 0x00	; 0
+     968:	33 d6       	rcall	.+3174   	; 0x15d0 <__udivmodhi4>
+     96a:	86 2f       	mov	r24, r22
+     96c:	97 2f       	mov	r25, r23
+     96e:	60 93 60 00 	sts	0x0060, r22	; 0x800060 <__data_start>
+     972:	70 93 61 00 	sts	0x0061, r23	; 0x800061 <__data_start+0x1>
+      if (average > COUNTER_TIME_50HZ + COUNTER_DELTA) average = COUNTER_TIME_50HZ + COUNTER_DELTA;
+     976:	8c 38       	cpi	r24, 0x8C	; 140
+     978:	2a e0       	ldi	r18, 0x0A	; 10
+     97a:	92 07       	cpc	r25, r18
+     97c:	38 f0       	brcs	.+14     	; 0x98c <__vector_13+0xae>
+     97e:	8b e8       	ldi	r24, 0x8B	; 139
+     980:	9a e0       	ldi	r25, 0x0A	; 10
+     982:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+     986:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+     98a:	09 c0       	rjmp	.+18     	; 0x99e <__vector_13+0xc0>
+      if (average < COUNTER_TIME_50HZ - COUNTER_DELTA) average = COUNTER_TIME_50HZ - COUNTER_DELTA;
+     98c:	8b 3f       	cpi	r24, 0xFB	; 251
+     98e:	98 40       	sbci	r25, 0x08	; 8
+     990:	30 f4       	brcc	.+12     	; 0x99e <__vector_13+0xc0>
+     992:	8b ef       	ldi	r24, 0xFB	; 251
+     994:	98 e0       	ldi	r25, 0x08	; 8
+     996:	90 93 61 00 	sts	0x0061, r25	; 0x800061 <__data_start+0x1>
+     99a:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__data_start>
+
+      // next adc measurement will be buttons
+      ADMUX = 0;
+     99e:	17 b8       	out	0x07, r1	; 7
+      OCR1B = COUNTER_DELAY_BUTTON;
+     9a0:	87 ee       	ldi	r24, 0xE7	; 231
+     9a2:	93 e0       	ldi	r25, 0x03	; 3
+     9a4:	99 bd       	out	0x29, r25	; 41
+     9a6:	88 bd       	out	0x28, r24	; 40
+   }
+   TIFR1 = (1 << TOV1) | (1 << OCF1B) | (1 << OCF1A) | (1 << ICF1);
+     9a8:	87 e2       	ldi	r24, 0x27	; 39
+     9aa:	8b b9       	out	0x0b, r24	; 11
+}
+     9ac:	ff 91       	pop	r31
+     9ae:	ef 91       	pop	r30
+     9b0:	bf 91       	pop	r27
+     9b2:	af 91       	pop	r26
+     9b4:	9f 91       	pop	r25
+     9b6:	8f 91       	pop	r24
+     9b8:	7f 91       	pop	r23
+     9ba:	6f 91       	pop	r22
+     9bc:	5f 91       	pop	r21
+     9be:	4f 91       	pop	r20
+     9c0:	3f 91       	pop	r19
+     9c2:	2f 91       	pop	r18
+     9c4:	0f 90       	pop	r0
+     9c6:	0f be       	out	0x3f, r0	; 63
+     9c8:	0f 90       	pop	r0
+     9ca:	1f 90       	pop	r1
+     9cc:	18 95       	reti
+
+000009ce <WriteLcdData>:
+   }
+}
+
+static void WriteLcdData(uint8_t data)
+{
+   USIDR = data;
+     9ce:	8f b9       	out	0x0f, r24	; 15
+   USISR = (1 << USIOIF);                // clear counter and counter overflow interrupt flag
+     9d0:	80 e4       	ldi	r24, 0x40	; 64
+     9d2:	8e b9       	out	0x0e, r24	; 14
+   while (!(USISR & (1 << USIOIF)) )
+     9d4:	76 99       	sbic	0x0e, 6	; 14
+     9d6:	04 c0       	rjmp	.+8      	; 0x9e0 <WriteLcdData+0x12>
+   {
+      USICR = (1 << USIWM0) | (1 << USICS1) | (1 << USICLK) | (1 << USITC);
+     9d8:	8b e1       	ldi	r24, 0x1B	; 27
+     9da:	8d b9       	out	0x0d, r24	; 13
+
+static void WriteLcdData(uint8_t data)
+{
+   USIDR = data;
+   USISR = (1 << USIOIF);                // clear counter and counter overflow interrupt flag
+   while (!(USISR & (1 << USIOIF)) )
+     9dc:	76 9b       	sbis	0x0e, 6	; 14
+     9de:	fd cf       	rjmp	.-6      	; 0x9da <WriteLcdData+0xc>
+     9e0:	08 95       	ret
+
+000009e2 <WriteLcdCommand>:
+   }
+}
+
+static void WriteLcdCommand(uint8_t data)
+{
+   PORTB &= ~(1 << DDB1);  // PB1: select command register (low)
+     9e2:	c1 98       	cbi	0x18, 1	; 24
+   WriteLcdData(data);
+     9e4:	f4 df       	rcall	.-24     	; 0x9ce <WriteLcdData>
+   PORTB |= (1 << DDB1);   // PB1: select data register (high)
+     9e6:	c1 9a       	sbi	0x18, 1	; 24
+     9e8:	08 95       	ret
+
+000009ea <SetAddress>:
+}
+
+static void SetAddress(uint8_t x, uint8_t y)
+{
+     9ea:	cf 93       	push	r28
+     9ec:	c8 2f       	mov	r28, r24
+   WriteLcdCommand(0x40 + y); // 0 <= y <= 5; bytes
+     9ee:	80 e4       	ldi	r24, 0x40	; 64
+     9f0:	86 0f       	add	r24, r22
+     9f2:	f7 df       	rcall	.-18     	; 0x9e2 <WriteLcdCommand>
+   WriteLcdCommand(0x80 + x); // 0 <= x <= 83; pixels
+     9f4:	80 e8       	ldi	r24, 0x80	; 128
+     9f6:	8c 0f       	add	r24, r28
+     9f8:	f4 df       	rcall	.-24     	; 0x9e2 <WriteLcdCommand>
+}
+     9fa:	cf 91       	pop	r28
+     9fc:	08 95       	ret
+
+000009fe <ReadStringFromRam>:
+}
+
+static char ReadStringFromRam(const char* address)
+{
+   return *address;
+}
+     9fe:	fc 01       	movw	r30, r24
+     a00:	80 81       	ld	r24, Z
+     a02:	08 95       	ret
+
+00000a04 <ReadStringFromEeprom>:
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+}
+
+static char ReadStringFromEeprom(const char* address)
+{
+   return eeprom_read_byte((uint8_t *)address);
+     a04:	1b d6       	rcall	.+3126   	; 0x163c <eeprom_read_byte>
+}
+     a06:	08 95       	ret
+
+00000a08 <LcdSetup>:
+#include "kernel.h"
+#include "lcd.h"
+
+void LcdSetup(void)
+{
+   PORTB &= ~((1 << PORTB1) | (1 << PORTB2));
+     a08:	88 b3       	in	r24, 0x18	; 24
+     a0a:	89 7f       	andi	r24, 0xF9	; 249
+     a0c:	88 bb       	out	0x18, r24	; 24
+   PORTB |= (1 << PORTB0);
+     a0e:	c0 9a       	sbi	0x18, 0	; 24
+   DDRB |= (1 << DDB0)      // PB0; chip enable active low
+     a10:	87 b3       	in	r24, 0x17	; 23
+     a12:	87 60       	ori	r24, 0x07	; 7
+     a14:	87 bb       	out	0x17, r24	; 23
+        |  (1 << DDB1)      // PB1: data register (high) / command register (low)
+        |  (1 << DDB2);     // PB2: reset active low
+
+   USICR = (1 << USICS1) | (1 << USICLK);
+     a16:	8a e0       	ldi	r24, 0x0A	; 10
+     a18:	8d b9       	out	0x0d, r24	; 13
+   DDRA |= (1 << PORTA4)    // uclk as output
+     a1a:	8a b3       	in	r24, 0x1a	; 26
+     a1c:	80 63       	ori	r24, 0x30	; 48
+     a1e:	8a bb       	out	0x1a, r24	; 26
+        |  (1 << PORTA5);   // LCD Din as output
+
+   PORTB |= (1 << PORTB2);   // nRESET high
+     a20:	c2 9a       	sbi	0x18, 2	; 24
+     a22:	08 95       	ret
+
+00000a24 <EnableLcd>:
+}
+
+void EnableLcd(enum boolean enable)
+{
+   if (enable)
+     a24:	88 23       	and	r24, r24
+     a26:	11 f0       	breq	.+4      	; 0xa2c <EnableLcd+0x8>
+   {
+      PORTB &= ~(1 << PORTB0);
+     a28:	c0 98       	cbi	0x18, 0	; 24
+     a2a:	08 95       	ret
+   }
+   else
+   {
+      // enableing the LCD also turns on the backlight
+      PORTB |= (1 << PORTB0);
+     a2c:	c0 9a       	sbi	0x18, 0	; 24
+     a2e:	08 95       	ret
+
+00000a30 <Clear>:
+   WriteLcdCommand(0x40 + y); // 0 <= y <= 5; bytes
+   WriteLcdCommand(0x80 + x); // 0 <= x <= 83; pixels
+}
+
+void Clear(void)
+{
+     a30:	cf 93       	push	r28
+     a32:	df 93       	push	r29
+   WriteLcdCommand(8);    // display control; switch display off
+     a34:	88 e0       	ldi	r24, 0x08	; 8
+     a36:	d5 df       	rcall	.-86     	; 0x9e2 <WriteLcdCommand>
+
+   SetAddress(0, 0);
+     a38:	60 e0       	ldi	r22, 0x00	; 0
+     a3a:	80 e0       	ldi	r24, 0x00	; 0
+     a3c:	d6 df       	rcall	.-84     	; 0x9ea <SetAddress>
+     a3e:	c8 ef       	ldi	r28, 0xF8	; 248
+     a40:	d1 e0       	ldi	r29, 0x01	; 1
+   for (uint16_t i = 0; i < 84 * 48 / 8; ++i)
+   {
+      WriteLcdData(0);
+     a42:	80 e0       	ldi	r24, 0x00	; 0
+     a44:	c4 df       	rcall	.-120    	; 0x9ce <WriteLcdData>
+     a46:	21 97       	sbiw	r28, 0x01	; 1
+void Clear(void)
+{
+   WriteLcdCommand(8);    // display control; switch display off
+
+   SetAddress(0, 0);
+   for (uint16_t i = 0; i < 84 * 48 / 8; ++i)
+     a48:	e1 f7       	brne	.-8      	; 0xa42 <Clear+0x12>
+   {
+      WriteLcdData(0);
+   }
+   WriteLcdCommand(0x0C); // display control; switch display on
+     a4a:	8c e0       	ldi	r24, 0x0C	; 12
+     a4c:	ca df       	rcall	.-108    	; 0x9e2 <WriteLcdCommand>
+}
+     a4e:	df 91       	pop	r29
+     a50:	cf 91       	pop	r28
+     a52:	08 95       	ret
+
+00000a54 <LcdInitialize>:
+
+void LcdInitialize(void)
+{
+   EnableLcd(true);
+     a54:	81 e0       	ldi	r24, 0x01	; 1
+     a56:	e6 df       	rcall	.-52     	; 0xa24 <EnableLcd>
+   WriteLcdCommand(0x21); // function set; H = 1
+     a58:	81 e2       	ldi	r24, 0x21	; 33
+     a5a:	c3 df       	rcall	.-122    	; 0x9e2 <WriteLcdCommand>
+   WriteLcdCommand(0x14); // bias value 4 (1 : 48)
+     a5c:	84 e1       	ldi	r24, 0x14	; 20
+     a5e:	c1 df       	rcall	.-126    	; 0x9e2 <WriteLcdCommand>
+   WriteLcdCommand(0xb2); // set Vop to 3 + 50 * 0.06 = 6V
+     a60:	82 eb       	ldi	r24, 0xB2	; 178
+     a62:	bf df       	rcall	.-130    	; 0x9e2 <WriteLcdCommand>
+   WriteLcdCommand(0x06); // temperature control
+     a64:	86 e0       	ldi	r24, 0x06	; 6
+     a66:	bd df       	rcall	.-134    	; 0x9e2 <WriteLcdCommand>
+   WriteLcdCommand(0x20); // function set; H = 0, horizontal addressing mode
+     a68:	80 e2       	ldi	r24, 0x20	; 32
+     a6a:	bb df       	rcall	.-138    	; 0x9e2 <WriteLcdCommand>
+   Clear();               // clear ram
+     a6c:	e1 df       	rcall	.-62     	; 0xa30 <Clear>
+     a6e:	08 95       	ret
+
+00000a70 <WriteString>:
+   }
+   SetAddress(x, y / 8);
+}
+
+void WriteString(const uint8_t *font, const uint8_t x, const uint8_t y, char* text)
+{
+     a70:	2f 92       	push	r2
+     a72:	3f 92       	push	r3
+     a74:	4f 92       	push	r4
+     a76:	5f 92       	push	r5
+     a78:	6f 92       	push	r6
+     a7a:	7f 92       	push	r7
+     a7c:	8f 92       	push	r8
+     a7e:	9f 92       	push	r9
+     a80:	af 92       	push	r10
+     a82:	bf 92       	push	r11
+     a84:	cf 92       	push	r12
+     a86:	df 92       	push	r13
+     a88:	ef 92       	push	r14
+     a8a:	ff 92       	push	r15
+     a8c:	0f 93       	push	r16
+     a8e:	1f 93       	push	r17
+     a90:	cf 93       	push	r28
+     a92:	df 93       	push	r29
+     a94:	ec 01       	movw	r28, r24
+     a96:	96 2e       	mov	r9, r22
+     a98:	74 2e       	mov	r7, r20
+     a9a:	69 01       	movw	r12, r18
+   Clear();               // clear ram
+}
+
+static inline uint8_t GetNrRows(const uint8_t *font)
+{
+   return pgm_read_byte_near(&(font[1]));
+     a9c:	fc 01       	movw	r30, r24
+     a9e:	31 96       	adiw	r30, 0x01	; 1
+     aa0:	e4 91       	lpm	r30, Z
+   SetAddress(x, y / 8);
+}
+
+void WriteString(const uint8_t *font, const uint8_t x, const uint8_t y, char* text)
+{
+   if (GetNrRows(font) > 8)
+     aa2:	e9 30       	cpi	r30, 0x09	; 9
+     aa4:	08 f4       	brcc	.+2      	; 0xaa8 <WriteString+0x38>
+     aa6:	e2 c0       	rjmp	.+452    	; 0xc6c <WriteString+0x1fc>
+
+void static inline Write16PixelString(const uint8_t *font, const uint8_t x, uint8_t y, char (*source)(const char*), const char* text)
+{
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+     aa8:	64 2e       	mov	r6, r20
+     aaa:	66 94       	lsr	r6
+     aac:	66 94       	lsr	r6
+     aae:	66 94       	lsr	r6
+     ab0:	66 2d       	mov	r22, r6
+     ab2:	89 2d       	mov	r24, r9
+     ab4:	9a df       	rcall	.-204    	; 0x9ea <SetAddress>
+
+   ch = source(&text[index++]);
+     ab6:	c6 01       	movw	r24, r12
+     ab8:	a2 df       	rcall	.-188    	; 0x9fe <ReadStringFromRam>
+     aba:	b8 2e       	mov	r11, r24
+   while (ch != 0)
+     abc:	88 23       	and	r24, r24
+     abe:	09 f4       	brne	.+2      	; 0xac2 <WriteString+0x52>
+     ac0:	58 c0       	rjmp	.+176    	; 0xb72 <WriteString+0x102>
+     ac2:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     ac4:	8e 01       	movw	r16, r28
+     ac6:	0e 5f       	subi	r16, 0xFE	; 254
+     ac8:	1f 4f       	sbci	r17, 0xFF	; 255
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value << (y % 8);
+         WriteLcdData(data);
+     aca:	37 2d       	mov	r19, r7
+     acc:	37 70       	andi	r19, 0x07	; 7
+     ace:	a3 2e       	mov	r10, r19
+     ad0:	01 c0       	rjmp	.+2      	; 0xad4 <WriteString+0x64>
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+     ad2:	24 2d       	mov	r18, r4
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+     ad4:	fe 01       	movw	r30, r28
+     ad6:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     ad8:	44 23       	and	r20, r20
+     ada:	d9 f0       	breq	.+54     	; 0xb12 <WriteString+0xa2>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     adc:	f8 01       	movw	r30, r16
+     ade:	84 91       	lpm	r24, Z
+     ae0:	8b 15       	cp	r24, r11
+     ae2:	d1 f0       	breq	.+52     	; 0xb18 <WriteString+0xa8>
+     ae4:	30 e0       	ldi	r19, 0x00	; 0
+     ae6:	82 e0       	ldi	r24, 0x02	; 2
+     ae8:	90 e0       	ldi	r25, 0x00	; 0
+     aea:	06 c0       	rjmp	.+12     	; 0xaf8 <WriteString+0x88>
+     aec:	fe 01       	movw	r30, r28
+     aee:	e8 0f       	add	r30, r24
+     af0:	f9 1f       	adc	r31, r25
+     af2:	e4 91       	lpm	r30, Z
+     af4:	eb 15       	cp	r30, r11
+     af6:	91 f0       	breq	.+36     	; 0xb1c <WriteString+0xac>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+     af8:	fc 01       	movw	r30, r24
+     afa:	31 96       	adiw	r30, 0x01	; 1
+     afc:	ec 0f       	add	r30, r28
+     afe:	fd 1f       	adc	r31, r29
+     b00:	e4 91       	lpm	r30, Z
+     b02:	f0 e0       	ldi	r31, 0x00	; 0
+     b04:	32 96       	adiw	r30, 0x02	; 2
+     b06:	8e 0f       	add	r24, r30
+     b08:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     b0a:	3f 5f       	subi	r19, 0xFF	; 255
+     b0c:	43 13       	cpse	r20, r19
+     b0e:	ee cf       	rjmp	.-36     	; 0xaec <WriteString+0x7c>
+     b10:	05 c0       	rjmp	.+10     	; 0xb1c <WriteString+0xac>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+     b12:	82 e0       	ldi	r24, 0x02	; 2
+     b14:	90 e0       	ldi	r25, 0x00	; 0
+     b16:	02 c0       	rjmp	.+4      	; 0xb1c <WriteString+0xac>
+     b18:	82 e0       	ldi	r24, 0x02	; 2
+     b1a:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+     b1c:	7c 01       	movw	r14, r24
+     b1e:	f2 e0       	ldi	r31, 0x02	; 2
+     b20:	ef 0e       	add	r14, r31
+     b22:	f1 1c       	adc	r15, r1
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+     b24:	fc 01       	movw	r30, r24
+     b26:	31 96       	adiw	r30, 0x01	; 1
+     b28:	ec 0f       	add	r30, r28
+     b2a:	fd 1f       	adc	r31, r29
+     b2c:	84 90       	lpm	r8, Z
+
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+     b2e:	86 94       	lsr	r8
+      ch = source(&text[index++]);
+     b30:	44 24       	eor	r4, r4
+     b32:	43 94       	inc	r4
+     b34:	42 0e       	add	r4, r18
+     b36:	c6 01       	movw	r24, r12
+     b38:	82 0f       	add	r24, r18
+     b3a:	91 1d       	adc	r25, r1
+     b3c:	60 df       	rcall	.-320    	; 0x9fe <ReadStringFromRam>
+     b3e:	b8 2e       	mov	r11, r24
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     b40:	88 20       	and	r8, r8
+     b42:	91 f0       	breq	.+36     	; 0xb68 <WriteString+0xf8>
+     b44:	51 2c       	mov	r5, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+     b46:	85 2d       	mov	r24, r5
+     b48:	88 0f       	add	r24, r24
+     b4a:	f7 01       	movw	r30, r14
+     b4c:	e8 0f       	add	r30, r24
+     b4e:	f1 1d       	adc	r31, r1
+     b50:	ec 0f       	add	r30, r28
+     b52:	fd 1f       	adc	r31, r29
+     b54:	84 91       	lpm	r24, Z
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value << (y % 8);
+         WriteLcdData(data);
+     b56:	0a 2c       	mov	r0, r10
+     b58:	01 c0       	rjmp	.+2      	; 0xb5c <WriteString+0xec>
+     b5a:	88 0f       	add	r24, r24
+     b5c:	0a 94       	dec	r0
+     b5e:	ea f7       	brpl	.-6      	; 0xb5a <WriteString+0xea>
+     b60:	36 df       	rcall	.-404    	; 0x9ce <WriteLcdData>
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     b62:	53 94       	inc	r5
+     b64:	85 10       	cpse	r8, r5
+     b66:	ef cf       	rjmp	.-34     	; 0xb46 <WriteString+0xd6>
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+     b68:	80 e0       	ldi	r24, 0x00	; 0
+     b6a:	90 e0       	ldi	r25, 0x00	; 0
+     b6c:	c4 dc       	rcall	.-1656   	; 0x4f6 <TaskSleep>
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+
+   ch = source(&text[index++]);
+   while (ch != 0)
+     b6e:	b1 10       	cpse	r11, r1
+     b70:	b0 cf       	rjmp	.-160    	; 0xad2 <WriteString+0x62>
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+   }
+
+   SetAddress(x, y / 8 + 1);
+     b72:	61 e0       	ldi	r22, 0x01	; 1
+     b74:	66 0d       	add	r22, r6
+     b76:	89 2d       	mov	r24, r9
+     b78:	38 df       	rcall	.-400    	; 0x9ea <SetAddress>
+   index = 0;
+   ch = source(&text[index++]);
+     b7a:	c6 01       	movw	r24, r12
+     b7c:	40 df       	rcall	.-384    	; 0x9fe <ReadStringFromRam>
+     b7e:	88 2e       	mov	r8, r24
+   while (ch != 0)
+     b80:	88 23       	and	r24, r24
+     b82:	09 f4       	brne	.+2      	; 0xb86 <WriteString+0x116>
+     b84:	6f c0       	rjmp	.+222    	; 0xc64 <WriteString+0x1f4>
+     b86:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     b88:	8e 01       	movw	r16, r28
+     b8a:	0e 5f       	subi	r16, 0xFE	; 254
+     b8c:	1f 4f       	sbci	r17, 0xFF	; 255
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value >> (8 - (y % 8));
+     b8e:	37 2d       	mov	r19, r7
+     b90:	37 70       	andi	r19, 0x07	; 7
+     b92:	73 2e       	mov	r7, r19
+         value = GetColumnData(font, characterIndex, n * 2 + 1);
+         data |= value << (y % 8);
+         WriteLcdData(data);
+     b94:	88 e0       	ldi	r24, 0x08	; 8
+     b96:	90 e0       	ldi	r25, 0x00	; 0
+     b98:	7c 01       	movw	r14, r24
+     b9a:	e3 1a       	sub	r14, r19
+     b9c:	f1 08       	sbc	r15, r1
+     b9e:	01 c0       	rjmp	.+2      	; 0xba2 <WriteString+0x132>
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+     ba0:	23 2d       	mov	r18, r3
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+     ba2:	fe 01       	movw	r30, r28
+     ba4:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     ba6:	44 23       	and	r20, r20
+     ba8:	d9 f0       	breq	.+54     	; 0xbe0 <WriteString+0x170>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     baa:	f8 01       	movw	r30, r16
+     bac:	84 91       	lpm	r24, Z
+     bae:	88 15       	cp	r24, r8
+     bb0:	d1 f0       	breq	.+52     	; 0xbe6 <WriteString+0x176>
+     bb2:	30 e0       	ldi	r19, 0x00	; 0
+     bb4:	82 e0       	ldi	r24, 0x02	; 2
+     bb6:	90 e0       	ldi	r25, 0x00	; 0
+     bb8:	06 c0       	rjmp	.+12     	; 0xbc6 <WriteString+0x156>
+     bba:	fe 01       	movw	r30, r28
+     bbc:	e8 0f       	add	r30, r24
+     bbe:	f9 1f       	adc	r31, r25
+     bc0:	e4 91       	lpm	r30, Z
+     bc2:	e8 15       	cp	r30, r8
+     bc4:	91 f0       	breq	.+36     	; 0xbea <WriteString+0x17a>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+     bc6:	fc 01       	movw	r30, r24
+     bc8:	31 96       	adiw	r30, 0x01	; 1
+     bca:	ec 0f       	add	r30, r28
+     bcc:	fd 1f       	adc	r31, r29
+     bce:	e4 91       	lpm	r30, Z
+     bd0:	f0 e0       	ldi	r31, 0x00	; 0
+     bd2:	32 96       	adiw	r30, 0x02	; 2
+     bd4:	8e 0f       	add	r24, r30
+     bd6:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     bd8:	3f 5f       	subi	r19, 0xFF	; 255
+     bda:	43 13       	cpse	r20, r19
+     bdc:	ee cf       	rjmp	.-36     	; 0xbba <WriteString+0x14a>
+     bde:	05 c0       	rjmp	.+10     	; 0xbea <WriteString+0x17a>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+     be0:	82 e0       	ldi	r24, 0x02	; 2
+     be2:	90 e0       	ldi	r25, 0x00	; 0
+     be4:	02 c0       	rjmp	.+4      	; 0xbea <WriteString+0x17a>
+     be6:	82 e0       	ldi	r24, 0x02	; 2
+     be8:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+     bea:	5c 01       	movw	r10, r24
+     bec:	f2 e0       	ldi	r31, 0x02	; 2
+     bee:	af 0e       	add	r10, r31
+     bf0:	b1 1c       	adc	r11, r1
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+     bf2:	fc 01       	movw	r30, r24
+     bf4:	31 96       	adiw	r30, 0x01	; 1
+     bf6:	ec 0f       	add	r30, r28
+     bf8:	fd 1f       	adc	r31, r29
+     bfa:	54 90       	lpm	r5, Z
+   index = 0;
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+     bfc:	56 94       	lsr	r5
+      ch = source(&text[index++]);
+     bfe:	33 24       	eor	r3, r3
+     c00:	33 94       	inc	r3
+     c02:	32 0e       	add	r3, r18
+     c04:	c6 01       	movw	r24, r12
+     c06:	82 0f       	add	r24, r18
+     c08:	91 1d       	adc	r25, r1
+     c0a:	f9 de       	rcall	.-526    	; 0x9fe <ReadStringFromRam>
+     c0c:	88 2e       	mov	r8, r24
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     c0e:	55 20       	and	r5, r5
+     c10:	21 f1       	breq	.+72     	; 0xc5a <WriteString+0x1ea>
+     c12:	22 24       	eor	r2, r2
+     c14:	23 94       	inc	r2
+     c16:	41 2c       	mov	r4, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+     c18:	84 2d       	mov	r24, r4
+     c1a:	88 0f       	add	r24, r24
+     c1c:	f5 01       	movw	r30, r10
+     c1e:	e8 0f       	add	r30, r24
+     c20:	f1 1d       	adc	r31, r1
+     c22:	ec 0f       	add	r30, r28
+     c24:	fd 1f       	adc	r31, r29
+     c26:	24 91       	lpm	r18, Z
+     c28:	f5 01       	movw	r30, r10
+     c2a:	e2 0d       	add	r30, r2
+     c2c:	f1 1d       	adc	r31, r1
+     c2e:	ec 0f       	add	r30, r28
+     c30:	fd 1f       	adc	r31, r29
+     c32:	84 91       	lpm	r24, Z
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value >> (8 - (y % 8));
+         value = GetColumnData(font, characterIndex, n * 2 + 1);
+         data |= value << (y % 8);
+         WriteLcdData(data);
+     c34:	30 e0       	ldi	r19, 0x00	; 0
+     c36:	0e 2c       	mov	r0, r14
+     c38:	02 c0       	rjmp	.+4      	; 0xc3e <WriteString+0x1ce>
+     c3a:	35 95       	asr	r19
+     c3c:	27 95       	ror	r18
+     c3e:	0a 94       	dec	r0
+     c40:	e2 f7       	brpl	.-8      	; 0xc3a <WriteString+0x1ca>
+     c42:	07 2c       	mov	r0, r7
+     c44:	01 c0       	rjmp	.+2      	; 0xc48 <WriteString+0x1d8>
+     c46:	88 0f       	add	r24, r24
+     c48:	0a 94       	dec	r0
+     c4a:	ea f7       	brpl	.-6      	; 0xc46 <WriteString+0x1d6>
+     c4c:	82 2b       	or	r24, r18
+     c4e:	bf de       	rcall	.-642    	; 0x9ce <WriteLcdData>
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     c50:	43 94       	inc	r4
+     c52:	23 94       	inc	r2
+     c54:	23 94       	inc	r2
+     c56:	54 10       	cpse	r5, r4
+     c58:	df cf       	rjmp	.-66     	; 0xc18 <WriteString+0x1a8>
+         data = value >> (8 - (y % 8));
+         value = GetColumnData(font, characterIndex, n * 2 + 1);
+         data |= value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+     c5a:	80 e0       	ldi	r24, 0x00	; 0
+     c5c:	90 e0       	ldi	r25, 0x00	; 0
+     c5e:	4b dc       	rcall	.-1898   	; 0x4f6 <TaskSleep>
+   }
+
+   SetAddress(x, y / 8 + 1);
+   index = 0;
+   ch = source(&text[index++]);
+   while (ch != 0)
+     c60:	81 10       	cpse	r8, r1
+     c62:	9e cf       	rjmp	.-196    	; 0xba0 <WriteString+0x130>
+         data |= value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+   }
+   SetAddress(x, y / 8);
+     c64:	66 2d       	mov	r22, r6
+     c66:	89 2d       	mov	r24, r9
+     c68:	c0 de       	rcall	.-640    	; 0x9ea <SetAddress>
+     c6a:	cd c0       	rjmp	.+410    	; 0xe06 <WriteString+0x396>
+
+static inline void Write8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, char (*source)(const char*), const char* text)
+{
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+     c6c:	84 2e       	mov	r8, r20
+     c6e:	86 94       	lsr	r8
+     c70:	86 94       	lsr	r8
+     c72:	86 94       	lsr	r8
+     c74:	68 2d       	mov	r22, r8
+     c76:	89 2d       	mov	r24, r9
+     c78:	b8 de       	rcall	.-656    	; 0x9ea <SetAddress>
+
+   ch = source(&text[index++]);
+     c7a:	c6 01       	movw	r24, r12
+     c7c:	c0 de       	rcall	.-640    	; 0x9fe <ReadStringFromRam>
+     c7e:	b8 2e       	mov	r11, r24
+   while (ch != 0)
+     c80:	88 23       	and	r24, r24
+     c82:	09 f4       	brne	.+2      	; 0xc86 <WriteString+0x216>
+     c84:	56 c0       	rjmp	.+172    	; 0xd32 <WriteString+0x2c2>
+     c86:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     c88:	8e 01       	movw	r16, r28
+     c8a:	0e 5f       	subi	r16, 0xFE	; 254
+     c8c:	1f 4f       	sbci	r17, 0xFF	; 255
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(data);
+     c8e:	37 2d       	mov	r19, r7
+     c90:	37 70       	andi	r19, 0x07	; 7
+     c92:	a3 2e       	mov	r10, r19
+     c94:	01 c0       	rjmp	.+2      	; 0xc98 <WriteString+0x228>
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = source(&text[index++]);
+     c96:	25 2d       	mov	r18, r5
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+     c98:	fe 01       	movw	r30, r28
+     c9a:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     c9c:	44 23       	and	r20, r20
+     c9e:	d9 f0       	breq	.+54     	; 0xcd6 <WriteString+0x266>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     ca0:	f8 01       	movw	r30, r16
+     ca2:	84 91       	lpm	r24, Z
+     ca4:	8b 15       	cp	r24, r11
+     ca6:	d1 f0       	breq	.+52     	; 0xcdc <WriteString+0x26c>
+     ca8:	30 e0       	ldi	r19, 0x00	; 0
+     caa:	82 e0       	ldi	r24, 0x02	; 2
+     cac:	90 e0       	ldi	r25, 0x00	; 0
+     cae:	06 c0       	rjmp	.+12     	; 0xcbc <WriteString+0x24c>
+     cb0:	fe 01       	movw	r30, r28
+     cb2:	e8 0f       	add	r30, r24
+     cb4:	f9 1f       	adc	r31, r25
+     cb6:	e4 91       	lpm	r30, Z
+     cb8:	eb 15       	cp	r30, r11
+     cba:	91 f0       	breq	.+36     	; 0xce0 <WriteString+0x270>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+     cbc:	fc 01       	movw	r30, r24
+     cbe:	31 96       	adiw	r30, 0x01	; 1
+     cc0:	ec 0f       	add	r30, r28
+     cc2:	fd 1f       	adc	r31, r29
+     cc4:	e4 91       	lpm	r30, Z
+     cc6:	f0 e0       	ldi	r31, 0x00	; 0
+     cc8:	32 96       	adiw	r30, 0x02	; 2
+     cca:	8e 0f       	add	r24, r30
+     ccc:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     cce:	3f 5f       	subi	r19, 0xFF	; 255
+     cd0:	43 13       	cpse	r20, r19
+     cd2:	ee cf       	rjmp	.-36     	; 0xcb0 <WriteString+0x240>
+     cd4:	05 c0       	rjmp	.+10     	; 0xce0 <WriteString+0x270>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+     cd6:	82 e0       	ldi	r24, 0x02	; 2
+     cd8:	90 e0       	ldi	r25, 0x00	; 0
+     cda:	02 c0       	rjmp	.+4      	; 0xce0 <WriteString+0x270>
+     cdc:	82 e0       	ldi	r24, 0x02	; 2
+     cde:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+     ce0:	7c 01       	movw	r14, r24
+     ce2:	f2 e0       	ldi	r31, 0x02	; 2
+     ce4:	ef 0e       	add	r14, r31
+     ce6:	f1 1c       	adc	r15, r1
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+     ce8:	fc 01       	movw	r30, r24
+     cea:	31 96       	adiw	r30, 0x01	; 1
+     cec:	ec 0f       	add	r30, r28
+     cee:	fd 1f       	adc	r31, r29
+     cf0:	64 90       	lpm	r6, Z
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = source(&text[index++]);
+     cf2:	55 24       	eor	r5, r5
+     cf4:	53 94       	inc	r5
+     cf6:	52 0e       	add	r5, r18
+     cf8:	c6 01       	movw	r24, r12
+     cfa:	82 0f       	add	r24, r18
+     cfc:	91 1d       	adc	r25, r1
+     cfe:	7f de       	rcall	.-770    	; 0x9fe <ReadStringFromRam>
+     d00:	b8 2e       	mov	r11, r24
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     d02:	66 20       	and	r6, r6
+     d04:	89 f0       	breq	.+34     	; 0xd28 <WriteString+0x2b8>
+     d06:	ec 0e       	add	r14, r28
+     d08:	fd 1e       	adc	r15, r29
+     d0a:	41 2c       	mov	r4, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+     d0c:	f7 01       	movw	r30, r14
+     d0e:	84 91       	lpm	r24, Z
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(data);
+     d10:	0a 2c       	mov	r0, r10
+     d12:	01 c0       	rjmp	.+2      	; 0xd16 <WriteString+0x2a6>
+     d14:	88 0f       	add	r24, r24
+     d16:	0a 94       	dec	r0
+     d18:	ea f7       	brpl	.-6      	; 0xd14 <WriteString+0x2a4>
+     d1a:	59 de       	rcall	.-846    	; 0x9ce <WriteLcdData>
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     d1c:	43 94       	inc	r4
+     d1e:	ff ef       	ldi	r31, 0xFF	; 255
+     d20:	ef 1a       	sub	r14, r31
+     d22:	ff 0a       	sbc	r15, r31
+     d24:	64 10       	cpse	r6, r4
+     d26:	f2 cf       	rjmp	.-28     	; 0xd0c <WriteString+0x29c>
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+     d28:	80 e0       	ldi	r24, 0x00	; 0
+     d2a:	90 e0       	ldi	r25, 0x00	; 0
+     d2c:	e4 db       	rcall	.-2104   	; 0x4f6 <TaskSleep>
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+
+   ch = source(&text[index++]);
+   while (ch != 0)
+     d2e:	b1 10       	cpse	r11, r1
+     d30:	b2 cf       	rjmp	.-156    	; 0xc96 <WriteString+0x226>
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+   }
+
+   if (y % 8 > 0)
+     d32:	17 2d       	mov	r17, r7
+     d34:	17 70       	andi	r17, 0x07	; 7
+     d36:	09 f4       	brne	.+2      	; 0xd3a <WriteString+0x2ca>
+     d38:	63 c0       	rjmp	.+198    	; 0xe00 <WriteString+0x390>
+   {
+      index = 0;
+      ch = source(&text[index++]);
+     d3a:	c6 01       	movw	r24, r12
+     d3c:	60 de       	rcall	.-832    	; 0x9fe <ReadStringFromRam>
+     d3e:	68 2e       	mov	r6, r24
+      SetAddress(x, y / 8 + 1);
+     d40:	61 e0       	ldi	r22, 0x01	; 1
+     d42:	68 0d       	add	r22, r8
+     d44:	89 2d       	mov	r24, r9
+     d46:	51 de       	rcall	.-862    	; 0x9ea <SetAddress>
+      while (ch != 0)
+     d48:	66 20       	and	r6, r6
+     d4a:	09 f4       	brne	.+2      	; 0xd4e <WriteString+0x2de>
+     d4c:	59 c0       	rjmp	.+178    	; 0xe00 <WriteString+0x390>
+     d4e:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     d50:	5e 01       	movw	r10, r28
+     d52:	32 e0       	ldi	r19, 0x02	; 2
+     d54:	a3 0e       	add	r10, r19
+     d56:	b1 1c       	adc	r11, r1
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+     d58:	88 e0       	ldi	r24, 0x08	; 8
+     d5a:	90 e0       	ldi	r25, 0x00	; 0
+     d5c:	7c 01       	movw	r14, r24
+     d5e:	e1 1a       	sub	r14, r17
+     d60:	f1 08       	sbc	r15, r1
+     d62:	01 c0       	rjmp	.+2      	; 0xd66 <WriteString+0x2f6>
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+     d64:	25 2d       	mov	r18, r5
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+     d66:	fe 01       	movw	r30, r28
+     d68:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     d6a:	44 23       	and	r20, r20
+     d6c:	d9 f0       	breq	.+54     	; 0xda4 <WriteString+0x334>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     d6e:	f5 01       	movw	r30, r10
+     d70:	84 91       	lpm	r24, Z
+     d72:	86 15       	cp	r24, r6
+     d74:	d1 f0       	breq	.+52     	; 0xdaa <WriteString+0x33a>
+     d76:	30 e0       	ldi	r19, 0x00	; 0
+     d78:	82 e0       	ldi	r24, 0x02	; 2
+     d7a:	90 e0       	ldi	r25, 0x00	; 0
+     d7c:	06 c0       	rjmp	.+12     	; 0xd8a <WriteString+0x31a>
+     d7e:	fe 01       	movw	r30, r28
+     d80:	e8 0f       	add	r30, r24
+     d82:	f9 1f       	adc	r31, r25
+     d84:	e4 91       	lpm	r30, Z
+     d86:	e6 15       	cp	r30, r6
+     d88:	91 f0       	breq	.+36     	; 0xdae <WriteString+0x33e>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+     d8a:	fc 01       	movw	r30, r24
+     d8c:	31 96       	adiw	r30, 0x01	; 1
+     d8e:	ec 0f       	add	r30, r28
+     d90:	fd 1f       	adc	r31, r29
+     d92:	e4 91       	lpm	r30, Z
+     d94:	f0 e0       	ldi	r31, 0x00	; 0
+     d96:	32 96       	adiw	r30, 0x02	; 2
+     d98:	8e 0f       	add	r24, r30
+     d9a:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     d9c:	3f 5f       	subi	r19, 0xFF	; 255
+     d9e:	43 13       	cpse	r20, r19
+     da0:	ee cf       	rjmp	.-36     	; 0xd7e <WriteString+0x30e>
+     da2:	05 c0       	rjmp	.+10     	; 0xdae <WriteString+0x33e>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+     da4:	82 e0       	ldi	r24, 0x02	; 2
+     da6:	90 e0       	ldi	r25, 0x00	; 0
+     da8:	02 c0       	rjmp	.+4      	; 0xdae <WriteString+0x33e>
+     daa:	82 e0       	ldi	r24, 0x02	; 2
+     dac:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+     dae:	8c 01       	movw	r16, r24
+     db0:	0e 5f       	subi	r16, 0xFE	; 254
+     db2:	1f 4f       	sbci	r17, 0xFF	; 255
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+     db4:	fc 01       	movw	r30, r24
+     db6:	31 96       	adiw	r30, 0x01	; 1
+     db8:	ec 0f       	add	r30, r28
+     dba:	fd 1f       	adc	r31, r29
+     dbc:	74 90       	lpm	r7, Z
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+     dbe:	55 24       	eor	r5, r5
+     dc0:	53 94       	inc	r5
+     dc2:	52 0e       	add	r5, r18
+     dc4:	c6 01       	movw	r24, r12
+     dc6:	82 0f       	add	r24, r18
+     dc8:	91 1d       	adc	r25, r1
+     dca:	19 de       	rcall	.-974    	; 0x9fe <ReadStringFromRam>
+     dcc:	68 2e       	mov	r6, r24
+         for (uint8_t n = 0; n < nrColumns; ++n)
+     dce:	77 20       	and	r7, r7
+     dd0:	91 f0       	breq	.+36     	; 0xdf6 <WriteString+0x386>
+     dd2:	0c 0f       	add	r16, r28
+     dd4:	1d 1f       	adc	r17, r29
+     dd6:	41 2c       	mov	r4, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+     dd8:	f8 01       	movw	r30, r16
+     dda:	84 91       	lpm	r24, Z
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+     ddc:	90 e0       	ldi	r25, 0x00	; 0
+     dde:	0e 2c       	mov	r0, r14
+     de0:	02 c0       	rjmp	.+4      	; 0xde6 <WriteString+0x376>
+     de2:	95 95       	asr	r25
+     de4:	87 95       	ror	r24
+     de6:	0a 94       	dec	r0
+     de8:	e2 f7       	brpl	.-8      	; 0xde2 <WriteString+0x372>
+            WriteLcdData(data);
+     dea:	f1 dd       	rcall	.-1054   	; 0x9ce <WriteLcdData>
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+     dec:	43 94       	inc	r4
+     dee:	0f 5f       	subi	r16, 0xFF	; 255
+     df0:	1f 4f       	sbci	r17, 0xFF	; 255
+     df2:	74 10       	cpse	r7, r4
+     df4:	f1 cf       	rjmp	.-30     	; 0xdd8 <WriteString+0x368>
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+            WriteLcdData(data);
+         }
+         TaskSleep(0);
+     df6:	80 e0       	ldi	r24, 0x00	; 0
+     df8:	90 e0       	ldi	r25, 0x00	; 0
+     dfa:	7d db       	rcall	.-2310   	; 0x4f6 <TaskSleep>
+   if (y % 8 > 0)
+   {
+      index = 0;
+      ch = source(&text[index++]);
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+     dfc:	61 10       	cpse	r6, r1
+     dfe:	b2 cf       	rjmp	.-156    	; 0xd64 <WriteString+0x2f4>
+            WriteLcdData(data);
+         }
+         TaskSleep(0);
+      }
+   }
+   SetAddress(x, y / 8);
+     e00:	68 2d       	mov	r22, r8
+     e02:	89 2d       	mov	r24, r9
+     e04:	f2 dd       	rcall	.-1052   	; 0x9ea <SetAddress>
+   }
+   else
+   {
+      Write8PixelString(font, x, y, ReadStringFromRam, text);
+   }
+}
+     e06:	df 91       	pop	r29
+     e08:	cf 91       	pop	r28
+     e0a:	1f 91       	pop	r17
+     e0c:	0f 91       	pop	r16
+     e0e:	ff 90       	pop	r15
+     e10:	ef 90       	pop	r14
+     e12:	df 90       	pop	r13
+     e14:	cf 90       	pop	r12
+     e16:	bf 90       	pop	r11
+     e18:	af 90       	pop	r10
+     e1a:	9f 90       	pop	r9
+     e1c:	8f 90       	pop	r8
+     e1e:	7f 90       	pop	r7
+     e20:	6f 90       	pop	r6
+     e22:	5f 90       	pop	r5
+     e24:	4f 90       	pop	r4
+     e26:	3f 90       	pop	r3
+     e28:	2f 90       	pop	r2
+     e2a:	08 95       	ret
+
+00000e2c <WriteStaticString>:
+
+void WriteStaticString(const uint8_t *font, uint8_t x, uint8_t y, const char* text)
+{
+     e2c:	2f 92       	push	r2
+     e2e:	3f 92       	push	r3
+     e30:	4f 92       	push	r4
+     e32:	5f 92       	push	r5
+     e34:	6f 92       	push	r6
+     e36:	7f 92       	push	r7
+     e38:	8f 92       	push	r8
+     e3a:	9f 92       	push	r9
+     e3c:	af 92       	push	r10
+     e3e:	bf 92       	push	r11
+     e40:	cf 92       	push	r12
+     e42:	df 92       	push	r13
+     e44:	ef 92       	push	r14
+     e46:	ff 92       	push	r15
+     e48:	0f 93       	push	r16
+     e4a:	1f 93       	push	r17
+     e4c:	cf 93       	push	r28
+     e4e:	df 93       	push	r29
+     e50:	ec 01       	movw	r28, r24
+     e52:	96 2e       	mov	r9, r22
+     e54:	74 2e       	mov	r7, r20
+     e56:	69 01       	movw	r12, r18
+   Clear();               // clear ram
+}
+
+static inline uint8_t GetNrRows(const uint8_t *font)
+{
+   return pgm_read_byte_near(&(font[1]));
+     e58:	fc 01       	movw	r30, r24
+     e5a:	31 96       	adiw	r30, 0x01	; 1
+     e5c:	e4 91       	lpm	r30, Z
+   }
+}
+
+void WriteStaticString(const uint8_t *font, uint8_t x, uint8_t y, const char* text)
+{
+   if (GetNrRows(font) > 8)
+     e5e:	e9 30       	cpi	r30, 0x09	; 9
+     e60:	08 f4       	brcc	.+2      	; 0xe64 <WriteStaticString+0x38>
+     e62:	e2 c0       	rjmp	.+452    	; 0x1028 <WriteStaticString+0x1fc>
+
+void static inline Write16PixelString(const uint8_t *font, const uint8_t x, uint8_t y, char (*source)(const char*), const char* text)
+{
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+     e64:	64 2e       	mov	r6, r20
+     e66:	66 94       	lsr	r6
+     e68:	66 94       	lsr	r6
+     e6a:	66 94       	lsr	r6
+     e6c:	66 2d       	mov	r22, r6
+     e6e:	89 2d       	mov	r24, r9
+     e70:	bc dd       	rcall	.-1160   	; 0x9ea <SetAddress>
+
+   ch = source(&text[index++]);
+     e72:	c6 01       	movw	r24, r12
+     e74:	c7 dd       	rcall	.-1138   	; 0xa04 <ReadStringFromEeprom>
+     e76:	b8 2e       	mov	r11, r24
+   while (ch != 0)
+     e78:	88 23       	and	r24, r24
+     e7a:	09 f4       	brne	.+2      	; 0xe7e <WriteStaticString+0x52>
+     e7c:	58 c0       	rjmp	.+176    	; 0xf2e <WriteStaticString+0x102>
+     e7e:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     e80:	8e 01       	movw	r16, r28
+     e82:	0e 5f       	subi	r16, 0xFE	; 254
+     e84:	1f 4f       	sbci	r17, 0xFF	; 255
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value << (y % 8);
+         WriteLcdData(data);
+     e86:	37 2d       	mov	r19, r7
+     e88:	37 70       	andi	r19, 0x07	; 7
+     e8a:	a3 2e       	mov	r10, r19
+     e8c:	01 c0       	rjmp	.+2      	; 0xe90 <WriteStaticString+0x64>
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+     e8e:	24 2d       	mov	r18, r4
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+     e90:	fe 01       	movw	r30, r28
+     e92:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     e94:	44 23       	and	r20, r20
+     e96:	d9 f0       	breq	.+54     	; 0xece <WriteStaticString+0xa2>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     e98:	f8 01       	movw	r30, r16
+     e9a:	84 91       	lpm	r24, Z
+     e9c:	8b 15       	cp	r24, r11
+     e9e:	d1 f0       	breq	.+52     	; 0xed4 <WriteStaticString+0xa8>
+     ea0:	30 e0       	ldi	r19, 0x00	; 0
+     ea2:	82 e0       	ldi	r24, 0x02	; 2
+     ea4:	90 e0       	ldi	r25, 0x00	; 0
+     ea6:	06 c0       	rjmp	.+12     	; 0xeb4 <WriteStaticString+0x88>
+     ea8:	fe 01       	movw	r30, r28
+     eaa:	e8 0f       	add	r30, r24
+     eac:	f9 1f       	adc	r31, r25
+     eae:	e4 91       	lpm	r30, Z
+     eb0:	eb 15       	cp	r30, r11
+     eb2:	91 f0       	breq	.+36     	; 0xed8 <WriteStaticString+0xac>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+     eb4:	fc 01       	movw	r30, r24
+     eb6:	31 96       	adiw	r30, 0x01	; 1
+     eb8:	ec 0f       	add	r30, r28
+     eba:	fd 1f       	adc	r31, r29
+     ebc:	e4 91       	lpm	r30, Z
+     ebe:	f0 e0       	ldi	r31, 0x00	; 0
+     ec0:	32 96       	adiw	r30, 0x02	; 2
+     ec2:	8e 0f       	add	r24, r30
+     ec4:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     ec6:	3f 5f       	subi	r19, 0xFF	; 255
+     ec8:	43 13       	cpse	r20, r19
+     eca:	ee cf       	rjmp	.-36     	; 0xea8 <WriteStaticString+0x7c>
+     ecc:	05 c0       	rjmp	.+10     	; 0xed8 <WriteStaticString+0xac>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+     ece:	82 e0       	ldi	r24, 0x02	; 2
+     ed0:	90 e0       	ldi	r25, 0x00	; 0
+     ed2:	02 c0       	rjmp	.+4      	; 0xed8 <WriteStaticString+0xac>
+     ed4:	82 e0       	ldi	r24, 0x02	; 2
+     ed6:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+     ed8:	7c 01       	movw	r14, r24
+     eda:	f2 e0       	ldi	r31, 0x02	; 2
+     edc:	ef 0e       	add	r14, r31
+     ede:	f1 1c       	adc	r15, r1
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+     ee0:	fc 01       	movw	r30, r24
+     ee2:	31 96       	adiw	r30, 0x01	; 1
+     ee4:	ec 0f       	add	r30, r28
+     ee6:	fd 1f       	adc	r31, r29
+     ee8:	84 90       	lpm	r8, Z
+
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+     eea:	86 94       	lsr	r8
+      ch = source(&text[index++]);
+     eec:	44 24       	eor	r4, r4
+     eee:	43 94       	inc	r4
+     ef0:	42 0e       	add	r4, r18
+     ef2:	c6 01       	movw	r24, r12
+     ef4:	82 0f       	add	r24, r18
+     ef6:	91 1d       	adc	r25, r1
+     ef8:	85 dd       	rcall	.-1270   	; 0xa04 <ReadStringFromEeprom>
+     efa:	b8 2e       	mov	r11, r24
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     efc:	88 20       	and	r8, r8
+     efe:	91 f0       	breq	.+36     	; 0xf24 <WriteStaticString+0xf8>
+     f00:	51 2c       	mov	r5, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+     f02:	85 2d       	mov	r24, r5
+     f04:	88 0f       	add	r24, r24
+     f06:	f7 01       	movw	r30, r14
+     f08:	e8 0f       	add	r30, r24
+     f0a:	f1 1d       	adc	r31, r1
+     f0c:	ec 0f       	add	r30, r28
+     f0e:	fd 1f       	adc	r31, r29
+     f10:	84 91       	lpm	r24, Z
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value << (y % 8);
+         WriteLcdData(data);
+     f12:	0a 2c       	mov	r0, r10
+     f14:	01 c0       	rjmp	.+2      	; 0xf18 <WriteStaticString+0xec>
+     f16:	88 0f       	add	r24, r24
+     f18:	0a 94       	dec	r0
+     f1a:	ea f7       	brpl	.-6      	; 0xf16 <WriteStaticString+0xea>
+     f1c:	58 dd       	rcall	.-1360   	; 0x9ce <WriteLcdData>
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     f1e:	53 94       	inc	r5
+     f20:	85 10       	cpse	r8, r5
+     f22:	ef cf       	rjmp	.-34     	; 0xf02 <WriteStaticString+0xd6>
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+     f24:	80 e0       	ldi	r24, 0x00	; 0
+     f26:	90 e0       	ldi	r25, 0x00	; 0
+     f28:	e6 da       	rcall	.-2612   	; 0x4f6 <TaskSleep>
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+
+   ch = source(&text[index++]);
+   while (ch != 0)
+     f2a:	b1 10       	cpse	r11, r1
+     f2c:	b0 cf       	rjmp	.-160    	; 0xe8e <WriteStaticString+0x62>
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+   }
+
+   SetAddress(x, y / 8 + 1);
+     f2e:	61 e0       	ldi	r22, 0x01	; 1
+     f30:	66 0d       	add	r22, r6
+     f32:	89 2d       	mov	r24, r9
+     f34:	5a dd       	rcall	.-1356   	; 0x9ea <SetAddress>
+   index = 0;
+   ch = source(&text[index++]);
+     f36:	c6 01       	movw	r24, r12
+     f38:	65 dd       	rcall	.-1334   	; 0xa04 <ReadStringFromEeprom>
+     f3a:	88 2e       	mov	r8, r24
+   while (ch != 0)
+     f3c:	88 23       	and	r24, r24
+     f3e:	09 f4       	brne	.+2      	; 0xf42 <WriteStaticString+0x116>
+     f40:	6f c0       	rjmp	.+222    	; 0x1020 <WriteStaticString+0x1f4>
+     f42:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     f44:	8e 01       	movw	r16, r28
+     f46:	0e 5f       	subi	r16, 0xFE	; 254
+     f48:	1f 4f       	sbci	r17, 0xFF	; 255
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value >> (8 - (y % 8));
+     f4a:	37 2d       	mov	r19, r7
+     f4c:	37 70       	andi	r19, 0x07	; 7
+     f4e:	73 2e       	mov	r7, r19
+         value = GetColumnData(font, characterIndex, n * 2 + 1);
+         data |= value << (y % 8);
+         WriteLcdData(data);
+     f50:	88 e0       	ldi	r24, 0x08	; 8
+     f52:	90 e0       	ldi	r25, 0x00	; 0
+     f54:	7c 01       	movw	r14, r24
+     f56:	e3 1a       	sub	r14, r19
+     f58:	f1 08       	sbc	r15, r1
+     f5a:	01 c0       	rjmp	.+2      	; 0xf5e <WriteStaticString+0x132>
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+     f5c:	23 2d       	mov	r18, r3
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+     f5e:	fe 01       	movw	r30, r28
+     f60:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     f62:	44 23       	and	r20, r20
+     f64:	d9 f0       	breq	.+54     	; 0xf9c <WriteStaticString+0x170>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+     f66:	f8 01       	movw	r30, r16
+     f68:	84 91       	lpm	r24, Z
+     f6a:	88 15       	cp	r24, r8
+     f6c:	d1 f0       	breq	.+52     	; 0xfa2 <WriteStaticString+0x176>
+     f6e:	30 e0       	ldi	r19, 0x00	; 0
+     f70:	82 e0       	ldi	r24, 0x02	; 2
+     f72:	90 e0       	ldi	r25, 0x00	; 0
+     f74:	06 c0       	rjmp	.+12     	; 0xf82 <WriteStaticString+0x156>
+     f76:	fe 01       	movw	r30, r28
+     f78:	e8 0f       	add	r30, r24
+     f7a:	f9 1f       	adc	r31, r25
+     f7c:	e4 91       	lpm	r30, Z
+     f7e:	e8 15       	cp	r30, r8
+     f80:	91 f0       	breq	.+36     	; 0xfa6 <WriteStaticString+0x17a>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+     f82:	fc 01       	movw	r30, r24
+     f84:	31 96       	adiw	r30, 0x01	; 1
+     f86:	ec 0f       	add	r30, r28
+     f88:	fd 1f       	adc	r31, r29
+     f8a:	e4 91       	lpm	r30, Z
+     f8c:	f0 e0       	ldi	r31, 0x00	; 0
+     f8e:	32 96       	adiw	r30, 0x02	; 2
+     f90:	8e 0f       	add	r24, r30
+     f92:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+     f94:	3f 5f       	subi	r19, 0xFF	; 255
+     f96:	43 13       	cpse	r20, r19
+     f98:	ee cf       	rjmp	.-36     	; 0xf76 <WriteStaticString+0x14a>
+     f9a:	05 c0       	rjmp	.+10     	; 0xfa6 <WriteStaticString+0x17a>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+     f9c:	82 e0       	ldi	r24, 0x02	; 2
+     f9e:	90 e0       	ldi	r25, 0x00	; 0
+     fa0:	02 c0       	rjmp	.+4      	; 0xfa6 <WriteStaticString+0x17a>
+     fa2:	82 e0       	ldi	r24, 0x02	; 2
+     fa4:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+     fa6:	5c 01       	movw	r10, r24
+     fa8:	f2 e0       	ldi	r31, 0x02	; 2
+     faa:	af 0e       	add	r10, r31
+     fac:	b1 1c       	adc	r11, r1
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+     fae:	fc 01       	movw	r30, r24
+     fb0:	31 96       	adiw	r30, 0x01	; 1
+     fb2:	ec 0f       	add	r30, r28
+     fb4:	fd 1f       	adc	r31, r29
+     fb6:	54 90       	lpm	r5, Z
+   index = 0;
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+     fb8:	56 94       	lsr	r5
+      ch = source(&text[index++]);
+     fba:	33 24       	eor	r3, r3
+     fbc:	33 94       	inc	r3
+     fbe:	32 0e       	add	r3, r18
+     fc0:	c6 01       	movw	r24, r12
+     fc2:	82 0f       	add	r24, r18
+     fc4:	91 1d       	adc	r25, r1
+     fc6:	1e dd       	rcall	.-1476   	; 0xa04 <ReadStringFromEeprom>
+     fc8:	88 2e       	mov	r8, r24
+      for (uint8_t n = 0; n < nrColumns; ++n)
+     fca:	55 20       	and	r5, r5
+     fcc:	21 f1       	breq	.+72     	; 0x1016 <WriteStaticString+0x1ea>
+     fce:	22 24       	eor	r2, r2
+     fd0:	23 94       	inc	r2
+     fd2:	41 2c       	mov	r4, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+     fd4:	84 2d       	mov	r24, r4
+     fd6:	88 0f       	add	r24, r24
+     fd8:	f5 01       	movw	r30, r10
+     fda:	e8 0f       	add	r30, r24
+     fdc:	f1 1d       	adc	r31, r1
+     fde:	ec 0f       	add	r30, r28
+     fe0:	fd 1f       	adc	r31, r29
+     fe2:	24 91       	lpm	r18, Z
+     fe4:	f5 01       	movw	r30, r10
+     fe6:	e2 0d       	add	r30, r2
+     fe8:	f1 1d       	adc	r31, r1
+     fea:	ec 0f       	add	r30, r28
+     fec:	fd 1f       	adc	r31, r29
+     fee:	84 91       	lpm	r24, Z
+      {
+         value = GetColumnData(font, characterIndex, n * 2);
+         data = value >> (8 - (y % 8));
+         value = GetColumnData(font, characterIndex, n * 2 + 1);
+         data |= value << (y % 8);
+         WriteLcdData(data);
+     ff0:	30 e0       	ldi	r19, 0x00	; 0
+     ff2:	0e 2c       	mov	r0, r14
+     ff4:	02 c0       	rjmp	.+4      	; 0xffa <WriteStaticString+0x1ce>
+     ff6:	35 95       	asr	r19
+     ff8:	27 95       	ror	r18
+     ffa:	0a 94       	dec	r0
+     ffc:	e2 f7       	brpl	.-8      	; 0xff6 <WriteStaticString+0x1ca>
+     ffe:	07 2c       	mov	r0, r7
+    1000:	01 c0       	rjmp	.+2      	; 0x1004 <WriteStaticString+0x1d8>
+    1002:	88 0f       	add	r24, r24
+    1004:	0a 94       	dec	r0
+    1006:	ea f7       	brpl	.-6      	; 0x1002 <WriteStaticString+0x1d6>
+    1008:	82 2b       	or	r24, r18
+    100a:	e1 dc       	rcall	.-1598   	; 0x9ce <WriteLcdData>
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex) / 2;
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+    100c:	43 94       	inc	r4
+    100e:	23 94       	inc	r2
+    1010:	23 94       	inc	r2
+    1012:	54 10       	cpse	r5, r4
+    1014:	df cf       	rjmp	.-66     	; 0xfd4 <WriteStaticString+0x1a8>
+         data = value >> (8 - (y % 8));
+         value = GetColumnData(font, characterIndex, n * 2 + 1);
+         data |= value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+    1016:	80 e0       	ldi	r24, 0x00	; 0
+    1018:	90 e0       	ldi	r25, 0x00	; 0
+    101a:	6d da       	rcall	.-2854   	; 0x4f6 <TaskSleep>
+   }
+
+   SetAddress(x, y / 8 + 1);
+   index = 0;
+   ch = source(&text[index++]);
+   while (ch != 0)
+    101c:	81 10       	cpse	r8, r1
+    101e:	9e cf       	rjmp	.-196    	; 0xf5c <WriteStaticString+0x130>
+         data |= value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+   }
+   SetAddress(x, y / 8);
+    1020:	66 2d       	mov	r22, r6
+    1022:	89 2d       	mov	r24, r9
+    1024:	e2 dc       	rcall	.-1596   	; 0x9ea <SetAddress>
+    1026:	cd c0       	rjmp	.+410    	; 0x11c2 <WriteStaticString+0x396>
+
+static inline void Write8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, char (*source)(const char*), const char* text)
+{
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+    1028:	84 2e       	mov	r8, r20
+    102a:	86 94       	lsr	r8
+    102c:	86 94       	lsr	r8
+    102e:	86 94       	lsr	r8
+    1030:	68 2d       	mov	r22, r8
+    1032:	89 2d       	mov	r24, r9
+    1034:	da dc       	rcall	.-1612   	; 0x9ea <SetAddress>
+
+   ch = source(&text[index++]);
+    1036:	c6 01       	movw	r24, r12
+    1038:	e5 dc       	rcall	.-1590   	; 0xa04 <ReadStringFromEeprom>
+    103a:	b8 2e       	mov	r11, r24
+   while (ch != 0)
+    103c:	88 23       	and	r24, r24
+    103e:	09 f4       	brne	.+2      	; 0x1042 <WriteStaticString+0x216>
+    1040:	56 c0       	rjmp	.+172    	; 0x10ee <WriteStaticString+0x2c2>
+    1042:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+    1044:	8e 01       	movw	r16, r28
+    1046:	0e 5f       	subi	r16, 0xFE	; 254
+    1048:	1f 4f       	sbci	r17, 0xFF	; 255
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(data);
+    104a:	37 2d       	mov	r19, r7
+    104c:	37 70       	andi	r19, 0x07	; 7
+    104e:	a3 2e       	mov	r10, r19
+    1050:	01 c0       	rjmp	.+2      	; 0x1054 <WriteStaticString+0x228>
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = source(&text[index++]);
+    1052:	25 2d       	mov	r18, r5
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+    1054:	fe 01       	movw	r30, r28
+    1056:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+    1058:	44 23       	and	r20, r20
+    105a:	d9 f0       	breq	.+54     	; 0x1092 <WriteStaticString+0x266>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+    105c:	f8 01       	movw	r30, r16
+    105e:	84 91       	lpm	r24, Z
+    1060:	8b 15       	cp	r24, r11
+    1062:	d1 f0       	breq	.+52     	; 0x1098 <WriteStaticString+0x26c>
+    1064:	30 e0       	ldi	r19, 0x00	; 0
+    1066:	82 e0       	ldi	r24, 0x02	; 2
+    1068:	90 e0       	ldi	r25, 0x00	; 0
+    106a:	06 c0       	rjmp	.+12     	; 0x1078 <WriteStaticString+0x24c>
+    106c:	fe 01       	movw	r30, r28
+    106e:	e8 0f       	add	r30, r24
+    1070:	f9 1f       	adc	r31, r25
+    1072:	e4 91       	lpm	r30, Z
+    1074:	eb 15       	cp	r30, r11
+    1076:	91 f0       	breq	.+36     	; 0x109c <WriteStaticString+0x270>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+    1078:	fc 01       	movw	r30, r24
+    107a:	31 96       	adiw	r30, 0x01	; 1
+    107c:	ec 0f       	add	r30, r28
+    107e:	fd 1f       	adc	r31, r29
+    1080:	e4 91       	lpm	r30, Z
+    1082:	f0 e0       	ldi	r31, 0x00	; 0
+    1084:	32 96       	adiw	r30, 0x02	; 2
+    1086:	8e 0f       	add	r24, r30
+    1088:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+    108a:	3f 5f       	subi	r19, 0xFF	; 255
+    108c:	43 13       	cpse	r20, r19
+    108e:	ee cf       	rjmp	.-36     	; 0x106c <WriteStaticString+0x240>
+    1090:	05 c0       	rjmp	.+10     	; 0x109c <WriteStaticString+0x270>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+    1092:	82 e0       	ldi	r24, 0x02	; 2
+    1094:	90 e0       	ldi	r25, 0x00	; 0
+    1096:	02 c0       	rjmp	.+4      	; 0x109c <WriteStaticString+0x270>
+    1098:	82 e0       	ldi	r24, 0x02	; 2
+    109a:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+    109c:	7c 01       	movw	r14, r24
+    109e:	f2 e0       	ldi	r31, 0x02	; 2
+    10a0:	ef 0e       	add	r14, r31
+    10a2:	f1 1c       	adc	r15, r1
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+    10a4:	fc 01       	movw	r30, r24
+    10a6:	31 96       	adiw	r30, 0x01	; 1
+    10a8:	ec 0f       	add	r30, r28
+    10aa:	fd 1f       	adc	r31, r29
+    10ac:	64 90       	lpm	r6, Z
+   ch = source(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = source(&text[index++]);
+    10ae:	55 24       	eor	r5, r5
+    10b0:	53 94       	inc	r5
+    10b2:	52 0e       	add	r5, r18
+    10b4:	c6 01       	movw	r24, r12
+    10b6:	82 0f       	add	r24, r18
+    10b8:	91 1d       	adc	r25, r1
+    10ba:	a4 dc       	rcall	.-1720   	; 0xa04 <ReadStringFromEeprom>
+    10bc:	b8 2e       	mov	r11, r24
+      for (uint8_t n = 0; n < nrColumns; ++n)
+    10be:	66 20       	and	r6, r6
+    10c0:	89 f0       	breq	.+34     	; 0x10e4 <WriteStaticString+0x2b8>
+    10c2:	ec 0e       	add	r14, r28
+    10c4:	fd 1e       	adc	r15, r29
+    10c6:	41 2c       	mov	r4, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+    10c8:	f7 01       	movw	r30, r14
+    10ca:	84 91       	lpm	r24, Z
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(data);
+    10cc:	0a 2c       	mov	r0, r10
+    10ce:	01 c0       	rjmp	.+2      	; 0x10d2 <WriteStaticString+0x2a6>
+    10d0:	88 0f       	add	r24, r24
+    10d2:	0a 94       	dec	r0
+    10d4:	ea f7       	brpl	.-6      	; 0x10d0 <WriteStaticString+0x2a4>
+    10d6:	7b dc       	rcall	.-1802   	; 0x9ce <WriteLcdData>
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = source(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+    10d8:	43 94       	inc	r4
+    10da:	ff ef       	ldi	r31, 0xFF	; 255
+    10dc:	ef 1a       	sub	r14, r31
+    10de:	ff 0a       	sbc	r15, r31
+    10e0:	64 10       	cpse	r6, r4
+    10e2:	f2 cf       	rjmp	.-28     	; 0x10c8 <WriteStaticString+0x29c>
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+    10e4:	80 e0       	ldi	r24, 0x00	; 0
+    10e6:	90 e0       	ldi	r25, 0x00	; 0
+    10e8:	06 da       	rcall	.-3060   	; 0x4f6 <TaskSleep>
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+
+   ch = source(&text[index++]);
+   while (ch != 0)
+    10ea:	b1 10       	cpse	r11, r1
+    10ec:	b2 cf       	rjmp	.-156    	; 0x1052 <WriteStaticString+0x226>
+         WriteLcdData(data);
+      }
+      TaskSleep(0);
+   }
+
+   if (y % 8 > 0)
+    10ee:	17 2d       	mov	r17, r7
+    10f0:	17 70       	andi	r17, 0x07	; 7
+    10f2:	09 f4       	brne	.+2      	; 0x10f6 <WriteStaticString+0x2ca>
+    10f4:	63 c0       	rjmp	.+198    	; 0x11bc <WriteStaticString+0x390>
+   {
+      index = 0;
+      ch = source(&text[index++]);
+    10f6:	c6 01       	movw	r24, r12
+    10f8:	85 dc       	rcall	.-1782   	; 0xa04 <ReadStringFromEeprom>
+    10fa:	68 2e       	mov	r6, r24
+      SetAddress(x, y / 8 + 1);
+    10fc:	61 e0       	ldi	r22, 0x01	; 1
+    10fe:	68 0d       	add	r22, r8
+    1100:	89 2d       	mov	r24, r9
+    1102:	73 dc       	rcall	.-1818   	; 0x9ea <SetAddress>
+      while (ch != 0)
+    1104:	66 20       	and	r6, r6
+    1106:	09 f4       	brne	.+2      	; 0x110a <WriteStaticString+0x2de>
+    1108:	59 c0       	rjmp	.+178    	; 0x11bc <WriteStaticString+0x390>
+    110a:	21 e0       	ldi	r18, 0x01	; 1
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+    110c:	5e 01       	movw	r10, r28
+    110e:	32 e0       	ldi	r19, 0x02	; 2
+    1110:	a3 0e       	add	r10, r19
+    1112:	b1 1c       	adc	r11, r1
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+    1114:	88 e0       	ldi	r24, 0x08	; 8
+    1116:	90 e0       	ldi	r25, 0x00	; 0
+    1118:	7c 01       	movw	r14, r24
+    111a:	e1 1a       	sub	r14, r17
+    111c:	f1 08       	sbc	r15, r1
+    111e:	01 c0       	rjmp	.+2      	; 0x1122 <WriteStaticString+0x2f6>
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+    1120:	25 2d       	mov	r18, r5
+   return pgm_read_byte_near(&(font[1]));
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+    1122:	fe 01       	movw	r30, r28
+    1124:	44 91       	lpm	r20, Z
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+    1126:	44 23       	and	r20, r20
+    1128:	d9 f0       	breq	.+54     	; 0x1160 <WriteStaticString+0x334>
+   {
+      if (value == pgm_read_byte_near(&(font[index])))
+    112a:	f5 01       	movw	r30, r10
+    112c:	84 91       	lpm	r24, Z
+    112e:	86 15       	cp	r24, r6
+    1130:	d1 f0       	breq	.+52     	; 0x1166 <WriteStaticString+0x33a>
+    1132:	30 e0       	ldi	r19, 0x00	; 0
+    1134:	82 e0       	ldi	r24, 0x02	; 2
+    1136:	90 e0       	ldi	r25, 0x00	; 0
+    1138:	06 c0       	rjmp	.+12     	; 0x1146 <WriteStaticString+0x31a>
+    113a:	fe 01       	movw	r30, r28
+    113c:	e8 0f       	add	r30, r24
+    113e:	f9 1f       	adc	r31, r25
+    1140:	e4 91       	lpm	r30, Z
+    1142:	e6 15       	cp	r30, r6
+    1144:	91 f0       	breq	.+36     	; 0x116a <WriteStaticString+0x33e>
+      {
+         break;
+      }
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+    1146:	fc 01       	movw	r30, r24
+    1148:	31 96       	adiw	r30, 0x01	; 1
+    114a:	ec 0f       	add	r30, r28
+    114c:	fd 1f       	adc	r31, r29
+    114e:	e4 91       	lpm	r30, Z
+    1150:	f0 e0       	ldi	r31, 0x00	; 0
+    1152:	32 96       	adiw	r30, 0x02	; 2
+    1154:	8e 0f       	add	r24, r30
+    1156:	9f 1f       	adc	r25, r31
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+
+   for (uint8_t i = 0; i < nrCharacters; ++i)
+    1158:	3f 5f       	subi	r19, 0xFF	; 255
+    115a:	43 13       	cpse	r20, r19
+    115c:	ee cf       	rjmp	.-36     	; 0x113a <WriteStaticString+0x30e>
+    115e:	05 c0       	rjmp	.+10     	; 0x116a <WriteStaticString+0x33e>
+}
+
+static inline uint16_t FindCharacter(const uint8_t *font, uint8_t value)
+{
+   uint8_t nrCharacters = pgm_read_byte_near(&(font[0]));
+   uint16_t index = 2;
+    1160:	82 e0       	ldi	r24, 0x02	; 2
+    1162:	90 e0       	ldi	r25, 0x00	; 0
+    1164:	02 c0       	rjmp	.+4      	; 0x116a <WriteStaticString+0x33e>
+    1166:	82 e0       	ldi	r24, 0x02	; 2
+    1168:	90 e0       	ldi	r25, 0x00	; 0
+      else
+      {
+         index += pgm_read_byte_near(&(font[index + 1])) + 2;
+      }
+   }
+   return index + 2;
+    116a:	8c 01       	movw	r16, r24
+    116c:	0e 5f       	subi	r16, 0xFE	; 254
+    116e:	1f 4f       	sbci	r17, 0xFF	; 255
+}
+
+static inline uint8_t GetNrColumns(const uint8_t *font, uint16_t characterIndex)
+{
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+    1170:	fc 01       	movw	r30, r24
+    1172:	31 96       	adiw	r30, 0x01	; 1
+    1174:	ec 0f       	add	r30, r28
+    1176:	fd 1f       	adc	r31, r29
+    1178:	74 90       	lpm	r7, Z
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+    117a:	55 24       	eor	r5, r5
+    117c:	53 94       	inc	r5
+    117e:	52 0e       	add	r5, r18
+    1180:	c6 01       	movw	r24, r12
+    1182:	82 0f       	add	r24, r18
+    1184:	91 1d       	adc	r25, r1
+    1186:	3e dc       	rcall	.-1924   	; 0xa04 <ReadStringFromEeprom>
+    1188:	68 2e       	mov	r6, r24
+         for (uint8_t n = 0; n < nrColumns; ++n)
+    118a:	77 20       	and	r7, r7
+    118c:	91 f0       	breq	.+36     	; 0x11b2 <WriteStaticString+0x386>
+    118e:	0c 0f       	add	r16, r28
+    1190:	1d 1f       	adc	r17, r29
+    1192:	41 2c       	mov	r4, r1
+   return pgm_read_byte_near(&(font[characterIndex - 1]));
+}
+
+static inline uint8_t GetColumnData(const uint8_t *font, uint16_t characterIndex, uint8_t position)
+{
+   return pgm_read_byte_near(&(font[characterIndex + position]));
+    1194:	f8 01       	movw	r30, r16
+    1196:	84 91       	lpm	r24, Z
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+    1198:	90 e0       	ldi	r25, 0x00	; 0
+    119a:	0e 2c       	mov	r0, r14
+    119c:	02 c0       	rjmp	.+4      	; 0x11a2 <WriteStaticString+0x376>
+    119e:	95 95       	asr	r25
+    11a0:	87 95       	ror	r24
+    11a2:	0a 94       	dec	r0
+    11a4:	e2 f7       	brpl	.-8      	; 0x119e <WriteStaticString+0x372>
+            WriteLcdData(data);
+    11a6:	13 dc       	rcall	.-2010   	; 0x9ce <WriteLcdData>
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = source(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+    11a8:	43 94       	inc	r4
+    11aa:	0f 5f       	subi	r16, 0xFF	; 255
+    11ac:	1f 4f       	sbci	r17, 0xFF	; 255
+    11ae:	74 10       	cpse	r7, r4
+    11b0:	f1 cf       	rjmp	.-30     	; 0x1194 <WriteStaticString+0x368>
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+            WriteLcdData(data);
+         }
+         TaskSleep(0);
+    11b2:	80 e0       	ldi	r24, 0x00	; 0
+    11b4:	90 e0       	ldi	r25, 0x00	; 0
+    11b6:	9f d9       	rcall	.-3266   	; 0x4f6 <TaskSleep>
+   if (y % 8 > 0)
+   {
+      index = 0;
+      ch = source(&text[index++]);
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+    11b8:	61 10       	cpse	r6, r1
+    11ba:	b2 cf       	rjmp	.-156    	; 0x1120 <WriteStaticString+0x2f4>
+            WriteLcdData(data);
+         }
+         TaskSleep(0);
+      }
+   }
+   SetAddress(x, y / 8);
+    11bc:	68 2d       	mov	r22, r8
+    11be:	89 2d       	mov	r24, r9
+    11c0:	14 dc       	rcall	.-2008   	; 0x9ea <SetAddress>
+   }
+   else
+   {
+      Write8PixelString(font, x, y, ReadStringFromEeprom, text);
+   }
+}
+    11c2:	df 91       	pop	r29
+    11c4:	cf 91       	pop	r28
+    11c6:	1f 91       	pop	r17
+    11c8:	0f 91       	pop	r16
+    11ca:	ff 90       	pop	r15
+    11cc:	ef 90       	pop	r14
+    11ce:	df 90       	pop	r13
+    11d0:	cf 90       	pop	r12
+    11d2:	bf 90       	pop	r11
+    11d4:	af 90       	pop	r10
+    11d6:	9f 90       	pop	r9
+    11d8:	8f 90       	pop	r8
+    11da:	7f 90       	pop	r7
+    11dc:	6f 90       	pop	r6
+    11de:	5f 90       	pop	r5
+    11e0:	4f 90       	pop	r4
+    11e2:	3f 90       	pop	r3
+    11e4:	2f 90       	pop	r2
+    11e6:	08 95       	ret
+
+000011e8 <DigitalOutputSetup>:
+#include "button.h"
+
+void DigitalOutputSetup(void)
+{
+   // PA2; drive motor down, PA3: motor up
+   PORTA &= ~((1 << PORTA2) | (1 << PORTA3)); // make sure outputs are low at startup
+    11e8:	8b b3       	in	r24, 0x1b	; 27
+    11ea:	83 7f       	andi	r24, 0xF3	; 243
+    11ec:	8b bb       	out	0x1b, r24	; 27
+   DDRA |= (1 << DDA2) | (1 << DDA3);
+    11ee:	8a b3       	in	r24, 0x1a	; 26
+    11f0:	8c 60       	ori	r24, 0x0C	; 12
+    11f2:	8a bb       	out	0x1a, r24	; 26
+    11f4:	08 95       	ret
+
+000011f6 <MotorDirection>:
+}
+
+void MotorDirection(direction_type direction)
+{
+   switch (direction)
+    11f6:	81 30       	cpi	r24, 0x01	; 1
+    11f8:	21 f0       	breq	.+8      	; 0x1202 <MotorDirection+0xc>
+    11fa:	48 f0       	brcs	.+18     	; 0x120e <MotorDirection+0x18>
+    11fc:	82 30       	cpi	r24, 0x02	; 2
+    11fe:	21 f0       	breq	.+8      	; 0x1208 <MotorDirection+0x12>
+    1200:	08 95       	ret
+   {
+      case DIRECTION_UP:
+         PORTA &= ~(1 << PORTA2);
+    1202:	da 98       	cbi	0x1b, 2	; 27
+         PORTA |= (1 << PORTA3);
+    1204:	db 9a       	sbi	0x1b, 3	; 27
+         break;
+    1206:	08 95       	ret
+      case DIRECTION_DOWN:
+         PORTA &= ~(1 << PORTA3);
+    1208:	db 98       	cbi	0x1b, 3	; 27
+         PORTA |= (1 << PORTA2);
+    120a:	da 9a       	sbi	0x1b, 2	; 27
+         break;
+    120c:	08 95       	ret
+      case DIRECTION_STOP:
+         PORTA &= ~((1 << PORTA2) | (1 << PORTA3));
+    120e:	8b b3       	in	r24, 0x1b	; 27
+    1210:	83 7f       	andi	r24, 0xF3	; 243
+    1212:	8b bb       	out	0x1b, r24	; 27
+    1214:	08 95       	ret
+
+00001216 <DigitalOutputTask>:
+      // else if (buttonState == PressedButtonNone)
+      // {
+      //    MotorDirection(DIRECTION_STOP);
+      // }
+
+      TaskSleep(100);
+    1216:	84 e6       	ldi	r24, 0x64	; 100
+    1218:	90 e0       	ldi	r25, 0x00	; 0
+    121a:	6d d9       	rcall	.-3366   	; 0x4f6 <TaskSleep>
+    121c:	fc cf       	rjmp	.-8      	; 0x1216 <DigitalOutputTask>
+
+0000121e <GetButtonState>:
+}
+
+enum PressedButtonState GetButtonState(void)
+{
+   return pressedButton;
+}
+    121e:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <pressedButton>
+    1222:	08 95       	ret
+
+00001224 <ButtonTask>:
+         pressedButton++;
+         // do something with the key press
+      }
+      else if (count > LONGPRESS)
+      {
+        count = LONGPRESS + 1;
+    1224:	c5 e6       	ldi	r28, 0x65	; 101
+static inline enum PressedButtonState AdcButtonToPressedButton(enum ButtonAdc adcButton)
+{
+   switch (adcButton)
+   {
+      case ButtonAdcDown: return PressedButtonDown;
+      case ButtonAdcUp:   return PressedButtonUp;
+    1226:	03 e0       	ldi	r16, 0x03	; 3
+      case ButtonAdcMenu: return PressedButtonMenu;
+    1228:	15 e0       	ldi	r17, 0x05	; 5
+
+static inline enum PressedButtonState AdcButtonToPressedButton(enum ButtonAdc adcButton)
+{
+   switch (adcButton)
+   {
+      case ButtonAdcDown: return PressedButtonDown;
+    122a:	d1 e0       	ldi	r29, 0x01	; 1
+
+static inline void CheckButtonPress(void)
+{
+   static enum ButtonAdc oldAdcButton = ButtonAdcNone;
+   static uint8_t count = 0;
+   enum ButtonAdc newAdcButton = GetAdcButton();
+    122c:	0a db       	rcall	.-2540   	; 0x842 <GetAdcButton>
+
+   if (oldAdcButton != newAdcButton)
+    122e:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <oldAdcButton.1534>
+    1232:	89 17       	cp	r24, r25
+    1234:	31 f0       	breq	.+12     	; 0x1242 <ButtonTask+0x1e>
+   {
+      count = 0;
+    1236:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <count.1535>
+      oldAdcButton = newAdcButton;
+    123a:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <oldAdcButton.1534>
+      pressedButton = PressedButtonNone;
+    123e:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <pressedButton>
+   }
+
+   if (newAdcButton != ButtonAdcNone)
+    1242:	88 23       	and	r24, r24
+    1244:	21 f1       	breq	.+72     	; 0x128e <ButtonTask+0x6a>
+   {
+      count++;
+    1246:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <count.1535>
+    124a:	9f 5f       	subi	r25, 0xFF	; 255
+    124c:	90 93 66 00 	sts	0x0066, r25	; 0x800066 <count.1535>
+
+      if (count == 5)
+    1250:	95 30       	cpi	r25, 0x05	; 5
+    1252:	89 f4       	brne	.+34     	; 0x1276 <ButtonTask+0x52>
+
+static enum PressedButtonState pressedButton;
+
+static inline enum PressedButtonState AdcButtonToPressedButton(enum ButtonAdc adcButton)
+{
+   switch (adcButton)
+    1254:	82 30       	cpi	r24, 0x02	; 2
+    1256:	29 f0       	breq	.+10     	; 0x1262 <ButtonTask+0x3e>
+    1258:	83 30       	cpi	r24, 0x03	; 3
+    125a:	29 f0       	breq	.+10     	; 0x1266 <ButtonTask+0x42>
+    125c:	81 30       	cpi	r24, 0x01	; 1
+    125e:	29 f4       	brne	.+10     	; 0x126a <ButtonTask+0x46>
+    1260:	06 c0       	rjmp	.+12     	; 0x126e <ButtonTask+0x4a>
+   {
+      case ButtonAdcDown: return PressedButtonDown;
+      case ButtonAdcUp:   return PressedButtonUp;
+    1262:	80 2f       	mov	r24, r16
+    1264:	05 c0       	rjmp	.+10     	; 0x1270 <ButtonTask+0x4c>
+      case ButtonAdcMenu: return PressedButtonMenu;
+    1266:	81 2f       	mov	r24, r17
+    1268:	03 c0       	rjmp	.+6      	; 0x1270 <ButtonTask+0x4c>
+      case ButtonAdcNone:
+      default:
+         return PressedButtonNone;
+    126a:	80 e0       	ldi	r24, 0x00	; 0
+    126c:	01 c0       	rjmp	.+2      	; 0x1270 <ButtonTask+0x4c>
+
+static inline enum PressedButtonState AdcButtonToPressedButton(enum ButtonAdc adcButton)
+{
+   switch (adcButton)
+   {
+      case ButtonAdcDown: return PressedButtonDown;
+    126e:	8d 2f       	mov	r24, r29
+   {
+      count++;
+
+      if (count == 5)
+      {
+         pressedButton = AdcButtonToPressedButton(newAdcButton);
+    1270:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <pressedButton>
+    1274:	0c c0       	rjmp	.+24     	; 0x128e <ButtonTask+0x6a>
+         // do something with the key press
+      }
+      else if (count == LONGPRESS)
+    1276:	94 36       	cpi	r25, 0x64	; 100
+    1278:	31 f4       	brne	.+12     	; 0x1286 <ButtonTask+0x62>
+      {
+         pressedButton++;
+    127a:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <pressedButton>
+    127e:	8f 5f       	subi	r24, 0xFF	; 255
+    1280:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <pressedButton>
+    1284:	04 c0       	rjmp	.+8      	; 0x128e <ButtonTask+0x6a>
+         // do something with the key press
+      }
+      else if (count > LONGPRESS)
+    1286:	95 36       	cpi	r25, 0x65	; 101
+    1288:	10 f0       	brcs	.+4      	; 0x128e <ButtonTask+0x6a>
+      {
+        count = LONGPRESS + 1;
+    128a:	c0 93 66 00 	sts	0x0066, r28	; 0x800066 <count.1535>
+{
+   while (true)
+   {
+      CheckButtonPress();
+      
+      TaskSleep(10);
+    128e:	8a e0       	ldi	r24, 0x0A	; 10
+    1290:	90 e0       	ldi	r25, 0x00	; 0
+    1292:	31 d9       	rcall	.-3486   	; 0x4f6 <TaskSleep>
+   }
+    1294:	cb cf       	rjmp	.-106    	; 0x122c <ButtonTask+0x8>
+
+00001296 <int32ToStr>:
+
+   current = percent;
+}
+
+static char* int32ToStr(char* buffer, uint8_t before, int32_t value)
+{
+    1296:	2f 92       	push	r2
+    1298:	3f 92       	push	r3
+    129a:	6f 92       	push	r6
+    129c:	7f 92       	push	r7
+    129e:	8f 92       	push	r8
+    12a0:	9f 92       	push	r9
+    12a2:	af 92       	push	r10
+    12a4:	bf 92       	push	r11
+    12a6:	cf 92       	push	r12
+    12a8:	df 92       	push	r13
+    12aa:	ef 92       	push	r14
+    12ac:	ff 92       	push	r15
+    12ae:	0f 93       	push	r16
+    12b0:	1f 93       	push	r17
+    12b2:	cf 93       	push	r28
+    12b4:	df 93       	push	r29
+    12b6:	ec 01       	movw	r28, r24
+    12b8:	26 2e       	mov	r2, r22
+    12ba:	49 01       	movw	r8, r18
+    12bc:	5a 01       	movw	r10, r20
+   int8_t i;
+   uint32_t divide = 1;
+
+   for (i = 1; i < before; i++) divide *= 10;
+    12be:	06 2f       	mov	r16, r22
+    12c0:	10 e0       	ldi	r17, 0x00	; 0
+    12c2:	02 30       	cpi	r16, 0x02	; 2
+    12c4:	11 05       	cpc	r17, r1
+    12c6:	04 f1       	brlt	.+64     	; 0x1308 <int32ToStr+0x72>
+    12c8:	c1 2c       	mov	r12, r1
+    12ca:	d1 2c       	mov	r13, r1
+    12cc:	76 01       	movw	r14, r12
+    12ce:	c3 94       	inc	r12
+    12d0:	81 e0       	ldi	r24, 0x01	; 1
+    12d2:	cc 0c       	add	r12, r12
+    12d4:	dd 1c       	adc	r13, r13
+    12d6:	ee 1c       	adc	r14, r14
+    12d8:	ff 1c       	adc	r15, r15
+    12da:	b7 01       	movw	r22, r14
+    12dc:	a6 01       	movw	r20, r12
+    12de:	44 0f       	add	r20, r20
+    12e0:	55 1f       	adc	r21, r21
+    12e2:	66 1f       	adc	r22, r22
+    12e4:	77 1f       	adc	r23, r23
+    12e6:	44 0f       	add	r20, r20
+    12e8:	55 1f       	adc	r21, r21
+    12ea:	66 1f       	adc	r22, r22
+    12ec:	77 1f       	adc	r23, r23
+    12ee:	c4 0e       	add	r12, r20
+    12f0:	d5 1e       	adc	r13, r21
+    12f2:	e6 1e       	adc	r14, r22
+    12f4:	f7 1e       	adc	r15, r23
+    12f6:	8f 5f       	subi	r24, 0xFF	; 255
+    12f8:	28 2f       	mov	r18, r24
+    12fa:	08 2e       	mov	r0, r24
+    12fc:	00 0c       	add	r0, r0
+    12fe:	33 0b       	sbc	r19, r19
+    1300:	20 17       	cp	r18, r16
+    1302:	31 07       	cpc	r19, r17
+    1304:	34 f3       	brlt	.-52     	; 0x12d2 <int32ToStr+0x3c>
+    1306:	04 c0       	rjmp	.+8      	; 0x1310 <int32ToStr+0x7a>
+}
+
+static char* int32ToStr(char* buffer, uint8_t before, int32_t value)
+{
+   int8_t i;
+   uint32_t divide = 1;
+    1308:	c1 2c       	mov	r12, r1
+    130a:	d1 2c       	mov	r13, r1
+    130c:	76 01       	movw	r14, r12
+    130e:	c3 94       	inc	r12
+
+   for (i = 1; i < before; i++) divide *= 10;
+
+   if (value < 0)
+    1310:	bb 20       	and	r11, r11
+    1312:	5c f4       	brge	.+22     	; 0x132a <int32ToStr+0x94>
+   {
+      buffer[0] = '-';
+    1314:	8d e2       	ldi	r24, 0x2D	; 45
+    1316:	88 83       	st	Y, r24
+      value = -value;
+    1318:	b0 94       	com	r11
+    131a:	a0 94       	com	r10
+    131c:	90 94       	com	r9
+    131e:	80 94       	com	r8
+    1320:	81 1c       	adc	r8, r1
+    1322:	91 1c       	adc	r9, r1
+    1324:	a1 1c       	adc	r10, r1
+    1326:	b1 1c       	adc	r11, r1
+    1328:	02 c0       	rjmp	.+4      	; 0x132e <int32ToStr+0x98>
+   }
+   else
+   {
+      buffer[0] = ' ';
+    132a:	80 e2       	ldi	r24, 0x20	; 32
+    132c:	88 83       	st	Y, r24
+   }
+
+   for (i = 1; i <= before; i++)
+    132e:	10 16       	cp	r1, r16
+    1330:	11 06       	cpc	r1, r17
+    1332:	24 f5       	brge	.+72     	; 0x137c <int32ToStr+0xe6>
+    1334:	33 24       	eor	r3, r3
+    1336:	33 94       	inc	r3
+   {
+      buffer[i] = '0' + value / divide;
+    1338:	3e 01       	movw	r6, r28
+    133a:	63 0c       	add	r6, r3
+    133c:	71 1c       	adc	r7, r1
+    133e:	37 fc       	sbrc	r3, 7
+    1340:	7a 94       	dec	r7
+    1342:	c5 01       	movw	r24, r10
+    1344:	b4 01       	movw	r22, r8
+    1346:	a7 01       	movw	r20, r14
+    1348:	96 01       	movw	r18, r12
+    134a:	56 d1       	rcall	.+684    	; 0x15f8 <__udivmodsi4>
+    134c:	20 5d       	subi	r18, 0xD0	; 208
+    134e:	f3 01       	movw	r30, r6
+    1350:	20 83       	st	Z, r18
+      value %= divide;
+    1352:	86 2e       	mov	r8, r22
+    1354:	97 2e       	mov	r9, r23
+    1356:	a8 2e       	mov	r10, r24
+    1358:	b9 2e       	mov	r11, r25
+      divide /= 10;
+    135a:	c7 01       	movw	r24, r14
+    135c:	b6 01       	movw	r22, r12
+    135e:	2a e0       	ldi	r18, 0x0A	; 10
+    1360:	30 e0       	ldi	r19, 0x00	; 0
+    1362:	40 e0       	ldi	r20, 0x00	; 0
+    1364:	50 e0       	ldi	r21, 0x00	; 0
+    1366:	48 d1       	rcall	.+656    	; 0x15f8 <__udivmodsi4>
+    1368:	69 01       	movw	r12, r18
+    136a:	7a 01       	movw	r14, r20
+    136c:	33 94       	inc	r3
+   else
+   {
+      buffer[0] = ' ';
+   }
+
+   for (i = 1; i <= before; i++)
+    136e:	83 2d       	mov	r24, r3
+    1370:	03 2c       	mov	r0, r3
+    1372:	00 0c       	add	r0, r0
+    1374:	99 0b       	sbc	r25, r25
+    1376:	08 17       	cp	r16, r24
+    1378:	19 07       	cpc	r17, r25
+    137a:	f4 f6       	brge	.-68     	; 0x1338 <int32ToStr+0xa2>
+      buffer[i] = '0' + value / divide;
+      value %= divide;
+      divide /= 10;
+   }
+
+   buffer[before + 1] = 0;
+    137c:	fe 01       	movw	r30, r28
+    137e:	e2 0d       	add	r30, r2
+    1380:	f1 1d       	adc	r31, r1
+    1382:	11 82       	std	Z+1, r1	; 0x01
+
+   i = 0;
+    1384:	80 e0       	ldi	r24, 0x00	; 0
+    1386:	01 c0       	rjmp	.+2      	; 0x138a <int32ToStr+0xf4>
+   do
+   {
+      i++;
+    1388:	89 2f       	mov	r24, r25
+    138a:	91 e0       	ldi	r25, 0x01	; 1
+    138c:	98 0f       	add	r25, r24
+   } while ((i < before) && (buffer[i] <= '0'));
+    138e:	29 2f       	mov	r18, r25
+    1390:	09 2e       	mov	r0, r25
+    1392:	00 0c       	add	r0, r0
+    1394:	33 0b       	sbc	r19, r19
+    1396:	20 17       	cp	r18, r16
+    1398:	31 07       	cpc	r19, r17
+    139a:	1c f0       	brlt	.+6      	; 0x13a2 <int32ToStr+0x10c>
+
+   i--;
+
+   while(i > 0)
+    139c:	18 16       	cp	r1, r24
+    139e:	54 f0       	brlt	.+20     	; 0x13b4 <int32ToStr+0x11e>
+    13a0:	14 c0       	rjmp	.+40     	; 0x13ca <int32ToStr+0x134>
+
+   i = 0;
+   do
+   {
+      i++;
+   } while ((i < before) && (buffer[i] <= '0'));
+    13a2:	fe 01       	movw	r30, r28
+    13a4:	e9 0f       	add	r30, r25
+    13a6:	f1 1d       	adc	r31, r1
+    13a8:	97 fd       	sbrc	r25, 7
+    13aa:	fa 95       	dec	r31
+    13ac:	20 81       	ld	r18, Z
+    13ae:	21 33       	cpi	r18, 0x31	; 49
+    13b0:	5c f3       	brlt	.-42     	; 0x1388 <int32ToStr+0xf2>
+    13b2:	f4 cf       	rjmp	.-24     	; 0x139c <int32ToStr+0x106>
+   i--;
+
+   while(i > 0)
+   {
+      buffer[i--] = buffer[0];
+      buffer[0] = ' ';
+    13b4:	20 e2       	ldi	r18, 0x20	; 32
+
+   i--;
+
+   while(i > 0)
+   {
+      buffer[i--] = buffer[0];
+    13b6:	98 81       	ld	r25, Y
+    13b8:	fe 01       	movw	r30, r28
+    13ba:	e8 0f       	add	r30, r24
+    13bc:	f1 1d       	adc	r31, r1
+    13be:	87 fd       	sbrc	r24, 7
+    13c0:	fa 95       	dec	r31
+    13c2:	90 83       	st	Z, r25
+      buffer[0] = ' ';
+    13c4:	28 83       	st	Y, r18
+
+   i--;
+
+   while(i > 0)
+   {
+      buffer[i--] = buffer[0];
+    13c6:	81 50       	subi	r24, 0x01	; 1
+      i++;
+   } while ((i < before) && (buffer[i] <= '0'));
+
+   i--;
+
+   while(i > 0)
+    13c8:	b1 f7       	brne	.-20     	; 0x13b6 <int32ToStr+0x120>
+      buffer[i--] = buffer[0];
+      buffer[0] = ' ';
+   }
+
+   return buffer;
+}
+    13ca:	ce 01       	movw	r24, r28
+    13cc:	df 91       	pop	r29
+    13ce:	cf 91       	pop	r28
+    13d0:	1f 91       	pop	r17
+    13d2:	0f 91       	pop	r16
+    13d4:	ff 90       	pop	r15
+    13d6:	ef 90       	pop	r14
+    13d8:	df 90       	pop	r13
+    13da:	cf 90       	pop	r12
+    13dc:	bf 90       	pop	r11
+    13de:	af 90       	pop	r10
+    13e0:	9f 90       	pop	r9
+    13e2:	8f 90       	pop	r8
+    13e4:	7f 90       	pop	r7
+    13e6:	6f 90       	pop	r6
+    13e8:	3f 90       	pop	r3
+    13ea:	2f 90       	pop	r2
+    13ec:	08 95       	ret
+
+000013ee <DisplaySetup>:
+//   return buffer;
+//}
+
+void DisplaySetup(void)
+{
+   LcdSetup();
+    13ee:	0c db       	rcall	.-2536   	; 0xa08 <LcdSetup>
+    13f0:	08 95       	ret
+
+000013f2 <GetScreenMode>:
+}
+
+enum ScreenModeType GetScreenMode(void)
+{
+   return screen;
+}
+    13f2:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <screen>
+    13f6:	08 95       	ret
+
+000013f8 <SetScreenMode>:
+
+void SetScreenMode(enum ScreenModeType screenMode)
+{
+   screen = screenMode;
+    13f8:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <screen>
+    13fc:	08 95       	ret
+
+000013fe <DisplayTask>:
+}
+
+void DisplayTask()
+{
+    13fe:	cf 93       	push	r28
+    1400:	df 93       	push	r29
+    1402:	cd b7       	in	r28, 0x3d	; 61
+    1404:	de b7       	in	r29, 0x3e	; 62
+    1406:	2a 97       	sbiw	r28, 0x0a	; 10
+    1408:	0f b6       	in	r0, 0x3f	; 63
+    140a:	f8 94       	cli
+    140c:	de bf       	out	0x3e, r29	; 62
+    140e:	0f be       	out	0x3f, r0	; 63
+    1410:	cd bf       	out	0x3d, r28	; 61
+   LcdInitialize();
+    1412:	20 db       	rcall	.-2496   	; 0xa54 <LcdInitialize>
+            break;
+
+         case ModeAskClosingTimeInit:
+            // ask user to input time before closing the sun blinds
+            Clear();
+            screen = ModeAskClosingTimeUpdate;
+    1414:	68 94       	set
+    1416:	ff 24       	eor	r15, r15
+    1418:	f2 f8       	bld	r15, 2
+      {
+         case ModeProductTitle:
+            // write product title and software version
+            displayProductTitle();
+            screen = ModeMainScreenInit;
+            screen = ModeDiagnosticInit;
+    141a:	07 e0       	ldi	r16, 0x07	; 7
+{
+   LcdInitialize();
+
+   while (true)
+   {
+      switch(screen)
+    141c:	e0 91 69 00 	lds	r30, 0x0069	; 0x800069 <screen>
+    1420:	8e 2f       	mov	r24, r30
+    1422:	90 e0       	ldi	r25, 0x00	; 0
+    1424:	89 30       	cpi	r24, 0x09	; 9
+    1426:	91 05       	cpc	r25, r1
+    1428:	08 f0       	brcs	.+2      	; 0x142c <DisplayTask+0x2e>
+    142a:	c3 c0       	rjmp	.+390    	; 0x15b2 <DisplayTask+0x1b4>
+    142c:	fc 01       	movw	r30, r24
+    142e:	ef 5e       	subi	r30, 0xEF	; 239
+    1430:	ff 4f       	sbci	r31, 0xFF	; 255
+    1432:	09 94       	ijmp
+   return buffer;
+}
+
+static void displayProductTitle(void)
+{
+   Clear();
+    1434:	fd da       	rcall	.-2566   	; 0xa30 <Clear>
+   WriteStaticString(font5x8, 0, 10, ProductTitle);
+    1436:	27 e8       	ldi	r18, 0x87	; 135
+    1438:	30 e0       	ldi	r19, 0x00	; 0
+    143a:	4a e0       	ldi	r20, 0x0A	; 10
+    143c:	60 e0       	ldi	r22, 0x00	; 0
+    143e:	8e e3       	ldi	r24, 0x3E	; 62
+    1440:	91 e0       	ldi	r25, 0x01	; 1
+    1442:	f4 dc       	rcall	.-1560   	; 0xe2c <WriteStaticString>
+   WriteStaticString(font5x8, 10, 24, ProductVersion);
+    1444:	23 e7       	ldi	r18, 0x73	; 115
+    1446:	30 e0       	ldi	r19, 0x00	; 0
+    1448:	48 e1       	ldi	r20, 0x18	; 24
+    144a:	6a e0       	ldi	r22, 0x0A	; 10
+    144c:	8e e3       	ldi	r24, 0x3E	; 62
+    144e:	91 e0       	ldi	r25, 0x01	; 1
+    1450:	ed dc       	rcall	.-1574   	; 0xe2c <WriteStaticString>
+   TaskSleep(2000);
+    1452:	80 ed       	ldi	r24, 0xD0	; 208
+    1454:	97 e0       	ldi	r25, 0x07	; 7
+    1456:	4f d8       	rcall	.-3938   	; 0x4f6 <TaskSleep>
+      {
+         case ModeProductTitle:
+            // write product title and software version
+            displayProductTitle();
+            screen = ModeMainScreenInit;
+            screen = ModeDiagnosticInit;
+    1458:	00 93 69 00 	sts	0x0069, r16	; 0x800069 <screen>
+            break;
+    145c:	aa c0       	rjmp	.+340    	; 0x15b2 <DisplayTask+0x1b4>
+
+static void mainScreenInit(void)
+{
+   char buffer[9];
+
+   Clear();
+    145e:	e8 da       	rcall	.-2608   	; 0xa30 <Clear>
+static char EEMEM None[9]  = "        ";
+
+
+static void ProgressBarSetup(void)
+{
+   WriteStaticString(lines5x12, 2, 2, ProgressOutline);
+    1460:	2f e5       	ldi	r18, 0x5F	; 95
+    1462:	30 e0       	ldi	r19, 0x00	; 0
+    1464:	42 e0       	ldi	r20, 0x02	; 2
+    1466:	62 e0       	ldi	r22, 0x02	; 2
+    1468:	80 e1       	ldi	r24, 0x10	; 16
+    146a:	91 e0       	ldi	r25, 0x01	; 1
+    146c:	df dc       	rcall	.-1602   	; 0xe2c <WriteStaticString>
+{
+   char buffer[9];
+
+   Clear();
+   ProgressBarSetup();
+   WriteString(font6x10, 3, 18, int32ToStr(buffer, 3, 0));
+    146e:	20 e0       	ldi	r18, 0x00	; 0
+    1470:	30 e0       	ldi	r19, 0x00	; 0
+    1472:	a9 01       	movw	r20, r18
+    1474:	63 e0       	ldi	r22, 0x03	; 3
+    1476:	ce 01       	movw	r24, r28
+    1478:	01 96       	adiw	r24, 0x01	; 1
+    147a:	0d df       	rcall	.-486    	; 0x1296 <int32ToStr>
+    147c:	9c 01       	movw	r18, r24
+    147e:	42 e1       	ldi	r20, 0x12	; 18
+    1480:	63 e0       	ldi	r22, 0x03	; 3
+    1482:	82 e4       	ldi	r24, 0x42	; 66
+    1484:	90 e0       	ldi	r25, 0x00	; 0
+    1486:	f4 da       	rcall	.-2584   	; 0xa70 <WriteString>
+            break;
+
+         case ModeMainScreenInit:
+            // display main screen with progress bar and percent blinds lowered
+            mainScreenInit();
+            screen = ModeMainScreenUpdate;
+    1488:	82 e0       	ldi	r24, 0x02	; 2
+    148a:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <screen>
+            break;
+    148e:	91 c0       	rjmp	.+290    	; 0x15b2 <DisplayTask+0x1b4>
+}
+
+static void ProgressBar(uint8_t percent)
+{
+   percent = (uint16_t)percent * 77 / 100;
+   if(percent > current)
+    1490:	10 91 9f 01 	lds	r17, 0x019F	; 0x80019f <current>
+      for (uint8_t i = current; i < percent; ++i)
+      {
+         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[0]);
+      }
+   }
+   else if (percent < current)
+    1494:	11 23       	and	r17, r17
+    1496:	51 f0       	breq	.+20     	; 0x14ac <DisplayTask+0xae>
+   {
+      for (uint8_t i = current; i > percent; --i)
+      {
+         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[1]);
+    1498:	63 e0       	ldi	r22, 0x03	; 3
+    149a:	61 0f       	add	r22, r17
+    149c:	2e e5       	ldi	r18, 0x5E	; 94
+    149e:	30 e0       	ldi	r19, 0x00	; 0
+    14a0:	42 e0       	ldi	r20, 0x02	; 2
+    14a2:	80 e1       	ldi	r24, 0x10	; 16
+    14a4:	91 e0       	ldi	r25, 0x01	; 1
+    14a6:	c2 dc       	rcall	.-1660   	; 0xe2c <WriteStaticString>
+         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[0]);
+      }
+   }
+   else if (percent < current)
+   {
+      for (uint8_t i = current; i > percent; --i)
+    14a8:	11 50       	subi	r17, 0x01	; 1
+    14aa:	b1 f7       	brne	.-20     	; 0x1498 <DisplayTask+0x9a>
+      {
+         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[1]);
+      }
+   }
+
+   current = percent;
+    14ac:	10 92 9f 01 	sts	0x019F, r1	; 0x80019f <current>
+    14b0:	80 c0       	rjmp	.+256    	; 0x15b2 <DisplayTask+0x1b4>
+            mainScreenUpdate();
+            break;
+
+         case ModeAskClosingTimeInit:
+            // ask user to input time before closing the sun blinds
+            Clear();
+    14b2:	be da       	rcall	.-2692   	; 0xa30 <Clear>
+            screen = ModeAskClosingTimeUpdate;
+    14b4:	f0 92 69 00 	sts	0x0069, r15	; 0x800069 <screen>
+            break;
+    14b8:	7c c0       	rjmp	.+248    	; 0x15b2 <DisplayTask+0x1b4>
+            // update the input time screen
+            break;
+
+         case ModeAskFullOpenInit:
+            // display screen to input time to open sun blinds 100%
+            Clear();
+    14ba:	ba da       	rcall	.-2700   	; 0xa30 <Clear>
+            screen = ModeAskFullOpenUpdate;
+    14bc:	86 e0       	ldi	r24, 0x06	; 6
+    14be:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <screen>
+            break;
+    14c2:	77 c0       	rjmp	.+238    	; 0x15b2 <DisplayTask+0x1b4>
+   ProgressBar(0);
+}
+
+static void diagnosticInit(void)
+{
+   Clear();
+    14c4:	b5 da       	rcall	.-2710   	; 0xa30 <Clear>
+   WriteStaticString(font5x8, 0, 0, Button);
+    14c6:	2f e3       	ldi	r18, 0x3F	; 63
+    14c8:	30 e0       	ldi	r19, 0x00	; 0
+    14ca:	40 e0       	ldi	r20, 0x00	; 0
+    14cc:	60 e0       	ldi	r22, 0x00	; 0
+    14ce:	8e e3       	ldi	r24, 0x3E	; 62
+    14d0:	91 e0       	ldi	r25, 0x01	; 1
+    14d2:	ac dc       	rcall	.-1704   	; 0xe2c <WriteStaticString>
+   WriteStaticString(font5x8, 0, 8, Voltage);
+    14d4:	23 e5       	ldi	r18, 0x53	; 83
+    14d6:	30 e0       	ldi	r19, 0x00	; 0
+    14d8:	48 e0       	ldi	r20, 0x08	; 8
+    14da:	60 e0       	ldi	r22, 0x00	; 0
+    14dc:	8e e3       	ldi	r24, 0x3E	; 62
+    14de:	91 e0       	ldi	r25, 0x01	; 1
+    14e0:	a5 dc       	rcall	.-1718   	; 0xe2c <WriteStaticString>
+   WriteStaticString(font5x8, 0, 16, Samples);
+    14e2:	29 e4       	ldi	r18, 0x49	; 73
+    14e4:	30 e0       	ldi	r19, 0x00	; 0
+    14e6:	40 e1       	ldi	r20, 0x10	; 16
+    14e8:	60 e0       	ldi	r22, 0x00	; 0
+    14ea:	8e e3       	ldi	r24, 0x3E	; 62
+    14ec:	91 e0       	ldi	r25, 0x01	; 1
+    14ee:	9e dc       	rcall	.-1732   	; 0xe2c <WriteStaticString>
+            break;
+
+         case ModeDiagnosticInit:
+            // display diagnostic screen
+            diagnosticInit();
+            screen = ModeDiagnosticUpdate;
+    14f0:	88 e0       	ldi	r24, 0x08	; 8
+    14f2:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <screen>
+            break;
+    14f6:	5d c0       	rjmp	.+186    	; 0x15b2 <DisplayTask+0x1b4>
+}
+
+static void diagnosticUpdate(void)
+{
+   char buffer[10];
+   switch (GetButtonState())
+    14f8:	92 de       	rcall	.-732    	; 0x121e <GetButtonState>
+    14fa:	90 e0       	ldi	r25, 0x00	; 0
+    14fc:	87 30       	cpi	r24, 0x07	; 7
+    14fe:	91 05       	cpc	r25, r1
+    1500:	d8 f5       	brcc	.+118    	; 0x1578 <DisplayTask+0x17a>
+    1502:	fc 01       	movw	r30, r24
+    1504:	e6 5e       	subi	r30, 0xE6	; 230
+    1506:	ff 4f       	sbci	r31, 0xFF	; 255
+    1508:	09 94       	ijmp
+   {
+      case PressedButtonNone:
+         WriteStaticString(font5x8, 40, 0, None);
+    150a:	20 e0       	ldi	r18, 0x00	; 0
+    150c:	30 e0       	ldi	r19, 0x00	; 0
+    150e:	40 e0       	ldi	r20, 0x00	; 0
+    1510:	68 e2       	ldi	r22, 0x28	; 40
+    1512:	8e e3       	ldi	r24, 0x3E	; 62
+    1514:	91 e0       	ldi	r25, 0x01	; 1
+    1516:	8a dc       	rcall	.-1772   	; 0xe2c <WriteStaticString>
+    1518:	2f c0       	rjmp	.+94     	; 0x1578 <DisplayTask+0x17a>
+//         SetMotorDirection(DIRECTION_STOP);
+         break;
+
+      case PressedButtonDown:
+         WriteStaticString(font5x8, 40, 0, Down);
+    151a:	2d e2       	ldi	r18, 0x2D	; 45
+    151c:	30 e0       	ldi	r19, 0x00	; 0
+    151e:	40 e0       	ldi	r20, 0x00	; 0
+    1520:	68 e2       	ldi	r22, 0x28	; 40
+    1522:	8e e3       	ldi	r24, 0x3E	; 62
+    1524:	91 e0       	ldi	r25, 0x01	; 1
+    1526:	82 dc       	rcall	.-1788   	; 0xe2c <WriteStaticString>
+    1528:	27 c0       	rjmp	.+78     	; 0x1578 <DisplayTask+0x17a>
+//         SetMotorDirection(DIRECTION_DOWN);
+         break;
+
+      case PressedButtonDownRepeat:
+         WriteStaticString(font5x8, 40, 0, Down2);
+    152a:	2b e1       	ldi	r18, 0x1B	; 27
+    152c:	30 e0       	ldi	r19, 0x00	; 0
+    152e:	40 e0       	ldi	r20, 0x00	; 0
+    1530:	68 e2       	ldi	r22, 0x28	; 40
+    1532:	8e e3       	ldi	r24, 0x3E	; 62
+    1534:	91 e0       	ldi	r25, 0x01	; 1
+    1536:	7a dc       	rcall	.-1804   	; 0xe2c <WriteStaticString>
+    1538:	1f c0       	rjmp	.+62     	; 0x1578 <DisplayTask+0x17a>
+//         SetMotorDirection(DIRECTION_DOWN);
+         break;
+
+      case PressedButtonUp:
+         WriteStaticString(font5x8, 40, 0, Up);
+    153a:	26 e3       	ldi	r18, 0x36	; 54
+    153c:	30 e0       	ldi	r19, 0x00	; 0
+    153e:	40 e0       	ldi	r20, 0x00	; 0
+    1540:	68 e2       	ldi	r22, 0x28	; 40
+    1542:	8e e3       	ldi	r24, 0x3E	; 62
+    1544:	91 e0       	ldi	r25, 0x01	; 1
+    1546:	72 dc       	rcall	.-1820   	; 0xe2c <WriteStaticString>
+    1548:	17 c0       	rjmp	.+46     	; 0x1578 <DisplayTask+0x17a>
+//         SetMotorDirection(DIRECTION_UP);
+         break;
+
+      case PressedButtonUpRepeat:
+         WriteStaticString(font5x8, 40, 0, Up2);
+    154a:	24 e2       	ldi	r18, 0x24	; 36
+    154c:	30 e0       	ldi	r19, 0x00	; 0
+    154e:	40 e0       	ldi	r20, 0x00	; 0
+    1550:	68 e2       	ldi	r22, 0x28	; 40
+    1552:	8e e3       	ldi	r24, 0x3E	; 62
+    1554:	91 e0       	ldi	r25, 0x01	; 1
+    1556:	6a dc       	rcall	.-1836   	; 0xe2c <WriteStaticString>
+    1558:	0f c0       	rjmp	.+30     	; 0x1578 <DisplayTask+0x17a>
+//         SetMotorDirection(DIRECTION_UP);
+         break;
+
+      case PressedButtonMenu:
+         WriteStaticString(font5x8, 40, 0, Menu);
+    155a:	22 e1       	ldi	r18, 0x12	; 18
+    155c:	30 e0       	ldi	r19, 0x00	; 0
+    155e:	40 e0       	ldi	r20, 0x00	; 0
+    1560:	68 e2       	ldi	r22, 0x28	; 40
+    1562:	8e e3       	ldi	r24, 0x3E	; 62
+    1564:	91 e0       	ldi	r25, 0x01	; 1
+    1566:	62 dc       	rcall	.-1852   	; 0xe2c <WriteStaticString>
+    1568:	07 c0       	rjmp	.+14     	; 0x1578 <DisplayTask+0x17a>
+//         SetMotorDirection(DIRECTION_STOP);
+         break;
+
+      case PressedButtonMenuRepeat:
+         WriteStaticString(font5x8, 40, 0, Menu2);
+    156a:	29 e0       	ldi	r18, 0x09	; 9
+    156c:	30 e0       	ldi	r19, 0x00	; 0
+    156e:	40 e0       	ldi	r20, 0x00	; 0
+    1570:	68 e2       	ldi	r22, 0x28	; 40
+    1572:	8e e3       	ldi	r24, 0x3E	; 62
+    1574:	91 e0       	ldi	r25, 0x01	; 1
+    1576:	5a dc       	rcall	.-1868   	; 0xe2c <WriteStaticString>
+//         SetMotorDirection(DIRECTION_STOP);
+         break;
+   }
+   WriteString(font5x8, 40, 8, int32ToStr(buffer, 6, GetVoltage()));
+    1578:	5d d9       	rcall	.-3398   	; 0x834 <GetVoltage>
+    157a:	9c 01       	movw	r18, r24
+    157c:	99 0f       	add	r25, r25
+    157e:	44 0b       	sbc	r20, r20
+    1580:	55 0b       	sbc	r21, r21
+    1582:	66 e0       	ldi	r22, 0x06	; 6
+    1584:	ce 01       	movw	r24, r28
+    1586:	01 96       	adiw	r24, 0x01	; 1
+    1588:	86 de       	rcall	.-756    	; 0x1296 <int32ToStr>
+    158a:	9c 01       	movw	r18, r24
+    158c:	48 e0       	ldi	r20, 0x08	; 8
+    158e:	68 e2       	ldi	r22, 0x28	; 40
+    1590:	8e e3       	ldi	r24, 0x3E	; 62
+    1592:	91 e0       	ldi	r25, 0x01	; 1
+    1594:	6d da       	rcall	.-2854   	; 0xa70 <WriteString>
+   WriteString(font5x8, 40, 16, int32ToStr(buffer, 8, GetNrSamples()));
+    1596:	8b d9       	rcall	.-3306   	; 0x8ae <GetNrSamples>
+    1598:	9c 01       	movw	r18, r24
+    159a:	40 e0       	ldi	r20, 0x00	; 0
+    159c:	50 e0       	ldi	r21, 0x00	; 0
+    159e:	68 e0       	ldi	r22, 0x08	; 8
+    15a0:	ce 01       	movw	r24, r28
+    15a2:	01 96       	adiw	r24, 0x01	; 1
+    15a4:	78 de       	rcall	.-784    	; 0x1296 <int32ToStr>
+    15a6:	9c 01       	movw	r18, r24
+    15a8:	40 e1       	ldi	r20, 0x10	; 16
+    15aa:	68 e2       	ldi	r22, 0x28	; 40
+    15ac:	8e e3       	ldi	r24, 0x3E	; 62
+    15ae:	91 e0       	ldi	r25, 0x01	; 1
+    15b0:	5f da       	rcall	.-2882   	; 0xa70 <WriteString>
+            // diagnostic screen is displayed
+            diagnosticUpdate();
+            break;
+
+      }
+      TaskSleep(200);
+    15b2:	88 ec       	ldi	r24, 0xC8	; 200
+    15b4:	90 e0       	ldi	r25, 0x00	; 0
+    15b6:	9f d7       	rcall	.+3902   	; 0x24f6 <__TEXT_REGION_LENGTH__+0x4f6>
+   }
+    15b8:	31 cf       	rjmp	.-414    	; 0x141c <DisplayTask+0x1e>
+
+000015ba <GetMotorDirection>:
+static direction_type motorDirection = DIRECTION_STOP;
+
+direction_type GetMotorDirection(void)
+{
+   return motorDirection;
+}
+    15ba:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <motorDirection>
+    15be:	08 95       	ret
+
+000015c0 <SetMotorDirection>:
+
+void SetMotorDirection(direction_type direction)
+{
+   motorDirection = direction;
+    15c0:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <motorDirection>
+    15c4:	08 95       	ret
+
+000015c6 <MotorSetup>:
+}
+
+void MotorSetup(void)
+{
+    15c6:	08 95       	ret
+
+000015c8 <MotorTask>:
+//      }
+//      else
+//      {
+//         motorDirection = DIRECTION_STOP;
+//      }
+      TaskSleep(10);
+    15c8:	8a e0       	ldi	r24, 0x0A	; 10
+    15ca:	90 e0       	ldi	r25, 0x00	; 0
+    15cc:	94 d7       	rcall	.+3880   	; 0x24f6 <__TEXT_REGION_LENGTH__+0x4f6>
+    15ce:	fc cf       	rjmp	.-8      	; 0x15c8 <MotorTask>
+
+000015d0 <__udivmodhi4>:
+    15d0:	aa 1b       	sub	r26, r26
+    15d2:	bb 1b       	sub	r27, r27
+    15d4:	51 e1       	ldi	r21, 0x11	; 17
+    15d6:	07 c0       	rjmp	.+14     	; 0x15e6 <__udivmodhi4_ep>
+
+000015d8 <__udivmodhi4_loop>:
+    15d8:	aa 1f       	adc	r26, r26
+    15da:	bb 1f       	adc	r27, r27
+    15dc:	a6 17       	cp	r26, r22
+    15de:	b7 07       	cpc	r27, r23
+    15e0:	10 f0       	brcs	.+4      	; 0x15e6 <__udivmodhi4_ep>
+    15e2:	a6 1b       	sub	r26, r22
+    15e4:	b7 0b       	sbc	r27, r23
+
+000015e6 <__udivmodhi4_ep>:
+    15e6:	88 1f       	adc	r24, r24
+    15e8:	99 1f       	adc	r25, r25
+    15ea:	5a 95       	dec	r21
+    15ec:	a9 f7       	brne	.-22     	; 0x15d8 <__udivmodhi4_loop>
+    15ee:	80 95       	com	r24
+    15f0:	90 95       	com	r25
+    15f2:	bc 01       	movw	r22, r24
+    15f4:	cd 01       	movw	r24, r26
+    15f6:	08 95       	ret
+
+000015f8 <__udivmodsi4>:
+    15f8:	a1 e2       	ldi	r26, 0x21	; 33
+    15fa:	1a 2e       	mov	r1, r26
+    15fc:	aa 1b       	sub	r26, r26
+    15fe:	bb 1b       	sub	r27, r27
+    1600:	fd 01       	movw	r30, r26
+    1602:	0d c0       	rjmp	.+26     	; 0x161e <__udivmodsi4_ep>
+
+00001604 <__udivmodsi4_loop>:
+    1604:	aa 1f       	adc	r26, r26
+    1606:	bb 1f       	adc	r27, r27
+    1608:	ee 1f       	adc	r30, r30
+    160a:	ff 1f       	adc	r31, r31
+    160c:	a2 17       	cp	r26, r18
+    160e:	b3 07       	cpc	r27, r19
+    1610:	e4 07       	cpc	r30, r20
+    1612:	f5 07       	cpc	r31, r21
+    1614:	20 f0       	brcs	.+8      	; 0x161e <__udivmodsi4_ep>
+    1616:	a2 1b       	sub	r26, r18
+    1618:	b3 0b       	sbc	r27, r19
+    161a:	e4 0b       	sbc	r30, r20
+    161c:	f5 0b       	sbc	r31, r21
+
+0000161e <__udivmodsi4_ep>:
+    161e:	66 1f       	adc	r22, r22
+    1620:	77 1f       	adc	r23, r23
+    1622:	88 1f       	adc	r24, r24
+    1624:	99 1f       	adc	r25, r25
+    1626:	1a 94       	dec	r1
+    1628:	69 f7       	brne	.-38     	; 0x1604 <__udivmodsi4_loop>
+    162a:	60 95       	com	r22
+    162c:	70 95       	com	r23
+    162e:	80 95       	com	r24
+    1630:	90 95       	com	r25
+    1632:	9b 01       	movw	r18, r22
+    1634:	ac 01       	movw	r20, r24
+    1636:	bd 01       	movw	r22, r26
+    1638:	cf 01       	movw	r24, r30
+    163a:	08 95       	ret
+
+0000163c <eeprom_read_byte>:
+    163c:	e1 99       	sbic	0x1c, 1	; 28
+    163e:	fe cf       	rjmp	.-4      	; 0x163c <eeprom_read_byte>
+    1640:	9f bb       	out	0x1f, r25	; 31
+    1642:	8e bb       	out	0x1e, r24	; 30
+    1644:	e0 9a       	sbi	0x1c, 0	; 28
+    1646:	99 27       	eor	r25, r25
+    1648:	8d b3       	in	r24, 0x1d	; 29
+    164a:	08 95       	ret
+
+0000164c <_exit>:
+    164c:	f8 94       	cli
+
+0000164e <__stop_program>:
+    164e:	ff cf       	rjmp	.-2      	; 0x164e <__stop_program>

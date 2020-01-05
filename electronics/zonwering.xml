@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/herman/electronics/zonwering/electronics/zonwering.sch</source>
+    <date>vr 12 jul 2019 08:50:46 CEST</date>
+    <tool>Eeschema 5.0.2-bee76a0~70~ubuntu16.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>zonwering.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="SW2">
+      <value>tactile switch</value>
+      <footprint>Buttons_Switches_SMD:SW_SPST_EVPBF</footprint>
+      <libsource lib="zonwering-rescue" part="SW_PUSH" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF0C35E</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>tactile switch</value>
+      <footprint>Buttons_Switches_SMD:SW_SPST_EVPBF</footprint>
+      <libsource lib="zonwering-rescue" part="SW_PUSH" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF0C3D9</tstamp>
+    </comp>
+    <comp ref="SW3">
+      <value>tactile switch</value>
+      <footprint>Buttons_Switches_SMD:SW_SPST_EVPBF</footprint>
+      <libsource lib="zonwering-rescue" part="SW_PUSH" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF0C40A</tstamp>
+    </comp>
+    <comp ref="VR1">
+      <value>JVR7N391K</value>
+      <footprint>Varistors:RV_Disc_D7_W3.5_P5</footprint>
+      <libsource lib="zonwering-rescue" part="VR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF44DBB</tstamp>
+    </comp>
+    <comp ref="F1">
+      <value>1A slow</value>
+      <footprint>Fuse_Holders_and_Fuses:Fuseholder5x20_horiz_open_Schurter_0031_8201</footprint>
+      <libsource lib="zonwering-rescue" part="Fuse" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF4BAD0</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>LCD5110</value>
+      <footprint>footprints:Nokia_lcd5110</footprint>
+      <libsource lib="zonwering-rescue" part="LCD5110" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF4C7DB</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>LNK302D</value>
+      <footprint>Power_Integrations:SO-8C</footprint>
+      <libsource lib="zonwering-rescue" part="LNK302D" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6C8AF</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>US1M</value>
+      <footprint>Diodes_SMD:SMA_Handsoldering</footprint>
+      <libsource lib="zonwering-rescue" part="D" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CADC</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>US1M</value>
+      <footprint>Diodes_SMD:SMA_Handsoldering</footprint>
+      <libsource lib="zonwering-rescue" part="D" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CB75</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <fields>
+        <field name="voltage">50V</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CBE0</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>2.2uF</value>
+      <footprint>Capacitors_ThroughHole:C_Radial_D8_L11.5_P3.5</footprint>
+      <fields>
+        <field name="voltage">400V</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="CP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CC8F</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>2.2uF</value>
+      <footprint>Capacitors_ThroughHole:C_Radial_D8_L11.5_P3.5</footprint>
+      <fields>
+        <field name="Field4">400V</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="CP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CD0E</tstamp>
+    </comp>
+    <comp ref="L1">
+      <value>100uH</value>
+      <footprint>footprints:Choke_6mm</footprint>
+      <fields>
+        <field name="current">80mA</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="INDUCTOR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CD7B</tstamp>
+    </comp>
+    <comp ref="L2">
+      <value>1mH</value>
+      <footprint>footprints:Choke_6mm</footprint>
+      <fields>
+        <field name="current">150mA</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="INDUCTOR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CE0A</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>100uF</value>
+      <footprint>Capacitors_ThroughHole:C_Radial_D8_L13_P3.8</footprint>
+      <fields>
+        <field name="voltage">16V</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="CP" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CF68</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>47</value>
+      <footprint>footprints:Resistor_14mm</footprint>
+      <fields>
+        <field name="power">2W</field>
+        <field name="type">CRF253-45T47R</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6D9E7</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>BT137S-600E</value>
+      <footprint>TO_SOT_Packages_SMD:TO-252-2Lead</footprint>
+      <libsource lib="zonwering-rescue" part="TRIAC_small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF727BD</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>BT137S-600E</value>
+      <footprint>TO_SOT_Packages_SMD:TO-252-2Lead</footprint>
+      <libsource lib="zonwering-rescue" part="TRIAC_small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF728A4</tstamp>
+    </comp>
+    <comp ref="R32">
+      <value>22</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF78D25</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>CONN_02X03</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_2x03</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_02X03" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7C306</tstamp>
+    </comp>
+    <comp ref="IC1">
+      <value>ATTINY84S</value>
+      <footprint>SMD_Packages:SOIC-14_N</footprint>
+      <libsource lib="zonwering-rescue" part="ATTINY84S" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7D878</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>4.7k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF77EF4</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7892A</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7C264</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>10nF</value>
+      <footprint>footprints:capacitor_RM7.5</footprint>
+      <fields>
+        <field name="voltage">300VAC X2</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7DE2B</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>100pF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7E5C1</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF8255C</tstamp>
+    </comp>
+    <comp ref="R27">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7F6C4</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>47k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7FC3F</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>47k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7FD60</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7FDEB</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80AFD</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80BBE</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80C55</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80CEE</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80D85</tstamp>
+    </comp>
+    <comp ref="R19">
+      <value>100</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80E22</tstamp>
+    </comp>
+    <comp ref="R20">
+      <value>100</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF80EC1</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF84F91</tstamp>
+    </comp>
+    <comp ref="R21">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF85A29</tstamp>
+    </comp>
+    <comp ref="R22">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF85AEC</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>150nF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF8946C</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>470pF</value>
+      <footprint>Capacitors_ThroughHole:C_Disc_D6_P5</footprint>
+      <fields>
+        <field name="voltage">400VAC Y</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF89551</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF8A4C0</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>1</value>
+      <footprint>footprints:Resistor_14mm</footprint>
+      <fields>
+        <field name="power">2W</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF8C723</tstamp>
+    </comp>
+    <comp ref="R26">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF922D8</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>2.2k</value>
+      <footprint>footprints:Resistor_14mm</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF9963B</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>10nF</value>
+      <footprint>footprints:capacitor_RM7.5</footprint>
+      <fields>
+        <field name="voltage">300VAC X2</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF996EE</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>2.2k</value>
+      <footprint>footprints:Resistor_14mm</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF997B3</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>10nF</value>
+      <footprint>footprints:capacitor_RM7.5</footprint>
+      <fields>
+        <field name="voltage">300VAC X2</field>
+      </fields>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF99868</tstamp>
+    </comp>
+    <comp ref="R28">
+      <value>1M</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF9FD20</tstamp>
+    </comp>
+    <comp ref="R31">
+      <value>20K</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6EBC5</tstamp>
+    </comp>
+    <comp ref="R30">
+      <value>12K</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6EC44</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>TLV431</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23_Handsoldering</footprint>
+      <libsource lib="zonwering-rescue" part="TL431" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF6CA30</tstamp>
+    </comp>
+    <comp ref="R29">
+      <value>10</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF7D669</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>1uF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA8704</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>PC817</value>
+      <footprint>Opto-Devices:Optocoupler_SMD_HandSoldering_KPC357_LTV35x_PC357_SingleChannel</footprint>
+      <libsource lib="zonwering-rescue" part="PC817" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA9AD0</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>1M</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF91C21</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>1M</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF9F772</tstamp>
+    </comp>
+    <comp ref="R23">
+      <value>1M</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFC7262</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>100pF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFC885D</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="C" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFC99D2</tstamp>
+    </comp>
+    <comp ref="R25">
+      <value>100k</value>
+      <footprint>Resistors_SMD:R_1206_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFCA372</tstamp>
+    </comp>
+    <comp ref="Q2">
+      <value>BSS138</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23_Handsoldering</footprint>
+      <libsource lib="zonwering-rescue" part="Q_NMOS_GSD" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFD3919</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>BSS138</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23_Handsoldering</footprint>
+      <libsource lib="zonwering-rescue" part="Q_NMOS_GSD" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFD3A0C</tstamp>
+    </comp>
+    <comp ref="Q3">
+      <value>OA3401A</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23_Handsoldering</footprint>
+      <libsource lib="zonwering-rescue" part="Q_PMOS_GSD" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFD43A2</tstamp>
+    </comp>
+    <comp ref="P8">
+      <value>-3.3V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFE1BC9</tstamp>
+    </comp>
+    <comp ref="P9">
+      <value>0V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFE1E3F</tstamp>
+    </comp>
+    <comp ref="P7">
+      <value>sense</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFE2F94</tstamp>
+    </comp>
+    <comp ref="P4">
+      <value>mains</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFE4C83</tstamp>
+    </comp>
+    <comp ref="P6">
+      <value>up</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFE4F3E</tstamp>
+    </comp>
+    <comp ref="P5">
+      <value>down</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFE4FE7</tstamp>
+    </comp>
+    <comp ref="L3">
+      <value>10uH</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="INDUCTOR" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFF0564</tstamp>
+    </comp>
+    <comp ref="P3">
+      <value>key</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X01" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFF2B46</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>CONN_01X07</value>
+      <footprint>footprints:Power_connector_Straight_508_7pin</footprint>
+      <libsource lib="zonwering-rescue" part="CONN_01X07" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFF2ED6</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>1k</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B0092EB</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>ZD 5W 4,7V</value>
+      <footprint>Diodes_ThroughHole:Diode_DO-201AD_Horizontal_RM15</footprint>
+      <libsource lib="zonwering-rescue" part="ZENER" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B015442</tstamp>
+    </comp>
+    <comp ref="R33">
+      <value>100</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="zonwering-rescue" part="R" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B093B4D</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="zonwering-rescue" part="ATTINY84S">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">ATTINY84S</field>
+        <field name="Footprint">SO14</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="power_in"/>
+        <pin num="2" name="(PCINT8/CLKI/XTAL1)PB0" type="BiDi"/>
+        <pin num="3" name="(PCINT9/XTAL2)PB1" type="BiDi"/>
+        <pin num="4" name="RESET/PB3" type="BiDi"/>
+        <pin num="5" name="(PCINT10/CKOUT/OC0A/INT0)PB2" type="BiDi"/>
+        <pin num="6" name="(PCINT7/ICP/OC0B/ADC7)PA7" type="BiDi"/>
+        <pin num="7" name="MOSI/PA6" type="BiDi"/>
+        <pin num="8" name="MISO/PA5" type="BiDi"/>
+        <pin num="9" name="USCK/PA4" type="BiDi"/>
+        <pin num="10" name="(PCINT3/T0/ADC3)PA3" type="BiDi"/>
+        <pin num="11" name="(PCINT2/AIN1/ADC2)PA2" type="BiDi"/>
+        <pin num="12" name="(PCINT1/AIN0/ADC1)PA1" type="BiDi"/>
+        <pin num="13" name="(PCINT0/AREF/ADC0)PA0" type="BiDi"/>
+        <pin num="14" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="C">
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="CONN_01X01">
+      <footprints>
+        <fp>Pin_Header_Straight_1X01</fp>
+        <fp>Pin_Header_Angled_1X01</fp>
+        <fp>Socket_Strip_Straight_1X01</fp>
+        <fp>Socket_Strip_Angled_1X01</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X01</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="CONN_01X07">
+      <footprints>
+        <fp>Pin_Header_Straight_1X07</fp>
+        <fp>Pin_Header_Angled_1X07</fp>
+        <fp>Socket_Strip_Straight_1X07</fp>
+        <fp>Socket_Strip_Angled_1X07</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X07</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="CONN_02X03">
+      <footprints>
+        <fp>Pin_Header_Straight_2X03</fp>
+        <fp>Pin_Header_Angled_2X03</fp>
+        <fp>Socket_Strip_Straight_2X03</fp>
+        <fp>Socket_Strip_Angled_2X03</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_02X03</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="CP">
+      <footprints>
+        <fp>CP*</fp>
+        <fp>Elko*</fp>
+        <fp>TantalC*</fp>
+        <fp>C*elec</fp>
+        <fp>c_elec*</fp>
+        <fp>SMD*_Pol</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="D">
+      <footprints>
+        <fp>Diode_*</fp>
+        <fp>D-Pak_TO252AA</fp>
+        <fp>*SingleDiode</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="Fuse">
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="INDUCTOR">
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">INDUCTOR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="LCD5110">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LCD5110</field>
+      </fields>
+      <pins>
+        <pin num="1" name="RST" type="input"/>
+        <pin num="2" name="CE" type="input"/>
+        <pin num="3" name="DO" type="input"/>
+        <pin num="4" name="DIN" type="input"/>
+        <pin num="5" name="CLK" type="input"/>
+        <pin num="6" name="VDD" type="power_in"/>
+        <pin num="7" name="BL" type="passive"/>
+        <pin num="8" name="VSS" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="LNK302D">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LNK302D</field>
+      </fields>
+      <pins>
+        <pin num="1" name="BP" type="input"/>
+        <pin num="2" name="FB" type="input"/>
+        <pin num="4" name="D" type="power_in"/>
+        <pin num="5" name="S" type="passive"/>
+        <pin num="6" name="S" type="passive"/>
+        <pin num="7" name="S" type="passive"/>
+        <pin num="8" name="S" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="PC817">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">PC817</field>
+        <field name="Footprint">DIP-4</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="passive"/>
+        <pin num="4" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="Q_NMOS_GSD">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NMOS_GSD</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="Q_PMOS_GSD">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_PMOS_GSD</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="R">
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="SW_PUSH">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_PUSH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="TL431">
+      <footprints>
+        <fp>TO-92</fp>
+        <fp>SOT-89</fp>
+        <fp>TO92</fp>
+        <fp>SOT89</fp>
+        <fp>SOT-235</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TL431</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="input"/>
+        <pin num="2" name="REF" type="power_out"/>
+        <pin num="3" name="A" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="TRIAC_small">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TRIAC_small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+        <pin num="3" name="~" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="VR">
+      <fields>
+        <field name="Reference">VR</field>
+        <field name="Value">VR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="zonwering-rescue" part="ZENER">
+      <footprints>
+        <fp>D?</fp>
+        <fp>SO*</fp>
+        <fp>SM*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">ZENER</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="zonwering-rescue">
+      <uri>/home/herman/electronics/zonwering/electronics/zonwering-rescue.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(C13-Pad2)">
+      <node ref="R26" pin="1"/>
+      <node ref="C13" pin="2"/>
+      <node ref="R28" pin="1"/>
+    </net>
+    <net code="2" name="Net-(R29-Pad1)">
+      <node ref="U4" pin="2"/>
+      <node ref="R29" pin="1"/>
+    </net>
+    <net code="3" name="Net-(C6-Pad2)">
+      <node ref="IC1" pin="12"/>
+      <node ref="C6" pin="2"/>
+      <node ref="P4" pin="1"/>
+      <node ref="R10" pin="1"/>
+      <node ref="R11" pin="1"/>
+    </net>
+    <net code="4" name="Net-(R11-Pad2)">
+      <node ref="R11" pin="2"/>
+      <node ref="R8" pin="1"/>
+    </net>
+    <net code="5" name="Net-(C2-Pad2)">
+      <node ref="C2" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="R8" pin="2"/>
+      <node ref="R6" pin="2"/>
+    </net>
+    <net code="6" name="Net-(R25-Pad1)">
+      <node ref="R26" pin="2"/>
+      <node ref="R25" pin="1"/>
+    </net>
+    <net code="7" name="GND">
+      <node ref="C4" pin="2"/>
+      <node ref="R31" pin="2"/>
+      <node ref="P9" pin="1"/>
+      <node ref="R28" pin="2"/>
+      <node ref="P2" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C12" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="C5" pin="2"/>
+      <node ref="R27" pin="1"/>
+      <node ref="R4" pin="2"/>
+      <node ref="R5" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="IC1" pin="1"/>
+      <node ref="C14" pin="1"/>
+      <node ref="U6" pin="6"/>
+      <node ref="C2" pin="1"/>
+      <node ref="R13" pin="2"/>
+      <node ref="L2" pin="1"/>
+      <node ref="F1" pin="1"/>
+      <node ref="VR1" pin="2"/>
+      <node ref="SW1" pin="1"/>
+      <node ref="C9" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="D3" pin="2"/>
+      <node ref="R6" pin="1"/>
+      <node ref="U4" pin="1"/>
+      <node ref="C15" pin="2"/>
+      <node ref="Q3" pin="2"/>
+    </net>
+    <net code="8" name="Net-(R4-Pad1)">
+      <node ref="SW2" pin="1"/>
+      <node ref="R7" pin="2"/>
+      <node ref="R4" pin="1"/>
+    </net>
+    <net code="9" name="Net-(R30-Pad2)">
+      <node ref="U5" pin="2"/>
+      <node ref="R30" pin="2"/>
+      <node ref="R31" pin="1"/>
+    </net>
+    <net code="10" name="Net-(C12-Pad2)">
+      <node ref="U5" pin="1"/>
+      <node ref="R30" pin="1"/>
+      <node ref="P8" pin="1"/>
+      <node ref="L3" pin="1"/>
+      <node ref="C12" pin="2"/>
+      <node ref="D2" pin="2"/>
+    </net>
+    <net code="11" name="nRESET">
+      <node ref="R24" pin="1"/>
+      <node ref="IC1" pin="5"/>
+      <node ref="U6" pin="1"/>
+    </net>
+    <net code="12" name="Net-(Q3-Pad3)">
+      <node ref="Q3" pin="3"/>
+      <node ref="R32" pin="1"/>
+    </net>
+    <net code="13" name="LCDCLK">
+      <node ref="IC1" pin="9"/>
+      <node ref="R3" pin="1"/>
+      <node ref="U6" pin="5"/>
+    </net>
+    <net code="14" name="LCDDin">
+      <node ref="P2" pin="1"/>
+      <node ref="U6" pin="4"/>
+      <node ref="IC1" pin="8"/>
+    </net>
+    <net code="15" name="D/nC">
+      <node ref="U6" pin="3"/>
+      <node ref="IC1" pin="3"/>
+    </net>
+    <net code="16" name="Net-(Q1-Pad3)">
+      <node ref="R19" pin="2"/>
+      <node ref="Q1" pin="3"/>
+    </net>
+    <net code="17" name="Net-(Q2-Pad1)">
+      <node ref="R18" pin="1"/>
+      <node ref="Q2" pin="1"/>
+    </net>
+    <net code="18" name="Net-(R15-Pad1)">
+      <node ref="R18" pin="2"/>
+      <node ref="R15" pin="1"/>
+    </net>
+    <net code="19" name="Net-(Q2-Pad3)">
+      <node ref="Q2" pin="3"/>
+      <node ref="R20" pin="2"/>
+    </net>
+    <net code="20" name="Net-(R14-Pad1)">
+      <node ref="R14" pin="1"/>
+      <node ref="R17" pin="2"/>
+    </net>
+    <net code="21" name="Net-(Q1-Pad1)">
+      <node ref="Q1" pin="1"/>
+      <node ref="R17" pin="1"/>
+    </net>
+    <net code="22" name="Net-(R7-Pad1)">
+      <node ref="SW3" pin="1"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="23" name="Net-(IC1-Pad13)">
+      <node ref="IC1" pin="13"/>
+      <node ref="R1" pin="1"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="SW2" pin="2"/>
+      <node ref="SW3" pin="2"/>
+      <node ref="P3" pin="1"/>
+    </net>
+    <net code="24" name="Net-(IC1-Pad11)">
+      <node ref="R22" pin="2"/>
+      <node ref="P5" pin="1"/>
+      <node ref="R14" pin="2"/>
+      <node ref="IC1" pin="11"/>
+    </net>
+    <net code="25" name="Net-(IC1-Pad10)">
+      <node ref="IC1" pin="10"/>
+      <node ref="P6" pin="1"/>
+      <node ref="R21" pin="2"/>
+      <node ref="R15" pin="2"/>
+    </net>
+    <net code="26" name="Net-(C3-Pad1)">
+      <node ref="C3" pin="1"/>
+      <node ref="R33" pin="2"/>
+    </net>
+    <net code="27" name="Net-(C10-Pad1)">
+      <node ref="R23" pin="1"/>
+      <node ref="R25" pin="2"/>
+      <node ref="P7" pin="1"/>
+      <node ref="C10" pin="1"/>
+      <node ref="IC1" pin="6"/>
+    </net>
+    <net code="28" name="Net-(F1-Pad2)">
+      <node ref="P1" pin="1"/>
+      <node ref="F1" pin="2"/>
+    </net>
+    <net code="29" name="Net-(P1-Pad3)">
+      <node ref="P1" pin="4"/>
+      <node ref="P1" pin="3"/>
+    </net>
+    <net code="30" name="Net-(P1-Pad6)">
+      <node ref="P1" pin="6"/>
+      <node ref="U1" pin="2"/>
+      <node ref="R12" pin="1"/>
+    </net>
+    <net code="31" name="Net-(C4-Pad1)">
+      <node ref="C4" pin="1"/>
+      <node ref="R12" pin="2"/>
+    </net>
+    <net code="32" name="Net-(C8-Pad1)">
+      <node ref="C8" pin="1"/>
+      <node ref="R16" pin="2"/>
+    </net>
+    <net code="33" name="Net-(P1-Pad2)">
+      <node ref="VR1" pin="1"/>
+      <node ref="P1" pin="2"/>
+      <node ref="P1" pin="5"/>
+      <node ref="R9" pin="2"/>
+    </net>
+    <net code="34" name="nCE">
+      <node ref="U6" pin="2"/>
+      <node ref="IC1" pin="2"/>
+      <node ref="Q3" pin="1"/>
+      <node ref="R27" pin="2"/>
+    </net>
+    <net code="35" name="-3V3">
+      <node ref="L3" pin="2"/>
+      <node ref="D3" pin="1"/>
+      <node ref="Q2" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="Q1" pin="2"/>
+      <node ref="C15" pin="1"/>
+      <node ref="R10" pin="2"/>
+      <node ref="R23" pin="2"/>
+      <node ref="R21" pin="1"/>
+      <node ref="R24" pin="2"/>
+      <node ref="R22" pin="1"/>
+      <node ref="C14" pin="2"/>
+      <node ref="U6" pin="8"/>
+      <node ref="P2" pin="6"/>
+      <node ref="R1" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="IC1" pin="14"/>
+    </net>
+    <net code="36" name="Net-(U3-Pad2)">
+      <node ref="U4" pin="3"/>
+      <node ref="U3" pin="2"/>
+    </net>
+    <net code="37" name="Net-(C11-Pad1)">
+      <node ref="U4" pin="4"/>
+      <node ref="U3" pin="1"/>
+      <node ref="C11" pin="1"/>
+    </net>
+    <net code="38" name="Net-(C11-Pad2)">
+      <node ref="D2" pin="1"/>
+      <node ref="L2" pin="2"/>
+      <node ref="C11" pin="2"/>
+      <node ref="U3" pin="8"/>
+      <node ref="U3" pin="7"/>
+      <node ref="U3" pin="5"/>
+      <node ref="U3" pin="6"/>
+    </net>
+    <net code="39" name="Net-(C7-Pad1)">
+      <node ref="C7" pin="1"/>
+      <node ref="D1" pin="1"/>
+      <node ref="L1" pin="1"/>
+    </net>
+    <net code="40" name="Net-(C9-Pad1)">
+      <node ref="U3" pin="4"/>
+      <node ref="L1" pin="2"/>
+      <node ref="C9" pin="1"/>
+    </net>
+    <net code="41" name="Net-(R32-Pad2)">
+      <node ref="R32" pin="2"/>
+      <node ref="U6" pin="7"/>
+    </net>
+    <net code="42" name="/CLK">
+      <node ref="R3" pin="2"/>
+      <node ref="P2" pin="3"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="43" name="/RST">
+      <node ref="IC1" pin="4"/>
+      <node ref="P2" pin="5"/>
+      <node ref="R5" pin="2"/>
+    </net>
+    <net code="44" name="/MOSI">
+      <node ref="P2" pin="4"/>
+      <node ref="IC1" pin="7"/>
+    </net>
+    <net code="45" name="Net-(C5-Pad1)">
+      <node ref="D1" pin="2"/>
+      <node ref="C5" pin="1"/>
+      <node ref="R33" pin="1"/>
+      <node ref="R9" pin="1"/>
+    </net>
+    <net code="46" name="SENSE">
+      <node ref="U2" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="R13" pin="1"/>
+      <node ref="C13" pin="1"/>
+    </net>
+    <net code="47" name="DOWN">
+      <node ref="R19" pin="1"/>
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="48" name="Net-(P1-Pad7)">
+      <node ref="U2" pin="2"/>
+      <node ref="P1" pin="7"/>
+      <node ref="R16" pin="1"/>
+    </net>
+    <net code="49" name="UP">
+      <node ref="R20" pin="1"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="50" name="Net-(R29-Pad2)">
+      <node ref="R29" pin="2"/>
+      <node ref="U5" pin="3"/>
+    </net>
+  </nets>
+</export>
