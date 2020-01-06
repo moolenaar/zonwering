@@ -1,8 +1,5 @@
-/* 
- * button.h
- *
- * Copyright 2019 Herman Moolenaar
- * 
+/* mainscreen.h
+ * Copyright 2020 Herman Moolenaar
  * This file is part of zonwering.
  *
  * zonwering is free software: you can redistribute it and/or modify
@@ -19,24 +16,12 @@
  * along with zonwering. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BUTTON_H
-#define BUTTON_H
+#ifndef MAINSCREEN_H
+#define MAINSCREEN_H
 
 #include "general.h"
 
-enum PressedButtonState
-{
-   PressedButtonNone = 0,
-   PressedButtonDown,
-   PressedButtonDownRepeat,
-   PressedButtonUp,
-   PressedButtonUpRepeat,
-   PressedButtonMenu,
-   PressedButtonMenuRepeat
-};
+void mainScreenInit(void);
+void mainScreenUpdate(void);
 
-extern void ButtonTask(void);
-extern enum PressedButtonState GetButtonState(void);
-extern enum PressedButtonState GetButtonPressed(void);
-
-#endif // BUTTONS_H
+#endif

@@ -36,7 +36,7 @@ int16_t GetVoltage(void)
    {
       value = button; //voltage;
    }
-   return value; // * 4 / 3;
+   return value * 4 / 3;
 }
 
 enum ButtonAdc GetAdcButton(void)
@@ -96,23 +96,11 @@ ISR (ADC_vect)
       // next adc measurement will be zero crossing
       ADMUX = 1;
       OCR1B = 0;
-      MotorDirection(DIRECTION_STOP);
+      MotorDirection(GetMotorDirection());
    }
    else
    {
       // zero crossing
-      MotorDirection(DIRECTION_UP);//GetMotorDirection());
-
-//      if ((OCR1A < COUNTER_TIME_50HZ + COUNTER_DELTA) && (ADC < 465))
-//      {
-//         OCR1A = OCR1A + 1 + step;
-//         OCR1A = OCR1A + 1 + (465 - ADC) / 2;
-//      }
-//      else if ((OCR1A > COUNTER_TIME_50HZ - COUNTER_DELTA) && (ADC > 465))
-//      {
-//         OCR1A = OCR1A - 1 - step;
-//         OCR1A = OCR1A - 1 - (ADC - 465) / 2;
-//      }
       OCR1A = average + (465 - ADC);
       average = (average * 9 + OCR1A) / 10;
       if (average > COUNTER_TIME_50HZ + COUNTER_DELTA) average = COUNTER_TIME_50HZ + COUNTER_DELTA;

@@ -24,53 +24,16 @@
 #include "adc.h"
 #include "motor.h"
 #include "button.h"
+#include "diagnosticscreen.h"
+#include "closingtimescreen.h"
+#include "mainscreen.h"
 
-uint8_t current;
 uint8_t screen = 0;
 
 static char EEMEM ProductTitle[20] = "Sun Blind Control";
 static char EEMEM ProductVersion[20] = "version 1.0";
-static char EEMEM ProgressOutline[20] = "[==============]";
-static char EEMEM ProgressLine[2] = "/ ";
-static char EEMEM Voltage[10] = "Voltage:";
-static char EEMEM Samples[10] = "Samples:";
-static char EEMEM Button[10] = "Button:";
-static char EEMEM Up[9]    = "Up";
-static char EEMEM Down[9]  = "Down";
-static char EEMEM Up2[9]   = "Up 2";
-static char EEMEM Down2[9] = "Down 2";
-static char EEMEM Menu[9]  = "Menu";
-static char EEMEM Menu2[9] = "Menu 2";
-static char EEMEM None[9]  = "        ";
 
-
-static void ProgressBarSetup(void)
-{
-   WriteStaticString(lines5x12, 2, 2, ProgressOutline);
-}
-
-static void ProgressBar(uint8_t percent)
-{
-   percent = (uint16_t)percent * 77 / 100;
-   if(percent > current)
-   {
-      for (uint8_t i = current; i < percent; ++i)
-      {
-         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[0]);
-      }
-   }
-   else if (percent < current)
-   {
-      for (uint8_t i = current; i > percent; --i)
-      {
-         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[1]);
-      }
-   }
-
-   current = percent;
-}
-
-static char* int32ToStr(char* buffer, uint8_t before, int32_t value)
+char* int32ToStr(char* buffer, uint8_t before, int32_t value)
 {
    int8_t i;
    uint32_t divide = 1;
@@ -119,72 +82,6 @@ static void displayProductTitle(void)
    WriteStaticString(font5x8, 0, 10, ProductTitle);
    WriteStaticString(font5x8, 10, 24, ProductVersion);
    TaskSleep(2000);
-}
-
-static void mainScreenInit(void)
-{
-   char buffer[9];
-
-   Clear();
-   ProgressBarSetup();
-   WriteString(font6x10, 3, 18, int32ToStr(buffer, 3, 0));
-}
-
-static void mainScreenUpdate(void)
-{
-   ProgressBar(0);
-}
-
-static void diagnosticInit(void)
-{
-   Clear();
-   WriteStaticString(font5x8, 0, 0, Button);
-   WriteStaticString(font5x8, 0, 8, Voltage);
-   WriteStaticString(font5x8, 0, 16, Samples);
-}
-
-static void diagnosticUpdate(void)
-{
-   char buffer[10];
-   switch (GetButtonState())
-   {
-      case PressedButtonNone:
-         WriteStaticString(font5x8, 40, 0, None);
-//         SetMotorDirection(DIRECTION_STOP);
-         break;
-
-      case PressedButtonDown:
-         WriteStaticString(font5x8, 40, 0, Down);
-//         SetMotorDirection(DIRECTION_DOWN);
-         break;
-
-      case PressedButtonDownRepeat:
-         WriteStaticString(font5x8, 40, 0, Down2);
-//         SetMotorDirection(DIRECTION_DOWN);
-         break;
-
-      case PressedButtonUp:
-         WriteStaticString(font5x8, 40, 0, Up);
-//         SetMotorDirection(DIRECTION_UP);
-         break;
-
-      case PressedButtonUpRepeat:
-         WriteStaticString(font5x8, 40, 0, Up2);
-//         SetMotorDirection(DIRECTION_UP);
-         break;
-
-      case PressedButtonMenu:
-         WriteStaticString(font5x8, 40, 0, Menu);
-//         SetMotorDirection(DIRECTION_STOP);
-         break;
-
-      case PressedButtonMenuRepeat:
-         WriteStaticString(font5x8, 40, 0, Menu2);
-//         SetMotorDirection(DIRECTION_STOP);
-         break;
-   }
-   WriteString(font5x8, 40, 8, int32ToStr(buffer, 6, GetVoltage()));
-   WriteString(font5x8, 40, 16, int32ToStr(buffer, 8, GetNrSamples()));
 }
 
 //static char* floatToStr(char* buffer, uint8_t before, uint8_t after, float value)
@@ -246,7 +143,6 @@ void DisplayTask()
             // write product title and software version
             displayProductTitle();
             screen = ModeMainScreenInit;
-            screen = ModeDiagnosticInit;
             break;
 
          case ModeMainScreenInit:
@@ -262,12 +158,13 @@ void DisplayTask()
 
          case ModeAskClosingTimeInit:
             // ask user to input time before closing the sun blinds
-            Clear();
+            closingTimeInit();
             screen = ModeAskClosingTimeUpdate;
             break;
 
          case ModeAskClosingTimeUpdate:
             // update the input time screen
+            closingTimeUpdate();
             break;
 
          case ModeAskFullOpenInit:
@@ -290,7 +187,10 @@ void DisplayTask()
             // diagnostic screen is displayed
             diagnosticUpdate();
             break;
-
+   
+         default:
+         screen = ModeProductTitle;
+            break;
       }
       TaskSleep(200);
    }

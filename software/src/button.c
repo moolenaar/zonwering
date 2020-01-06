@@ -74,6 +74,30 @@ static inline void CheckButtonPress(void)
    }
 }
 
+enum PressedButtonState GetButtonPressed(void)
+{
+   static uint8_t oldButton = PressedButtonNone;
+   uint8_t result;
+
+   if (pressedButton == PressedButtonNone)
+   {
+      result = oldButton;
+   }
+   
+   if ((pressedButton == PressedButtonDownRepeat) ||
+        (pressedButton == PressedButtonUpRepeat) ||
+        (pressedButton == PressedButtonMenuRepeat))
+   {
+      oldButton = PressedButtonNone;
+   }
+   else
+   {
+      oldButton = pressedButton;
+   }
+   
+   return result;
+}
+
 enum PressedButtonState GetButtonState(void)
 {
    return pressedButton;
