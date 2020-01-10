@@ -23,5 +23,6 @@
 
 void mainScreenInit(void);
 void mainScreenUpdate(void);
+void mainScreenKey(enum PressedButtonState key);
 
 #endif

@@ -17,6 +17,7 @@
  */
 
 #include <avr/eeprom.h>
+#include <stdbool.h>
 #include "lcd.h"
 #include "font.h"
 #include "kernel.h"
@@ -26,7 +27,7 @@
 #include "display.h"
 
 static char EEMEM ProgressOutline[20] = "[==============]";
-static char EEMEM ProgressLine[2] = "/ ";
+static char EEMEM ProgressLine[2] = "/";
 
 uint8_t openPercent = 0;
 uint8_t current;
@@ -38,7 +39,7 @@ static void ProgressBarSetup(void)
 
 static void ProgressBar(uint8_t percent)
 {
-   percent = (uint16_t)percent * 77 / 100;
+   percent = (uint16_t)(percent % 100) * 77 / 100;
    if(percent > current)
    {
       for (uint8_t i = current; i < percent; ++i)
@@ -66,42 +67,61 @@ void mainScreenInit(void)
    WriteString(font6x10, 3, 18, int32ToStr(buffer, 3, 0));
 }
 
-void mainScreenUpdate(void)
+static void test(uint8_t value)
 {
-   ProgressBar(0);
+   char buffer[10];
+   WriteString(font5x8, 10, 40, int32ToStr(buffer, 6, value));
+}
 
-   switch (GetButtonPressed())
+void mainScreenKey(enum PressedButtonState key)
+{
+   test(key);
+   switch (key)
    {
-      case PressedButtonMenu:
-         SetScreenMode(ModeAskClosingTimeInit);
-         break;      
-
       case PressedButtonDown:
-         if (openPercent < 100) openPercent += 25; 
+         MotorOpen();
+         break;
+
+      case PressedButtonDownRepeat:
+         break;
+
+      case PressedButtonDownKey:
+         if (openPercent < 100) openPercent += 25;
+         MotorOpenPercent(openPercent);
          break;
 
       case PressedButtonUp:
-         if (openPercent >0) openPercent -= 25; 
+         MotorClose();
+         break;
+
+      case PressedButtonUpRepeat:
+         break;
+
+      case PressedButtonUpKey:
+         if (openPercent >= 25) openPercent -= 25;
+         MotorOpenPercent(openPercent);
+         break;
+
+      case PressedButtonMenu:
+         break;
+
+      case PressedButtonMenuRepeat:
+         break;
+
+      case PressedButtonMenuKey:
+         SetScreenMode(ModeAskClosingTimeInit);
+         break;
+
+      case PressedButtonNone:
+         MotorStop();
          break;
 
       default:
-         switch (GetButtonState())
-         {
-            case PressedButtonNone:
-               SetMotorDirection(DIRECTION_STOP);
-               break;
-
-            case PressedButtonDownRepeat:
-               SetMotorDirection(DIRECTION_DOWN);
-               break;
-
-            case PressedButtonUpRepeat:
-               SetMotorDirection(DIRECTION_UP);
-               break;
-
-            default:
-               break;
-         }
          break;
    }
+}
+
+void mainScreenUpdate(void)
+{
+   ProgressBar(MotorProgress());
 }

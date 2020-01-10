@@ -48,43 +48,43 @@ void diagnosticInit(void)
 void diagnosticUpdate(void)
 {
    char buffer[10];
-   switch (GetButtonState())
-   {
-      case PressedButtonNone:
-         WriteStaticString(font5x8, 40, 0, None);
-         SetMotorDirection(DIRECTION_STOP);
-         break;
+   // switch (GetButtonState())
+   // {
+   //    case PressedButtonNone:
+   //       WriteStaticString(font5x8, 40, 0, None);
+   //       MotorStop();
+   //       break;
 
-      case PressedButtonDown:
-         WriteStaticString(font5x8, 40, 0, Down);
-         SetMotorDirection(DIRECTION_DOWN);
-         break;
+   //    case PressedButtonDown:
+   //       WriteStaticString(font5x8, 40, 0, Down);
+   //       MotorOpen();
+   //       break;
 
-      case PressedButtonDownRepeat:
-         WriteStaticString(font5x8, 40, 0, Down2);
-         SetMotorDirection(DIRECTION_DOWN);
-         break;
+   //    case PressedButtonDownRepeat:
+   //       WriteStaticString(font5x8, 40, 0, Down2);
+   //       MotorOpen();
+   //       break;
 
-      case PressedButtonUp:
-         WriteStaticString(font5x8, 40, 0, Up);
-         SetMotorDirection(DIRECTION_UP);
-         break;
+   //    case PressedButtonUp:
+   //       WriteStaticString(font5x8, 40, 0, Up);
+   //       MotorClose();
+   //       break;
 
-      case PressedButtonUpRepeat:
-         WriteStaticString(font5x8, 40, 0, Up2);
-         SetMotorDirection(DIRECTION_UP);
-         break;
+   //    case PressedButtonUpRepeat:
+   //       WriteStaticString(font5x8, 40, 0, Up2);
+   //       MotorClose();
+   //       break;
 
-      case PressedButtonMenu:
-         WriteStaticString(font5x8, 40, 0, Menu);
-         SetMotorDirection(DIRECTION_STOP);
-         break;
+   //    case PressedButtonMenu:
+   //       WriteStaticString(font5x8, 40, 0, Menu);
+   //       MotorStop();
+   //       break;
 
-      case PressedButtonMenuRepeat:
-         WriteStaticString(font5x8, 40, 0, Menu2);
-         SetMotorDirection(DIRECTION_STOP);
-         break;
-   }
-   WriteString(font5x8, 40, 8, int32ToStr(buffer, 6, GetVoltage()));
-   WriteString(font5x8, 40, 16, int32ToStr(buffer, 8, GetNrSamples()));
+   //    case PressedButtonMenuRepeat:
+   //       WriteStaticString(font5x8, 40, 0, Menu2);
+   //       MotorStop();
+   //       break;
+   // }
+   // WriteString(font5x8, 40, 8, int32ToStr(buffer, 6, GetVoltage()));
+   // WriteString(font5x8, 40, 16, int32ToStr(buffer, 8, GetNrSamples()));
 }

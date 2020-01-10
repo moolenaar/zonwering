@@ -17,6 +17,7 @@
  */
 
 #include <avr/eeprom.h>
+#include <stdbool.h>
 #include "lcd.h"
 #include "font.h"
 #include "button.h"
@@ -30,6 +31,15 @@ static char EEMEM WaitTitle2[20]  = "closing blinds...";
 static char EEMEM Semicolon[2]   = ".";
 static char EEMEM Hour[2]   = "h";
 
+static void updateTime(void)
+{
+   char buffer[9];
+
+   WriteString(font6x10, 2, 20, int32ToStr(buffer, 2, delayTime / 60));
+   WriteString(font6x10, 27, 20, int32ToStr(buffer, 2, delayTime % 60));
+
+}
+
 void closingTimeInit(void)
 {
    Clear();
@@ -39,17 +49,11 @@ void closingTimeInit(void)
    WriteStaticString(font5x8, 60, 20, Hour);
 }
 
-void closingTimeUpdate(void)
+void ClosingTimeKey(enum PressedButtonState key)
 {
-   char buffer[9];
-
-   switch (GetButtonPressed())
+   switch (key)
    {
-      case PressedButtonMenu:
-         SetScreenMode(ModeMainScreenInit);
-         break;      
-
-      case PressedButtonDown:
+      case PressedButtonDownKey:
          if (delayTime < 720 - 30)
          {
             delayTime += 30;
@@ -60,7 +64,7 @@ void closingTimeUpdate(void)
          }
          break;
 
-      case PressedButtonUp:
+      case PressedButtonUpKey:
          if (delayTime > 30)
          {
             delayTime -= 30;
@@ -71,37 +75,17 @@ void closingTimeUpdate(void)
          }
          break;
 
+      case PressedButtonMenuKey:
+         SetScreenMode(ModeMainScreenInit);
+         break;
+
       default:
-         switch (GetButtonState())
-         {
-            case PressedButtonDownRepeat:
-               if (delayTime < 720 - 5)
-               {
-                  delayTime += 5;
-               }
-               else
-               {
-                  delayTime = 720;
-               }
-               break;
-
-            case PressedButtonUpRepeat:
-               if (delayTime > 5)
-               {
-                  delayTime -= 5;
-               }
-               else
-               {
-                  delayTime = 0;
-               }
-               break;
-
-            default:
-               break;
-         }
          break;
    }
+   updateTime();
+}
 
-   WriteString(font6x10, 2, 20, int32ToStr(buffer, 2, delayTime / 60));
-   WriteString(font6x10, 27, 20, int32ToStr(buffer, 2, delayTime % 60));
+void closingTimeUpdate(void)
+{
+   updateTime();
 }

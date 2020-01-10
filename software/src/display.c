@@ -116,11 +116,6 @@ static void displayProductTitle(void)
 //   return buffer;
 //}
 
-void DisplaySetup(void)
-{
-   LcdSetup();
-}
-
 enum ScreenModeType GetScreenMode(void)
 {
    return screen;
@@ -131,68 +126,64 @@ void SetScreenMode(enum ScreenModeType screenMode)
    screen = screenMode;
 }
 
-void DisplayTask()
+void HandleDisplay(void)
 {
-   LcdInitialize();
-
-   while (true)
+   switch(screen)
    {
-      switch(screen)
-      {
-         case ModeProductTitle:
-            // write product title and software version
-            displayProductTitle();
-            screen = ModeMainScreenInit;
-            break;
+      case ModeProductTitle:
+         // write product title and software version
+         displayProductTitle();
+         screen = ModeMainScreenInit;
+         break;
 
-         case ModeMainScreenInit:
-            // display main screen with progress bar and percent blinds lowered
-            mainScreenInit();
-            screen = ModeMainScreenUpdate;
-            break;
+      case ModeMainScreenInit:
+         // display main screen with progress bar and percent blinds lowered
+         mainScreenInit();
+         SetKeyHandler(mainScreenKey);
+         screen = ModeMainScreenUpdate;
+         break;
 
-         case ModeMainScreenUpdate:
-            // update main screen
-            mainScreenUpdate();
-            break;
+      case ModeMainScreenUpdate:
+         // update main screen
+         mainScreenUpdate();
+         break;
 
-         case ModeAskClosingTimeInit:
-            // ask user to input time before closing the sun blinds
-            closingTimeInit();
-            screen = ModeAskClosingTimeUpdate;
-            break;
+      case ModeAskClosingTimeInit:
+         // ask user to input time before closing the sun blinds
+         closingTimeInit();
+         SetKeyHandler(ClosingTimeKey);
+         screen = ModeAskClosingTimeUpdate;
+         break;
 
-         case ModeAskClosingTimeUpdate:
-            // update the input time screen
-            closingTimeUpdate();
-            break;
+      case ModeAskClosingTimeUpdate:
+         // update the input time screen
+         closingTimeUpdate();
+         break;
 
-         case ModeAskFullOpenInit:
-            // display screen to input time to open sun blinds 100%
-            Clear();
-            screen = ModeAskFullOpenUpdate;
-            break;
+      case ModeAskFullOpenInit:
+         // display screen to input time to open sun blinds 100%
+         Clear();
+         screen = ModeAskFullOpenUpdate;
+         break;
 
-         case ModeAskFullOpenUpdate:
-            // screen to input 100% open time is displayed
-            break;
+      case ModeAskFullOpenUpdate:
+         // screen to input 100% open time is displayed
+         break;
 
-         case ModeDiagnosticInit:
-            // display diagnostic screen
-            diagnosticInit();
-            screen = ModeDiagnosticUpdate;
-            break;
+      case ModeDiagnosticInit:
+         // display diagnostic screen
+         diagnosticInit();
+         screen = ModeDiagnosticUpdate;
+         break;
 
-         case ModeDiagnosticUpdate:
-            // diagnostic screen is displayed
-            diagnosticUpdate();
-            break;
-   
-         default:
+      case ModeDiagnosticUpdate:
+         // diagnostic screen is displayed
+         diagnosticUpdate();
+         break;
+
+      default:
          screen = ModeProductTitle;
-            break;
-      }
-      TaskSleep(200);
+         break;
    }
 }
 

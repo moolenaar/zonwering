@@ -2,8 +2,8 @@
 MCU_TARGET        = attiny84
 AVRDUDETARGET     = t84
 TARGET            = zonwering
-SRC               = main.c kernel.c font.c adc.c lcd.c digitaloutput.c button.c display.c motor.c \
-                    mainscreen.c diagnosticscreen.c closingtimescreen.c
+SRC               = main.c kernel.c font.c adc.c lcd.c button.c display.c motor.c \
+                    mainscreen.c diagnosticscreen.c closingtimescreen.c clock.c
 OPTIMIZE          = -O
 LIBS              = 
 INCFLAGS          =

@@ -36,7 +36,7 @@ void LcdSetup(void)
    PORTB |= (1 << PORTB2);   // nRESET high
 }
 
-void EnableLcd(enum boolean enable)
+void EnableLcd(bool enable)
 {
    if (enable)
    {

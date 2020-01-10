@@ -21,8 +21,14 @@
 
 #include "general.h"
 
-extern void ClockSetup(void);
-extern void ClockTask(void);
+void StartTime(void);
+uint16_t GetTime(void);
+void HandleClock(void);
+void StartDown(void);
+void StartUp(void);
+void StopUpDown(void);
+void ResetUpDown(void);
+uint16_t GetUpDownTime(void);
 
 #endif
 

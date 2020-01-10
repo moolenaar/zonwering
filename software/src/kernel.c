@@ -21,6 +21,7 @@
 #include <avr/interrupt.h>
 #include <util/atomic.h>
 #include <avr/sleep.h>
+#include <stdbool.h>
 
 // task stack structure:
 // stack start address 0  return address low  (buffer address + buffer size - 1) 

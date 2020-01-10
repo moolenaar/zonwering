@@ -34,9 +34,7 @@ enum ScreenModeType
    ModeDiagnosticUpdate
 };
 
-
-extern void DisplaySetup(void);
-extern void DisplayTask(void);
+extern void HandleDisplay(void);
 extern enum ScreenModeType GetScreenMode(void);
 extern void SetScreenMode(enum ScreenModeType screenMode);
 extern char* int32ToStr(char* buffer, uint8_t before, int32_t value);

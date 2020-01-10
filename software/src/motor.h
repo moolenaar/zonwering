@@ -20,10 +20,21 @@
 #define MOTOR_H
 
 #include "general.h"
-#include "digitaloutput.h"
 
+typedef enum
+{
+   DIRECTION_STOP,
+   DIRECTION_UP,
+   DIRECTION_DOWN
+} direction_type;
+
+void SetMotorOutput(direction_type direction);
 direction_type GetMotorDirection(void);
-void SetMotorDirection(direction_type direction);
+void MotorOpenPercent(uint8_t value);
+void MotorOpen(void);
+void MotorClose(void);
+void MotorStop(void);
+uint8_t MotorProgress(void);
 void MotorSetup(void);
 void MotorTask(void);
 

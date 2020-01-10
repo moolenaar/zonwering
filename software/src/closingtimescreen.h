@@ -23,5 +23,6 @@
 
 void closingTimeInit(void);
 void closingTimeUpdate(void);
+void ClosingTimeKey(enum PressedButtonState key);
 
 #endif

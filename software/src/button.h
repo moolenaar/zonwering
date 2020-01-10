@@ -26,17 +26,20 @@
 
 enum PressedButtonState
 {
-   PressedButtonNone = 0,
-   PressedButtonDown,
+   PressedButtonDown = 0,
    PressedButtonDownRepeat,
+   PressedButtonDownKey,
    PressedButtonUp,
    PressedButtonUpRepeat,
+   PressedButtonUpKey,
    PressedButtonMenu,
-   PressedButtonMenuRepeat
+   PressedButtonMenuRepeat,
+   PressedButtonMenuKey,
+   PressedButtonNone
 };
 
-extern void ButtonTask(void);
-extern enum PressedButtonState GetButtonState(void);
-extern enum PressedButtonState GetButtonPressed(void);
+void ButtonSetup(void);
+void ButtonTask(void);
+void SetKeyHandler(void (*handler)(enum PressedButtonState));
 
 #endif // BUTTONS_H

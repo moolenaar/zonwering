@@ -22,10 +22,13 @@
 #include "kernel.h"
 #include "button.h"
 #include "adc.h"
+#include "lcd.h"
+#include "display.h"
 
 #define LONGPRESS 100
 
 static enum PressedButtonState pressedButton;
+static void (*keyHandler)(enum PressedButtonState);
 
 static inline enum PressedButtonState AdcButtonToPressedButton(enum ButtonAdc adcButton)
 {
@@ -49,8 +52,20 @@ static inline void CheckButtonPress(void)
    if (oldAdcButton != newAdcButton)
    {
       count = 0;
+      if (keyHandler)
+      {
+         if (pressedButton % 3 == 1)
+         {
+            pressedButton = PressedButtonNone;
+         }
+         else
+         {
+            pressedButton += 2;
+         }
+         
+         keyHandler(pressedButton);
+      }
       oldAdcButton = newAdcButton;
-      pressedButton = PressedButtonNone;
    }
 
    if (newAdcButton != ButtonAdcNone)
@@ -60,12 +75,12 @@ static inline void CheckButtonPress(void)
       if (count == 5)
       {
          pressedButton = AdcButtonToPressedButton(newAdcButton);
-         // do something with the key press
+         if (keyHandler) keyHandler(pressedButton);
       }
       else if (count == LONGPRESS)
       {
          pressedButton++;
-         // do something with the key press
+         if (keyHandler) keyHandler(pressedButton);
       }
       else if (count > LONGPRESS)
       {
@@ -74,33 +89,15 @@ static inline void CheckButtonPress(void)
    }
 }
 
-enum PressedButtonState GetButtonPressed(void)
+void SetKeyHandler(void (*handler)(enum PressedButtonState))
 {
-   static uint8_t oldButton = PressedButtonNone;
-   uint8_t result;
-
-   if (pressedButton == PressedButtonNone)
-   {
-      result = oldButton;
-   }
-   
-   if ((pressedButton == PressedButtonDownRepeat) ||
-        (pressedButton == PressedButtonUpRepeat) ||
-        (pressedButton == PressedButtonMenuRepeat))
-   {
-      oldButton = PressedButtonNone;
-   }
-   else
-   {
-      oldButton = pressedButton;
-   }
-   
-   return result;
+   keyHandler = handler;
 }
 
-enum PressedButtonState GetButtonState(void)
+void ButtonSetup(void)
 {
-   return pressedButton;
+   LcdSetup();
+   LcdInitialize();
 }
 
 void ButtonTask(void)
@@ -108,7 +105,8 @@ void ButtonTask(void)
    while (true)
    {
       CheckButtonPress();
-      
-      TaskSleep(10);
+      TaskSleep(5);
+      HandleDisplay();
+      TaskSleep(5);
    }
 }

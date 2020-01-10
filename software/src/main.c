@@ -19,8 +19,6 @@
 #include <stdlib.h>
 #include <general.h>
 #include "kernel.h"
-#include "digitaloutput.h"
-#include "display.h"
 #include "adc.h"
 #include "motor.h"
 #include "button.h"
@@ -28,17 +26,14 @@
 
 //#define test
 
-#define DISPLAYSTACKSIZE MINIMUMSTACKSIZE + 40
-uint8_t displayStack[DISPLAYSTACKSIZE];
-
-#define MOTORSTACKSIZE MINIMUMSTACKSIZE + 2
+#define MOTORSTACKSIZE MINIMUMSTACKSIZE + 22
 uint8_t motorStack[MOTORSTACKSIZE];
 
-#define BUTTONSTACKSIZE MINIMUMSTACKSIZE + 2
+#define BUTTONSTACKSIZE MINIMUMSTACKSIZE + 40
 uint8_t buttonStack[BUTTONSTACKSIZE];
 
-#define DIGITALOUTPUTSTACKSIZE MINIMUMSTACKSIZE + 12
-uint8_t digitalOutputStack[DIGITALOUTPUTSTACKSIZE];
+// #define DIGITALOUTPUTSTACKSIZE MINIMUMSTACKSIZE + 12
+// uint8_t digitalOutputStack[DIGITALOUTPUTSTACKSIZE];
 
 #ifdef test
 
@@ -62,18 +57,15 @@ void TestTask(void)
 int main (void)
 {
    KernelSetup();
-   DigitalOutputSetup();
-   DisplaySetup();
    AdcSetup();
    MotorSetup();
+   ButtonSetup();
 
 #ifdef test
    InitTask(TESTSTACKSIZE, testStack, TestTask);
 #else
-   InitTask(DISPLAYSTACKSIZE, displayStack, DisplayTask);
    InitTask(MOTORSTACKSIZE, motorStack, MotorTask);
    InitTask(BUTTONSTACKSIZE, buttonStack, ButtonTask);
-   InitTask(DIGITALOUTPUTSTACKSIZE, digitalOutputStack, DigitalOutputTask);
 #endif
 
    StartKernel(NULL);

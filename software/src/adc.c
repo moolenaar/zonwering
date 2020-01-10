@@ -22,6 +22,7 @@
 #include "kernel.h"
 #include "stdlib.h"
 #include "motor.h"
+#include "clock.h"
 
 #define COUNTER_TIME_50HZ (2500 - 1)
 #define COUNTER_DELAY_BUTTON (1000 - 1)
@@ -96,7 +97,7 @@ ISR (ADC_vect)
       // next adc measurement will be zero crossing
       ADMUX = 1;
       OCR1B = 0;
-      MotorDirection(GetMotorDirection());
+      SetMotorOutput(GetMotorDirection());
    }
    else
    {
@@ -111,4 +112,6 @@ ISR (ADC_vect)
       OCR1B = COUNTER_DELAY_BUTTON;
    }
    TIFR1 = (1 << TOV1) | (1 << OCF1B) | (1 << OCF1A) | (1 << ICF1);
+
+   HandleClock();
 }

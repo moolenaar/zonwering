@@ -16,18 +16,54 @@
  * along with zonwering. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "kernel.h"
 
-void ClockSetup(void)
+#include "clock.h"
+#include <stdbool.h>
+
+static volatile uint32_t timeCounter = 0;
+static volatile uint16_t upDownCounter = 0;
+static volatile int8_t step = 0;
+
+void StartTime(void)
 {
-
+   timeCounter = 0;
 }
 
-void ClockTask(void)
+uint16_t GetTime(void)
 {
-   while(true)
-   {
+   return timeCounter / 50 / 60;
+}
 
-   }
+void StartDown(void)
+{
+   step = 1;
+}
+
+void StartUp(void)
+{
+   step = -1;
+}
+
+void StopUpDown(void)
+{
+   step = 0;
+}
+
+void ResetUpDown(void)
+{
+   step = 0;
+   upDownCounter = 0;
+}
+
+uint16_t GetUpDownTime(void)
+{
+   return upDownCounter;
+}
+
+void HandleClock(void)
+{
+   upDownCounter += step;
+   if (upDownCounter == 0) step = 0;
+   timeCounter++;
 }
 

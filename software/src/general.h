@@ -21,8 +21,6 @@
 
 #include <avr/io.h>
 
-enum boolean { false = 0, true };
-
 #define UNUSED(x) ((void)(x))
 
 #endif

@@ -20,12 +20,13 @@
 #define LCD_H
 
 #include "general.h"
+#include <stdbool.h>
 
 extern void LcdSetup(void);
 extern void LcdInitialize(void);
 extern void WriteString(const uint8_t *font, const uint8_t x, const uint8_t y, char* text);
 extern void WriteStaticString(const uint8_t *font, const uint8_t x, const uint8_t y, const char* text);
 extern void Clear(void);
-extern void EnableLcd(enum boolean enable);
+extern void EnableLcd(bool enable);
 
 #endif
