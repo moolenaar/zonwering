@@ -84,38 +84,6 @@ static void displayProductTitle(void)
    TaskSleep(2000);
 }
 
-//static char* floatToStr(char* buffer, uint8_t before, uint8_t after, float value)
-//{
-//   uint8_t i, pos, tmp;
-//
-//   int32ToStr(buffer, before, (int32_t)value);
-//   pos = before + 1;
-//
-//   if (after > 0)
-//   {
-//      buffer[pos++] = '.';
-//
-//      value = value - (int32_t)value;
-//      if (value < 0)
-//      {
-//         value = -value;
-//      }
-//
-//      float divide = 0.1;
-//
-//      for (i = 0; i < after; i++)
-//      {
-//         tmp = (uint8_t)(value / divide);
-//         buffer[pos + i] = '0' + tmp;
-//         value -= tmp * divide;
-//         divide /= 10;
-//      }
-//   }
-//   buffer[pos + after] = 0;
-//
-//   return buffer;
-//}
-
 enum ScreenModeType GetScreenMode(void)
 {
    return screen;

@@ -22,11 +22,12 @@
 #include "general.h"
 #include <stdbool.h>
 
-extern void LcdSetup(void);
-extern void LcdInitialize(void);
-extern void WriteString(const uint8_t *font, const uint8_t x, const uint8_t y, char* text);
-extern void WriteStaticString(const uint8_t *font, const uint8_t x, const uint8_t y, const char* text);
-extern void Clear(void);
-extern void EnableLcd(bool enable);
+void LcdSetup(void);
+void LcdInitialize(void);
+void WriteString(const uint8_t *font, const uint8_t x, const uint8_t y, char* text);
+void WriteStaticString(const uint8_t *font, const uint8_t x, const uint8_t y, const char* text);
+void Clear(void);
+void EnableLcd(bool enable);
+void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, const char* text);
 
 #endif

@@ -27,7 +27,7 @@
 
 #define LONGPRESS 100
 
-static enum PressedButtonState pressedButton;
+static enum PressedButtonState pressedButton = PressedButtonNone;
 static void (*keyHandler)(enum PressedButtonState);
 
 static inline enum PressedButtonState AdcButtonToPressedButton(enum ButtonAdc adcButton)

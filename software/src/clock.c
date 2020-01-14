@@ -1,6 +1,6 @@
 /* clock.c
  * Copyright 2019 Herman Moolenaar
- * This file is part of LCR-Meter.
+ * This file is part of zonwering.
  *
  * zonwering is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,6 +31,7 @@ void StartTime(void)
 
 uint16_t GetTime(void)
 {
+   /* minutes resolution */
    return timeCounter / 50 / 60;
 }
 
@@ -57,13 +58,14 @@ void ResetUpDown(void)
 
 uint16_t GetUpDownTime(void)
 {
-   return upDownCounter;
+   /* 100ms resolution */
+   return upDownCounter / 5;
 }
 
 void HandleClock(void)
 {
    upDownCounter += step;
-   if (upDownCounter == 0) step = 0;
+   if ((upDownCounter == 0) || (upDownCounter == 0xFFFF)) step = 0;
    timeCounter++;
 }
 

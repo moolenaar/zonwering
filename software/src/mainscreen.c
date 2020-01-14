@@ -27,7 +27,12 @@
 #include "display.h"
 
 static char EEMEM ProgressOutline[20] = "[==============]";
-static char EEMEM ProgressLine[2] = "/";
+static char EEMEM ProgressLineSolid[2] = "/";
+static char EEMEM ProgressLineBlank[2] = " ";
+static char EEMEM Up[10] = " Up ";
+static char EEMEM Down[10] = " Down ";
+static char EEMEM Actual[10] = "Actual";
+static char EEMEM Set[10] = "Set";
 
 uint8_t openPercent = 0;
 uint8_t current;
@@ -35,54 +40,79 @@ uint8_t current;
 static void ProgressBarSetup(void)
 {
    WriteStaticString(lines5x12, 2, 2, ProgressOutline);
+   current = 0;
 }
 
-static void ProgressBar(uint8_t percent)
+static void ProgressBar(uint8_t targetValue)
 {
-   percent = (uint16_t)(percent % 100) * 77 / 100;
-   if(percent > current)
+   targetValue = (uint16_t)targetValue * 77 / 100;
+   if (targetValue >= current)
    {
-      for (uint8_t i = current; i < percent; ++i)
+      for (uint8_t i = current; i < targetValue; ++i)
       {
-         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[0]);
+         WriteStaticString(lines5x12, 3 + i, 2, ProgressLineSolid);
       }
    }
-   else if (percent < current)
+   else if (targetValue < current)
    {
-      for (uint8_t i = current; i > percent; --i)
+      for (uint8_t i = current; i > targetValue; --i)
       {
-         WriteStaticString(lines5x12, 3 + i, 2, &ProgressLine[1]);
+         WriteStaticString(lines5x12, 3 + i, 2, ProgressLineBlank);
       }
    }
 
-   current = percent;
+   current = targetValue;
 }
 
+static void ProgressPercent(void)
+{
+   char buffer[9];
+
+   WriteString(font6x10, 0, 26, int32ToStr(buffer, 3, openPercent));
+   WriteString(font6x10, 30, 26, int32ToStr(buffer, 3, MotorProgress()));
+}
+
+static void InvertedWhenMoving(void)
+{
+   switch(GetMotorDirection())
+   {
+      case DIRECTION_UP:
+         WriteInverted8PixelString(font5x8, 13, 40, Up);
+         WriteStaticString(font5x8, 50, 40, Down);
+         break;
+
+      case DIRECTION_DOWN:
+         WriteStaticString(font5x8, 13, 40, Up);
+         WriteInverted8PixelString(font5x8, 50, 40, Down);
+         break;
+
+      case DIRECTION_STOP:
+      default:
+         WriteStaticString(font5x8, 13, 40, Up);
+         WriteStaticString(font5x8, 50, 40, Down);
+         break;
+
+   }
+}
 void mainScreenInit(void)
 {
    char buffer[9];
 
    Clear();
    ProgressBarSetup();
-   WriteString(font6x10, 3, 18, int32ToStr(buffer, 3, 0));
-}
-
-static void test(uint8_t value)
-{
-   char buffer[10];
-   WriteString(font5x8, 10, 40, int32ToStr(buffer, 6, value));
+   ProgressPercent();
+   WriteStaticString(font5x8, 13, 40, Up);
+   WriteStaticString(font5x8, 50, 40, Down);
+   WriteStaticString(font5x8, 10, 16, Set);
+   WriteStaticString(font5x8, 40, 16, Actual);
 }
 
 void mainScreenKey(enum PressedButtonState key)
 {
-   test(key);
    switch (key)
    {
       case PressedButtonDown:
          MotorOpen();
-         break;
-
-      case PressedButtonDownRepeat:
          break;
 
       case PressedButtonDownKey:
@@ -94,15 +124,9 @@ void mainScreenKey(enum PressedButtonState key)
          MotorClose();
          break;
 
-      case PressedButtonUpRepeat:
-         break;
-
       case PressedButtonUpKey:
          if (openPercent >= 25) openPercent -= 25;
          MotorOpenPercent(openPercent);
-         break;
-
-      case PressedButtonMenu:
          break;
 
       case PressedButtonMenuRepeat:
@@ -123,5 +147,22 @@ void mainScreenKey(enum PressedButtonState key)
 
 void mainScreenUpdate(void)
 {
-   ProgressBar(MotorProgress());
+   static uint8_t selection = 0;
+
+   selection++;
+
+   switch(selection % 20)
+   {
+      case 5:
+         ProgressPercent();
+         break;
+
+      case 15:
+         InvertedWhenMoving();
+         break;
+
+      default:
+         ProgressBar(MotorProgress());
+         break;
+   };
 }

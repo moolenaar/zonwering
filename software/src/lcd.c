@@ -33,7 +33,7 @@ void LcdSetup(void)
    DDRA |= (1 << PORTA4)    // uclk as output
         |  (1 << PORTA5);   // LCD Din as output
 
-   PORTB |= (1 << PORTB2);   // nRESET high
+   PORTB |= (1 << PORTB2);  // nRESET high
 }
 
 void EnableLcd(bool enable)
@@ -146,7 +146,7 @@ static inline void Write8PixelString(const uint8_t *font, const uint8_t x, uint8
    SetAddress(x, y / 8);
 
    ch = source(&text[index++]);
-   while (ch != 0)
+   while ((ch != 0) && (ch != 255))
    {
       uint16_t characterIndex = FindCharacter(font, ch);
       uint8_t nrColumns = GetNrColumns(font, characterIndex);
@@ -246,4 +246,47 @@ void WriteStaticString(const uint8_t *font, uint8_t x, uint8_t y, const char* te
    {
       Write8PixelString(font, x, y, ReadStringFromEeprom, text);
    }
+}
+
+void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, const char* text)
+{
+   uint8_t data, value, ch, index = 0;
+
+   SetAddress(x, y / 8);
+
+   ch = eeprom_read_byte(&text[index++]);
+   while (ch != 0)
+   {
+      uint16_t characterIndex = FindCharacter(font, ch);
+      uint8_t nrColumns = GetNrColumns(font, characterIndex);
+      ch = eeprom_read_byte(&text[index++]);
+      for (uint8_t n = 0; n < nrColumns; ++n)
+      {
+         value = GetColumnData(font, characterIndex, n);
+         data = value << (y % 8);
+         WriteLcdData(~data);
+      }
+      TaskSleep(0);
+   }
+
+   if (y % 8 > 0)
+   {
+      index = 0;
+      ch = eeprom_read_byte(&text[index++]);
+      SetAddress(x, y / 8 + 1);
+      while (ch != 0)
+      {
+         uint16_t characterIndex = FindCharacter(font, ch);
+         uint8_t nrColumns = GetNrColumns(font, characterIndex);
+         ch = eeprom_read_byte(&text[index++]);
+         for (uint8_t n = 0; n < nrColumns; ++n)
+         {
+            data = GetColumnData(font, characterIndex, n);
+            data >>= (8 - (y % 8));
+            WriteLcdData(~data);
+         }
+         TaskSleep(0);
+      }
+   }
+   SetAddress(x, y / 8);
 }

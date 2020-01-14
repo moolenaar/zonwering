@@ -36,7 +36,7 @@ direction_type GetMotorDirection(void)
 
 void MotorOpenPercent(uint8_t value)
 {
-   requestedOpenTime = value * fullyOpen / 100;
+   requestedOpenTime = ((int32_t)value * (int32_t)fullyOpen) / 100;
 }
  
 void MotorOpen(void)
@@ -65,7 +65,7 @@ uint8_t MotorProgress(void)
    uint8_t value = 0;
    if (fullyOpen)
    {
-      value = 100 * GetUpDownTime() / fullyOpen;
+      value = ((int32_t)100 * GetUpDownTime()) / fullyOpen;
    }
    if (value > 100) value = 100;
    return value;
@@ -115,21 +115,21 @@ void MotorTask(void)
       }
 
       /* start automatic moving down */
-      if((motorDirection == DIRECTION_STOP) && (requestedOpenTime > 0) && (requestedOpenTime < GetUpDownTime()))
+      if((motorDirection == DIRECTION_STOP) && (requestedOpenTime > 0) && (requestedOpenTime > GetUpDownTime()))
       {
          StartDown();
          motorDirection = DIRECTION_DOWN;
       }
 
       /* start automatic moving up */
-      if((motorDirection == DIRECTION_STOP) && (requestedOpenTime >= 0) && (requestedOpenTime > GetUpDownTime()))
+      if((motorDirection == DIRECTION_STOP) && (requestedOpenTime >= 0) && (requestedOpenTime < GetUpDownTime()))
       {
          StartUp();
          motorDirection = DIRECTION_UP;
       }
 
       /* stop automatic moving down */
-      if ((motorDirection == DIRECTION_DOWN) && (requestedOpenTime > 0) && (requestedOpenTime >= GetUpDownTime()))
+      if ((motorDirection == DIRECTION_DOWN) && (requestedOpenTime > 0) && (requestedOpenTime < GetUpDownTime()))
       {
          StopUpDown();
          requestedOpenTime = -1;
@@ -137,7 +137,7 @@ void MotorTask(void)
       }
 
       /* stop automatic moving up */
-      if ((motorDirection == DIRECTION_UP) && (requestedOpenTime >= 0) && (requestedOpenTime <= GetUpDownTime()))
+      if ((motorDirection == DIRECTION_UP) && (requestedOpenTime >= 0) && (requestedOpenTime > GetUpDownTime()))
       {
          StopUpDown();
          requestedOpenTime = -1;
