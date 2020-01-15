@@ -18,6 +18,7 @@
 
 #include <avr/eeprom.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "lcd.h"
 #include "font.h"
 #include "kernel.h"
@@ -64,12 +65,32 @@ static void ProgressBar(uint8_t targetValue)
    current = targetValue;
 }
 
+static char *utoaRightAligned(uint8_t value, char *buffer)
+{
+   utoa(value, buffer, 10);
+   if (buffer[1] == 0)
+   {
+      buffer[2] = 0;
+      buffer[1] = buffer[0];
+      buffer[0] = ' ';
+
+   }
+   if (buffer[2] == 0)
+   {
+      buffer[3] = 0;
+      buffer[2] = buffer[1];
+      buffer[1] = buffer[0];
+      buffer[0] = ' ';
+   }
+   return buffer;
+}
+
 static void ProgressPercent(void)
 {
-   char buffer[9];
+   char buffer[6];
 
-   WriteString(font6x10, 0, 26, int32ToStr(buffer, 3, openPercent));
-   WriteString(font6x10, 30, 26, int32ToStr(buffer, 3, MotorProgress()));
+   WriteString(font6x10, 8, 26, utoaRightAligned(openPercent, buffer));
+   WriteString(font6x10, 50, 26, utoaRightAligned(MotorProgress(), buffer));
 }
 
 static void InvertedWhenMoving(void)
@@ -121,6 +142,7 @@ void mainScreenKey(enum PressedButtonState key)
          break;
 
       case PressedButtonUp:
+         openPercent = 0;
          MotorClose();
          break;
 
@@ -129,14 +151,12 @@ void mainScreenKey(enum PressedButtonState key)
          MotorOpenPercent(openPercent);
          break;
 
-      case PressedButtonMenuRepeat:
-         break;
-
       case PressedButtonMenuKey:
          SetScreenMode(ModeAskClosingTimeInit);
          break;
 
       case PressedButtonNone:
+         openPercent = 0;
          MotorStop();
          break;
 

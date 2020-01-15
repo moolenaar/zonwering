@@ -29,6 +29,8 @@ static int16_t fullyOpen = 50*2*10; //0;
 /* requested time to open */
 static int16_t requestedOpenTime = 0;
 
+static bool delayClose = false;
+
 direction_type GetMotorDirection(void)
 {
    return motorDirection;
@@ -36,21 +38,38 @@ direction_type GetMotorDirection(void)
 
 void MotorOpenPercent(uint8_t value)
 {
-   requestedOpenTime = ((int32_t)value * (int32_t)fullyOpen) / 100;
+   if (((value == 0) && (motorDirection == DIRECTION_DOWN)) ||
+       ((value > 0) && (motorDirection == DIRECTION_UP)))
+   {
+      MotorStop();
+   }
+   else
+   {
+      requestedOpenTime = ((int32_t)value * (int32_t)fullyOpen) / 100;
+   }
 }
  
 void MotorOpen(void)
 {
-   StartDown();
-   requestedOpenTime = -1;
-   motorDirection = DIRECTION_DOWN;
+   if (motorDirection != DIRECTION_UP)
+   {
+      StartDown();
+      requestedOpenTime = -1;
+      motorDirection = DIRECTION_DOWN;
+   }
 }
 
 void MotorClose(void)
 {
-   StartUp();
-   requestedOpenTime = -1;
-   motorDirection = DIRECTION_UP;
+   if (motorDirection != DIRECTION_DOWN)
+   {
+      if (GetUpDownTime() > 0)
+      {
+         StartUp();
+         motorDirection = DIRECTION_UP;
+      }
+      requestedOpenTime = -1;
+   }
 }
 
 void MotorStop(void)
@@ -101,6 +120,12 @@ void SetMotorOutput(direction_type direction)
    }
 }
 
+void MotorDelayClose(uint16_t delayTime)
+{
+   StartTime(delayTime);
+   delayClose = true;
+}
+
 void MotorTask(void)
 {
    while (true)
@@ -144,6 +169,12 @@ void MotorTask(void)
          motorDirection = DIRECTION_STOP;
       }
 
+      /* time delay has passed; close */
+      if (delayClose && (GetTime() == 0))
+      {
+         delayClose = false;
+         MotorClose();
+      }
       TaskSleep(10);
    }
 }

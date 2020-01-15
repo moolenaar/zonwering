@@ -33,49 +33,6 @@ uint8_t screen = 0;
 static char EEMEM ProductTitle[20] = "Sun Blind Control";
 static char EEMEM ProductVersion[20] = "version 1.0";
 
-char* int32ToStr(char* buffer, uint8_t before, int32_t value)
-{
-   int8_t i;
-   uint32_t divide = 1;
-
-   for (i = 1; i < before; i++) divide *= 10;
-
-   if (value < 0)
-   {
-      buffer[0] = '-';
-      value = -value;
-   }
-   else
-   {
-      buffer[0] = ' ';
-   }
-
-   for (i = 1; i <= before; i++)
-   {
-      buffer[i] = '0' + value / divide;
-      value %= divide;
-      divide /= 10;
-   }
-
-   buffer[before + 1] = 0;
-
-   i = 0;
-   do
-   {
-      i++;
-   } while ((i < before) && (buffer[i] <= '0'));
-
-   i--;
-
-   while(i > 0)
-   {
-      buffer[i--] = buffer[0];
-      buffer[0] = ' ';
-   }
-
-   return buffer;
-}
-
 static void displayProductTitle(void)
 {
    Clear();

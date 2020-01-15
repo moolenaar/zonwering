@@ -5,7 +5,7 @@
 
 #include <stdint.h>
 
-extern const uint8_t font5x8[542];
+extern const uint8_t font5x8[507];
 
 extern const uint8_t lines5x12[46];
 

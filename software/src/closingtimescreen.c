@@ -18,6 +18,7 @@
 
 #include <avr/eeprom.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "lcd.h"
 #include "font.h"
 #include "button.h"
@@ -25,19 +26,31 @@
 #include "display.h"
 
 uint16_t delayTime = 0;
+int8_t step = 0;
 
 static char EEMEM WaitTitle1[20]  = "Waiting before";
 static char EEMEM WaitTitle2[20]  = "closing blinds...";
 static char EEMEM Semicolon[2]   = ".";
 static char EEMEM Hour[2]   = "h";
 
+static char *utoa2Digits(uint8_t value, char *buffer)
+{
+   utoa(value, buffer, 10);
+   if (buffer[1] == 0)
+   {
+      buffer[1] = buffer[0];
+      buffer[0] = '0';
+      buffer[2] = 0;
+   }
+   return buffer;
+}
+
 static void updateTime(void)
 {
-   char buffer[9];
+   char buffer[6];
 
-   WriteString(font6x10, 2, 20, int32ToStr(buffer, 2, delayTime / 60));
-   WriteString(font6x10, 27, 20, int32ToStr(buffer, 2, delayTime % 60));
-
+   WriteString(font6x10, 5, 20, utoa2Digits(GetTime() / 60, buffer));
+   WriteString(font6x10, 28, 20, utoa2Digits(GetTime() % 60, buffer));
 }
 
 void closingTimeInit(void)
@@ -45,8 +58,8 @@ void closingTimeInit(void)
    Clear();
    WriteStaticString(font5x8, 0, 0, WaitTitle1);
    WriteStaticString(font5x8, 0, 8, WaitTitle2);
-   WriteStaticString(font6x10, 25, 20, Semicolon);
-   WriteStaticString(font5x8, 60, 20, Hour);
+   WriteStaticString(font6x10, 23, 20, Semicolon);
+   WriteStaticString(font5x8, 46, 23, Hour);
 }
 
 void ClosingTimeKey(enum PressedButtonState key)
@@ -62,6 +75,7 @@ void ClosingTimeKey(enum PressedButtonState key)
          {
             delayTime = 720;
          }
+         MotorDelayClose(delayTime);
          break;
 
       case PressedButtonUpKey:
@@ -73,16 +87,20 @@ void ClosingTimeKey(enum PressedButtonState key)
          {
             delayTime = 0;
          }
+         MotorDelayClose(delayTime);
          break;
 
       case PressedButtonMenuKey:
          SetScreenMode(ModeMainScreenInit);
          break;
 
+      case PressedButtonNone:
+         step = 0;
+         break;
+
       default:
          break;
    }
-   updateTime();
 }
 
 void closingTimeUpdate(void)

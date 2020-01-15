@@ -24,9 +24,9 @@ static volatile uint32_t timeCounter = 0;
 static volatile uint16_t upDownCounter = 0;
 static volatile int8_t step = 0;
 
-void StartTime(void)
+void StartTime(uint16_t waitTime)
 {
-   timeCounter = 0;
+   timeCounter = (uint32_t)waitTime * 50 * 60;
 }
 
 uint16_t GetTime(void)
@@ -66,6 +66,6 @@ void HandleClock(void)
 {
    upDownCounter += step;
    if ((upDownCounter == 0) || (upDownCounter == 0xFFFF)) step = 0;
-   timeCounter++;
+   if (timeCounter > 0) timeCounter--;
 }
 
