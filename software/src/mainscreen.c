@@ -37,6 +37,7 @@ static char EEMEM Set[10] = "Set";
 
 uint8_t openPercent = 0;
 uint8_t current;
+bool block;
 
 static void ProgressBarSetup(void)
 {
@@ -117,8 +118,7 @@ static void InvertedWhenMoving(void)
 }
 void mainScreenInit(void)
 {
-   char buffer[9];
-
+   block = false;
    Clear();
    ProgressBarSetup();
    ProgressPercent();
@@ -133,22 +133,54 @@ void mainScreenKey(enum PressedButtonState key)
    switch (key)
    {
       case PressedButtonDown:
-         MotorOpen();
+         if (GetMotorDirection() == DIRECTION_UP)
+         {
+            MotorStop();
+            block = true;
+         }
+         else
+         {
+            MotorOpen();
+         }
          break;
 
       case PressedButtonDownKey:
-         if (openPercent < 100) openPercent += 25;
-         MotorOpenPercent(openPercent);
+         if (block)
+         {
+            MotorStop();
+            block = false;
+         }
+         else
+         {
+            if (openPercent < 100) openPercent += 25;
+            MotorOpenPercent(openPercent);
+         }
          break;
 
       case PressedButtonUp:
-         openPercent = 0;
-         MotorClose();
+         if (GetMotorDirection() == DIRECTION_DOWN)
+         {
+            MotorStop();
+            block = true;
+         }
+         else
+         {
+            openPercent = 0;
+            MotorClose();
+         }
          break;
 
       case PressedButtonUpKey:
-         if (openPercent >= 25) openPercent -= 25;
-         MotorOpenPercent(openPercent);
+         if (block)
+         {
+            MotorStop();
+            block = false;
+         }
+         else
+         {
+            if (openPercent >= 25) openPercent -= 25;
+            MotorOpenPercent(openPercent);
+         }
          break;
 
       case PressedButtonMenuKey:

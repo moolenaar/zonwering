@@ -38,38 +38,24 @@ direction_type GetMotorDirection(void)
 
 void MotorOpenPercent(uint8_t value)
 {
-   if (((value == 0) && (motorDirection == DIRECTION_DOWN)) ||
-       ((value > 0) && (motorDirection == DIRECTION_UP)))
-   {
-      MotorStop();
-   }
-   else
-   {
-      requestedOpenTime = ((int32_t)value * (int32_t)fullyOpen) / 100;
-   }
+   requestedOpenTime = ((int32_t)value * (int32_t)fullyOpen) / 100;
 }
  
 void MotorOpen(void)
 {
-   if (motorDirection != DIRECTION_UP)
-   {
-      StartDown();
-      requestedOpenTime = -1;
-      motorDirection = DIRECTION_DOWN;
-   }
+   StartDown();
+   requestedOpenTime = -1;
+   motorDirection = DIRECTION_DOWN;
 }
 
 void MotorClose(void)
 {
-   if (motorDirection != DIRECTION_DOWN)
+   if (GetUpDownTime() > 0)
    {
-      if (GetUpDownTime() > 0)
-      {
-         StartUp();
-         motorDirection = DIRECTION_UP;
-      }
-      requestedOpenTime = -1;
+      StartUp();
+      motorDirection = DIRECTION_UP;
    }
+   requestedOpenTime = -1;
 }
 
 void MotorStop(void)
@@ -110,10 +96,12 @@ void SetMotorOutput(direction_type direction)
          PORTA &= ~(1 << PORTA2);
          PORTA |= (1 << PORTA3);
          break;
+
       case DIRECTION_DOWN:
          PORTA &= ~(1 << PORTA3);
          PORTA |= (1 << PORTA2);
          break;
+
       case DIRECTION_STOP:
          PORTA &= ~((1 << PORTA2) | (1 << PORTA3));
          break;
