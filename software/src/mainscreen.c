@@ -187,6 +187,10 @@ void mainScreenKey(enum PressedButtonState key)
          SetScreenMode(ModeAskClosingTimeInit);
          break;
 
+      case PressedButtonMenuRepeat:
+         SetScreenMode(ModeAskFullOpenInit);
+         break;
+
       case PressedButtonNone:
          openPercent = 0;
          MotorStop();

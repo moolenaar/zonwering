@@ -24,7 +24,7 @@
 #include "adc.h"
 #include "motor.h"
 #include "button.h"
-#include "diagnosticscreen.h"
+#include "fullopen.h"
 #include "closingtimescreen.h"
 #include "mainscreen.h"
 
@@ -88,22 +88,14 @@ void HandleDisplay(void)
       case ModeAskFullOpenInit:
          // display screen to input time to open sun blinds 100%
          Clear();
+         FullOpenInit();
+         SetKeyHandler(FullOpenKey);
          screen = ModeAskFullOpenUpdate;
          break;
 
       case ModeAskFullOpenUpdate:
          // screen to input 100% open time is displayed
-         break;
-
-      case ModeDiagnosticInit:
-         // display diagnostic screen
-         diagnosticInit();
-         screen = ModeDiagnosticUpdate;
-         break;
-
-      case ModeDiagnosticUpdate:
-         // diagnostic screen is displayed
-         diagnosticUpdate();
+         FullOpenUpdate();
          break;
 
       default:

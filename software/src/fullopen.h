@@ -1,4 +1,4 @@
-/* diagnosticscreen.h
+/* fullopen.h
  * Copyright 2020 Herman Moolenaar
  * This file is part of zonwering.
  *
@@ -16,12 +16,13 @@
  * along with zonwering. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DIAGNOSTICSCREEN_H
-#define DIAGNOSTICSCREEN_H
+#ifndef FULLOPEN_H
+#define FULLOPEN_H
 
 #include "general.h"
 
-extern void diagnosticInit(void);
-extern void diagnosticUpdate(void);
+extern void FullOpenInit(void);
+extern void FullOpenUpdate(void);
+void FullOpenKey(enum PressedButtonState key);
 
 #endif

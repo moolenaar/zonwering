@@ -56,15 +56,14 @@ static inline void CheckButtonPress(void)
       {
          if (pressedButton % 3 == 1)
          {
-            pressedButton = PressedButtonNone;
+            keyHandler(PressedButtonNone);
          }
          else
          {
-            pressedButton += 2;
+            keyHandler(pressedButton + 2);
          }
-         
-         keyHandler(pressedButton);
       }
+      pressedButton = PressedButtonNone;
       oldAdcButton = newAdcButton;
    }
 
