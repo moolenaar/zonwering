@@ -207,16 +207,23 @@ void mainScreenUpdate(void)
 
    selection++;
 
-   switch(selection % 20)
+   switch(selection % 4)
    {
-      case 5:
+      case 1:
          ProgressPercent();
          break;
 
-      case 15:
+      case 2:
          InvertedWhenMoving();
          break;
 
+      case 3:
+         if ((GetUpDownTime() == 0) && (GetMotorDirection() == DIRECTION_STOP))
+         {
+            openPercent = 0;
+         }
+         break;
+         
       default:
          ProgressBar(MotorProgress());
          break;

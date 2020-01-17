@@ -29,7 +29,7 @@ static int16_t fullyOpen = 50*2*10; //0;
 /* requested time to open */
 static int16_t requestedOpenTime = 0;
 
-static bool delayClose = false;
+static bool timerActive = false;
 
 direction_type GetMotorDirection(void)
 {
@@ -111,7 +111,7 @@ void SetMotorOutput(direction_type direction)
 void MotorDelayClose(uint16_t delayTime)
 {
    StartTime(delayTime);
-   delayClose = true;
+   timerActive = delayTime > 0;   
 }
 
 void MotorTask(void)
@@ -158,10 +158,10 @@ void MotorTask(void)
       }
 
       /* time delay has passed; close */
-      if (delayClose && (GetTime() == 0))
+      if (timerActive && (GetTime() == 0))
       {
-         delayClose = false;
          MotorClose();
+         timerActive = false;
       }
       TaskSleep(10);
    }

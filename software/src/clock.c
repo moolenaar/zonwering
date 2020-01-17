@@ -18,12 +18,11 @@
 
 
 #include "clock.h"
-#include <stdbool.h>
 
 static volatile uint32_t timeCounter = 0;
 static volatile uint16_t upDownCounter = 0;
 static volatile int8_t step = 0;
-
+ 
 void StartTime(uint16_t waitTime)
 {
    timeCounter = (uint32_t)waitTime * 50 * 60;

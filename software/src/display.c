@@ -30,7 +30,7 @@
 
 uint8_t screen = 0;
 
-static char EEMEM ProductTitle[20] = "Sun Blind Control";
+static char EEMEM ProductTitle[20] = "Sun Shade Control";
 static char EEMEM ProductVersion[20] = "version 1.0";
 
 static void displayProductTitle(void)

@@ -17,17 +17,19 @@
  */
 
 #include <avr/eeprom.h>
+#include "kernel.h"
 #include "display.h"
 #include "font.h"
 #include "motor.h"
 #include "button.h"
 #include "fullopen.h"
 
-static char EEMEM Accept[9]   = "Accept";
-static char EEMEM Back[9]     = "Back";
-static char EEMEM Title1[20]  = "Use current";
-static char EEMEM Title2[20]  = "position as fully";
-static char EEMEM Title3[20]  = "open?";
+static char EEMEM Accept[9]        = "Accept";
+static char EEMEM Back[9]          = "Back";
+static char EEMEM Title1[20]       = "Use current";
+static char EEMEM Title2[20]       = "position as fully";
+static char EEMEM Title3[20]       = "open?";
+static char EEMEM PositionSet[20]  = "Position is set";
 
 void FullOpenInit(void)
 {
@@ -48,7 +50,9 @@ void FullOpenKey(enum PressedButtonState key)
    switch (key)
    {
       case PressedButtonDownKey:
+         WriteStaticString(font5x8, 0, 30, PositionSet);
          SetFullyOpen();
+         TaskSleep(500);
          SetScreenMode(ModeMainScreenInit);
          break;
 

@@ -22,10 +22,12 @@
 #include "lcd.h"
 #include "font.h"
 #include "button.h"
-#include "diagnosticscreen.h"
 #include "display.h"
 
-uint16_t delayTime = 0;
+/* delay time and step in minutes */
+#define MAXDELAYTIME 720
+#define STEPDELAYTIME 2
+
 int8_t step = 0;
 
 static char EEMEM WaitTitle1[20]  = "Waiting before";
@@ -64,24 +66,28 @@ void closingTimeInit(void)
 
 void ClosingTimeKey(enum PressedButtonState key)
 {
+   uint16_t delayTime = GetTime();
+
+   delayTime = (delayTime / STEPDELAYTIME) * STEPDELAYTIME + (delayTime % STEPDELAYTIME > 0) ? STEPDELAYTIME : 0;
+
    switch (key)
    {
       case PressedButtonDownKey:
-         if (delayTime < 720 - 30)
+         if (delayTime < MAXDELAYTIME - STEPDELAYTIME)
          {
-            delayTime += 30;
+            delayTime += STEPDELAYTIME;
          }
          else
          {
-            delayTime = 720;
+            delayTime = MAXDELAYTIME;
          }
          MotorDelayClose(delayTime);
          break;
 
       case PressedButtonUpKey:
-         if (delayTime > 30)
+         if (delayTime > STEPDELAYTIME)
          {
-            delayTime -= 30;
+            delayTime -= STEPDELAYTIME;
          }
          else
          {

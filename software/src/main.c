@@ -23,6 +23,7 @@
 #include "motor.h"
 #include "button.h"
 #include "lcd.h"
+#include "nonvolataile.h"
 
 //#define test
 
@@ -32,8 +33,8 @@ uint8_t motorStack[MOTORSTACKSIZE];
 #define BUTTONSTACKSIZE MINIMUMSTACKSIZE + 60
 uint8_t buttonStack[BUTTONSTACKSIZE];
 
-// #define DIGITALOUTPUTSTACKSIZE MINIMUMSTACKSIZE + 12
-// uint8_t digitalOutputStack[DIGITALOUTPUTSTACKSIZE];
+#define EEPROMTASKSTACKSIZE MINIMUMSTACKSIZE + 12
+uint8_t eepromTaskStack[EEPROMTASKSTACKSIZE];
 
 #ifdef test
 
@@ -60,10 +61,12 @@ int main (void)
    AdcSetup();
    MotorSetup();
    ButtonSetup();
+   NonVolataileSetup();
 
 #ifdef test
    InitTask(TESTSTACKSIZE, testStack, TestTask);
 #else
+   InitTask(EEPROMTASKSTACKSIZE, eepromTaskStack, NonVolataileTask);
    InitTask(MOTORSTACKSIZE, motorStack, MotorTask);
    InitTask(BUTTONSTACKSIZE, buttonStack, ButtonTask);
 #endif
