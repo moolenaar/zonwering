@@ -22,75 +22,102 @@
 #include "nonvolataile.h"
 #include <avr/eeprom.h>
 #include <stdbool.h>
+#include <string.h>
 #include "kernel.h"
 #include "lcd.h"
 
-static volatile uint32_t timeCounter;
-static volatile uint16_t upDownCounter;
-static int16_t fullyOpen;
-static bool timerActive; 
+typedef struct
+{
+   uint32_t timeCounter;
+   uint16_t upDownCounter;
+   int16_t fullyOpen;
+   bool timerActive;
+   uint8_t step; 
+   uint8_t checksum;
+} DataType;
+
+typedef union 
+{
+   DataType data;
+   uint8_t buffer[20];
+} DataUnion; 
+
+static DataUnion EEMEM dataEeprom =
+{ 
+   .buffer = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },   
+   .data = { 0, 0, 1000, false, 30, 0xf7 }
+};
+
+static DataUnion data;
+
+static uint8_t calculateChecksum(void)
+{
+   uint8_t i;
+   uint8_t checksum = 0;
+
+   for (i = 0; i < sizeof(DataUnion); i++)
+   {
+      checksum += data.buffer[i];
+   }
+   return checksum;
+}
 
 void NonVolataileSetup(void)
 {
-   timeCounter = 0;//eeprom_read_dword((uint32_t*)500);
-   upDownCounter = 0;//eeprom_read_word((uint16_t*)504);
-   fullyOpen = 1000;//(int16_t)eeprom_read_word((uint16_t*)506);
-   timerActive = false;//eeprom_read_byte((uint8_t*)508);
+   eeprom_read_block(&data.buffer, dataEeprom.buffer, sizeof(DataUnion));
+   if(calculateChecksum() != 0)
+   {
+      memset(data.buffer, 0, sizeof(DataUnion));
+   }
 }
 
 uint32_t nvGetTimeCounter(void)
 {
-   return timeCounter;
+   return data.data.timeCounter;
 }
 
 void nvSetTimeCounter(uint32_t value)
 {
-   timeCounter = value;
+   data.data.timeCounter = value;
 }
 
 uint16_t nvGetUpDownCounter(void)
 {
-   return upDownCounter;
+   return data.data.upDownCounter;
 }
 
 void nvSetUpDownCounter(uint16_t  value)
 {
-   upDownCounter = value;
+   data.data.upDownCounter = value;
 }
 
 int16_t nvGetFullyOpen(void)
 {
-   return fullyOpen;
+   return data.data.fullyOpen;
 }
 
 void nvSetFullyOpen(int16_t value)
 {
-   fullyOpen = value;
+   data.data.fullyOpen = value;
 }
 
 bool nvGetTimerActive(void)
 {
-   return timerActive;
+   return data.data.timerActive;
 }
 
 void nvSetTimerActive(bool value)
 {
-   timerActive = value;
+   data.data.timerActive = value;
 }
 
 void NonVolataileTask(void)
 {
    while(true)
    {
-      eeprom_update_dword((uint32_t*)500, timeCounter);
-      TaskSleep(0);
-      eeprom_update_word((uint16_t*)504, upDownCounter);
-      TaskSleep(0);
-      eeprom_update_word((uint16_t*)506, (uint16_t)fullyOpen);
-      TaskSleep(0);
-      eeprom_update_byte((uint8_t*)508, timerActive);
-      TaskSleep(0);
-      HandleBacklight();
+      data.data.checksum = 0;
+      data.data.checksum = ~calculateChecksum() + 1;
+      eeprom_update_block(&data.buffer, dataEeprom.buffer, sizeof(DataUnion));
       TaskSleep(500);
    }
 }
