@@ -258,12 +258,12 @@ void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, 
 
    SetAddress(x, y / 8);
 
-   ch = eeprom_read_byte(&text[index++]);
+   ch = eeprom_read_byte((const uint8_t *)&text[index++]);
    while (ch != 0)
    {
       uint16_t characterIndex = FindCharacter(font, ch);
       uint8_t nrColumns = GetNrColumns(font, characterIndex);
-      ch = eeprom_read_byte(&text[index++]);
+      ch = eeprom_read_byte((const uint8_t *)&text[index++]);
       for (uint8_t n = 0; n < nrColumns; ++n)
       {
          value = GetColumnData(font, characterIndex, n);
@@ -276,13 +276,13 @@ void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, 
    if (y % 8 > 0)
    {
       index = 0;
-      ch = eeprom_read_byte(&text[index++]);
+      ch = eeprom_read_byte((const uint8_t *)&text[index++]);
       SetAddress(x, y / 8 + 1);
       while (ch != 0)
       {
          uint16_t characterIndex = FindCharacter(font, ch);
          uint8_t nrColumns = GetNrColumns(font, characterIndex);
-         ch = eeprom_read_byte(&text[index++]);
+         ch = eeprom_read_byte((const uint8_t *)&text[index++]);
          for (uint8_t n = 0; n < nrColumns; ++n)
          {
             data = GetColumnData(font, characterIndex, n);

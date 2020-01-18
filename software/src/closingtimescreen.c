@@ -23,16 +23,18 @@
 #include "font.h"
 #include "button.h"
 #include "display.h"
+#include "clock.h"
+#include "motor.h"
 
 /* delay time and step in minutes */
 #define MAXDELAYTIME 720
-#define STEPDELAYTIME 5
+#define STEPDELAYTIME 30
 
 int8_t step = 0;
 
 static char EEMEM WaitTitle1[20]  = "Waiting before";
 static char EEMEM WaitTitle2[20]  = "closing shades...";
-static char EEMEM Semicolon[2]   = ".";
+static char EEMEM Semicolon[2]   = ":";
 static char EEMEM Hour[2]   = "h";
 
 static char *utoa2Digits(uint8_t value, char *buffer)
@@ -50,12 +52,13 @@ static char *utoa2Digits(uint8_t value, char *buffer)
 static void updateTime(void)
 {
    char buffer[6];
+   uint16_t time = GetTime();
 
-   WriteString(font6x10, 5, 20, utoa2Digits(GetTime() / 60, buffer));
-   WriteString(font6x10, 28, 20, utoa2Digits(GetTime() % 60, buffer));
+   WriteString(font6x10, 5, 20, utoa2Digits(time / 60, buffer));
+   WriteString(font6x10, 28, 20, utoa2Digits(time % 60, buffer));
 }
 
-void closingTimeInit(void)
+void ClosingTimeInit(void)
 {
    Clear();
    WriteStaticString(font5x8, 0, 0, WaitTitle1);
@@ -68,7 +71,7 @@ void ClosingTimeKey(enum PressedButtonState key)
 {
    uint16_t delayTime = GetTime();
 
-   delayTime = (delayTime / STEPDELAYTIME) * STEPDELAYTIME + (delayTime % STEPDELAYTIME > 0) ? STEPDELAYTIME : 0;
+   delayTime = (delayTime / STEPDELAYTIME) * STEPDELAYTIME + ((delayTime % STEPDELAYTIME > 0) ? STEPDELAYTIME : 0);
 
    switch (key)
    {
@@ -81,7 +84,7 @@ void ClosingTimeKey(enum PressedButtonState key)
          {
             delayTime = MAXDELAYTIME;
          }
-         MotorDelayClose(delayTime);
+         MotorDelayClose(delayTime + 1);
          break;
 
       case PressedButtonUpKey:
@@ -93,7 +96,7 @@ void ClosingTimeKey(enum PressedButtonState key)
          {
             delayTime = 0;
          }
-         MotorDelayClose(delayTime);
+         MotorDelayClose(delayTime + 1);
          break;
 
       case PressedButtonMenuKey:
@@ -109,7 +112,7 @@ void ClosingTimeKey(enum PressedButtonState key)
    }
 }
 
-void closingTimeUpdate(void)
+void ClosingTimeUpdate(void)
 {
    updateTime();
 }

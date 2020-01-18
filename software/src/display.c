@@ -29,10 +29,14 @@
 #include "closingtimescreen.h"
 #include "mainscreen.h"
 #include "idlescreen.h"
+#include "clock.h"
+
+/* time before switching off backlight; 100ms resolution */
+#define BACKLIGHTTIMOUTTIME (10 * 60 * 5)
 
 static uint8_t screen = 0;
 static uint8_t current;
-static uint16_t backlightTimer = 1000;
+static uint16_t backlightTimer = BACKLIGHTTIMOUTTIME;
 
 static char EEMEM ProductTitle1[20] = "Sun Shade";
 static char EEMEM ProductTitle2[20] = "Control";
@@ -68,7 +72,7 @@ void ProgressBar(uint8_t targetValue)
    current = targetValue;
 }
 
-char *utoaRightAligned(uint8_t value, char *buffer)
+char *UtoaRightAligned(uint8_t value, char *buffer)
 {
    utoa(value, buffer, 10);
    if (buffer[1] == 0)
@@ -107,9 +111,9 @@ void SetScreenMode(enum ScreenModeType screenMode)
    screen = screenMode;
 }
 
-void RestBacklightTimer(void)
+void ResetBacklightTimer(void)
 {
-   backlightTimer = 1000;
+   backlightTimer = BACKLIGHTTIMOUTTIME;
 }
 
 void HandleDisplay(void)
@@ -124,26 +128,26 @@ void HandleDisplay(void)
 
       case ModeMainScreenInit:
          // display main screen with progress bar and percent blinds lowered
-         mainScreenInit();
-         SetKeyHandler(mainScreenKey);
+         MainScreenInit();
+         SetKeyHandler(MainScreenKey);
          screen = ModeMainScreenUpdate;
          break;
 
       case ModeMainScreenUpdate:
          // update main screen
-         mainScreenUpdate();
+         MainScreenUpdate();
          break;
 
       case ModeAskClosingTimeInit:
          // ask user to input time before closing the sun blinds
-         closingTimeInit();
+         ClosingTimeInit();
          SetKeyHandler(ClosingTimeKey);
          screen = ModeAskClosingTimeUpdate;
          break;
 
       case ModeAskClosingTimeUpdate:
          // update the input time screen
-         closingTimeUpdate();
+         ClosingTimeUpdate();
          break;
 
       case ModeAskFullOpenInit:
@@ -160,13 +164,13 @@ void HandleDisplay(void)
          break;
 
       case ModeIdleInit:
-         idleScreenInit();
+         IdleScreenInit();
          SetKeyHandler(idleScreenKey);
          screen = ModeIdleUpdate;
          break;
 
       case ModeIdleUpdate:
-         idleScreenUpdate();
+         IdleScreenUpdate();
          break;
 
       default:
@@ -176,7 +180,7 @@ void HandleDisplay(void)
 
    if ((GetMotorDirection() != DIRECTION_STOP) || (GetTime() > 0))
    {
-      RestBacklightTimer();
+      ResetBacklightTimer();
    }
 
    if (backlightTimer > 0)

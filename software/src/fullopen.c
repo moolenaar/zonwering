@@ -18,6 +18,7 @@
 
 #include <avr/eeprom.h>
 #include "kernel.h"
+#include "lcd.h"
 #include "display.h"
 #include "font.h"
 #include "motor.h"

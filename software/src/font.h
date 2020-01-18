@@ -9,7 +9,7 @@ extern const uint8_t font5x8[507];
 
 extern const uint8_t lines5x12[46];
 
-extern const uint8_t font6x10[206];
+extern const uint8_t font6x10[208];
 
 #endif
 

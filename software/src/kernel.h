@@ -34,13 +34,12 @@ enum TaskState_t
    StateRunable = 0x40
 };
 
-extern void KernelSetup(void);
-extern uint8_t InitTask(uint16_t stackSize, uint8_t* stackBuffer, TaskFunction function);
-extern void StartKernel(TaskFunction function);
-extern void TaskSleep(uint16_t time);
-extern void TaskStart(uint8_t index);
-extern void TaskStop(uint8_t index);
-//extern void DisableTaskSwitching();
-extern void EnableTaskSwitching(void);
+void KernelSetup(void);
+uint8_t InitTask(uint16_t stackSize, uint8_t* stackBuffer, TaskFunction function);
+void StartKernel(TaskFunction function);
+void TaskSleep(uint16_t time);
+void TaskStart(uint8_t index);
+void TaskStop(uint8_t index);
+void EnableTaskSwitching(void);
 
 #endif // KERNEL_H

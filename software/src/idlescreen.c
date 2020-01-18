@@ -29,15 +29,15 @@
 
 static char EEMEM Actual[10] = "Actual";
 
-void idleScreenInit(void)
+void IdleScreenInit(void)
 {
    char buffer[6];
 
    Clear();
    ProgressBarSetup();
    ProgressBar(MotorProgress());
-   WriteStaticString(font5x8, 40, 16, Actual);
-   WriteString(font6x10, 50, 26, utoaRightAligned(MotorProgress(), buffer));
+   WriteStaticString(font5x8, 0, 26, Actual);
+   WriteString(font6x10, 40, 26, UtoaRightAligned(MotorProgress(), buffer));
 
    EnableLcd(false);
 }
@@ -58,7 +58,7 @@ void idleScreenKey(enum PressedButtonState key)
    }
 }
 
-void idleScreenUpdate(void)
+void IdleScreenUpdate(void)
 {
   /* nothing to do here */
 }

@@ -35,5 +35,7 @@ void nvSetFullyOpen(int16_t value);
 bool nvGetTimerActive(void);
 void nvSetTimerActive(bool value);
 void NonVolataileTask(void);
+void nvSetOpenPercent(uint8_t value);
+uint8_t nvGetOpenPercent(void);
 
 #endif /* NONVOLATAILE_H_ */

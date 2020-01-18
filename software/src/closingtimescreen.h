@@ -21,8 +21,8 @@
 
 #include "general.h"
 
-void closingTimeInit(void);
-void closingTimeUpdate(void);
+void ClosingTimeInit(void);
+void ClosingTimeUpdate(void);
 void ClosingTimeKey(enum PressedButtonState key);
 
 #endif

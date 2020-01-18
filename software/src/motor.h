@@ -37,5 +37,7 @@ void MotorStop(void);
 uint8_t MotorProgress(void);
 void MotorSetup(void);
 void MotorTask(void);
+void SetFullyOpen(void);
+void MotorDelayClose(uint16_t delayTime);
 
 #endif

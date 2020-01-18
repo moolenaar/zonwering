@@ -26,6 +26,7 @@
 #include "nonvolataile.h"
 #include "clock.h"
 #include "display.h"
+#include "mainscreen.h"
 
 //#define test
 
@@ -60,11 +61,12 @@ void TestTask(void)
 int main (void)
 {
    NonVolataileSetup();
+   MainScreenSetup();
    KernelSetup();
    AdcSetup();
    MotorSetup();
    ButtonSetup();
-   ClockInit();
+   ClockSetup();
 
 #ifdef test
    InitTask(TESTSTACKSIZE, testStack, TestTask);
@@ -72,7 +74,7 @@ int main (void)
    InitTask(EEPROMTASKSTACKSIZE, eepromTaskStack, NonVolataileTask);
    InitTask(MOTORSTACKSIZE, motorStack, MotorTask);
    InitTask(BUTTONSTACKSIZE, buttonStack, ButtonTask);
-   RestBacklightTimer();
+   ResetBacklightTimer();
 #endif
 
    StartKernel(NULL);

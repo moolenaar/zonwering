@@ -26,21 +26,28 @@
 #include "motor.h"
 #include "button.h"
 #include "display.h"
+#include "clock.h"
+#include "nonvolataile.h"
 
 static char EEMEM Up[10] = " Up ";
 static char EEMEM Down[10] = " Down ";
 static char EEMEM Actual[10] = "Actual";
 static char EEMEM Set[10] = "Set";
 
-uint8_t openPercent = 0;
+uint8_t openPercent;
 bool block;
+
+void MainScreenSetup(void)
+{
+   openPercent = nvGetOpenPercent();
+}
 
 static void ProgressPercent(void)
 {
    char buffer[6];
 
-   WriteString(font6x10, 8, 26, utoaRightAligned(openPercent, buffer));
-   WriteString(font6x10, 50, 26, utoaRightAligned(MotorProgress(), buffer));
+   WriteString(font6x10, 8, 26, UtoaRightAligned(openPercent, buffer));
+   WriteString(font6x10, 50, 26, UtoaRightAligned(MotorProgress(), buffer));
 }
 
 static void InvertedWhenMoving(void)
@@ -66,7 +73,7 @@ static void InvertedWhenMoving(void)
    }
 }
 
-void mainScreenInit(void)
+void MainScreenInit(void)
 {
    block = false;
    Clear();
@@ -78,7 +85,7 @@ void mainScreenInit(void)
    WriteStaticString(font5x8, 40, 16, Actual);
 }
 
-void mainScreenKey(enum PressedButtonState key)
+void MainScreenKey(enum PressedButtonState key)
 {
    switch (key)
    {
@@ -151,29 +158,33 @@ void mainScreenKey(enum PressedButtonState key)
    }
 }
 
-void mainScreenUpdate(void)
+void MainScreenUpdate(void)
 {
    static uint8_t selection = 0;
 
    selection++;
 
-   switch(selection % 4)
+   switch(selection % 5)
    {
-      case 1:
+      case 0:
          ProgressPercent();
          break;
 
-      case 2:
+      case 1:
          InvertedWhenMoving();
          break;
 
-      case 3:
+      case 2:
          if ((GetUpDownTime() == 0) && (GetMotorDirection() == DIRECTION_STOP))
          {
             openPercent = 0;
          }
          break;
-         
+
+      case 3:
+            nvSetOpenPercent(openPercent);
+         break;
+
       default:
          ProgressBar(MotorProgress());
          break;

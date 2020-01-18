@@ -26,11 +26,11 @@
 /* variable used to stear the output pins that control the motor */ 
 static volatile direction_type motorDirection = DIRECTION_STOP;
 /* time value that represents 100% open */
-static int16_t fullyOpen = 50*2*10; //0;
+static int16_t fullyOpen;
 /* requested time to open */
-static int16_t requestedOpenTime = 0;
+static int16_t requestedOpenTime = -1;
 /* true when the timer to delay closing is active */
-static bool timerActive = false;
+static bool timerActive;
 
 direction_type GetMotorDirection(void)
 {
@@ -154,7 +154,7 @@ void MotorTask(void)
       }
 
       /* stop automatic moving up */
-      if ((motorDirection == DIRECTION_UP) && (requestedOpenTime >= 0) && (requestedOpenTime > GetUpDownTime()))
+      if ((motorDirection == DIRECTION_UP) && (requestedOpenTime > 0) && (requestedOpenTime > GetUpDownTime()))
       {
          StopUpDown();
          requestedOpenTime = -1;
@@ -162,7 +162,7 @@ void MotorTask(void)
       }
 
       /* time delay has passed; close */
-      if (timerActive && (GetTime() == 0))
+      if (timerActive && (GetTime() == 1))
       {
          MotorClose();
          timerActive = false;

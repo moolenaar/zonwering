@@ -32,7 +32,8 @@ typedef struct
    uint16_t upDownCounter;
    int16_t fullyOpen;
    bool timerActive;
-   uint8_t step; 
+   uint8_t step;
+   uint8_t openPercent;
    uint8_t checksum;
 } DataType;
 
@@ -42,13 +43,13 @@ typedef union
    uint8_t buffer[20];
 } DataUnion; 
 
-static DataUnion EEMEM dataEeprom =
+static DataUnion EEMEM eeprom =
 { 
    .buffer = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },   
-   .data = { 0, 0, 1000, false, 30, 0xf7 }
+   .data = { 0, 0, 1000, false, 30, 0, 0xf7 }
 };
 
-static DataUnion data;
+static DataUnion nv;
 
 static uint8_t calculateChecksum(void)
 {
@@ -57,67 +58,77 @@ static uint8_t calculateChecksum(void)
 
    for (i = 0; i < sizeof(DataUnion); i++)
    {
-      checksum += data.buffer[i];
+      checksum += nv.buffer[i];
    }
    return checksum;
 }
 
 void NonVolataileSetup(void)
 {
-   eeprom_read_block(&data.buffer, dataEeprom.buffer, sizeof(DataUnion));
+   eeprom_read_block(&nv.buffer, eeprom.buffer, sizeof(DataUnion));
    if(calculateChecksum() != 0)
    {
-      memset(data.buffer, 0, sizeof(DataUnion));
+      memset(nv.buffer, 0, sizeof(DataUnion));
    }
 }
 
 uint32_t nvGetTimeCounter(void)
 {
-   return data.data.timeCounter;
+   return nv.data.timeCounter;
 }
 
 void nvSetTimeCounter(uint32_t value)
 {
-   data.data.timeCounter = value;
+   nv.data.timeCounter = value;
 }
 
 uint16_t nvGetUpDownCounter(void)
 {
-   return data.data.upDownCounter;
+   return nv.data.upDownCounter;
 }
 
 void nvSetUpDownCounter(uint16_t  value)
 {
-   data.data.upDownCounter = value;
+   nv.data.upDownCounter = value;
 }
 
 int16_t nvGetFullyOpen(void)
 {
-   return data.data.fullyOpen;
+   return nv.data.fullyOpen;
 }
 
 void nvSetFullyOpen(int16_t value)
 {
-   data.data.fullyOpen = value;
+   nv.data.fullyOpen = value;
 }
 
 bool nvGetTimerActive(void)
 {
-   return data.data.timerActive;
+   return nv.data.timerActive;
 }
 
 void nvSetTimerActive(bool value)
 {
-   data.data.timerActive = value;
+   nv.data.timerActive = value;
+}
+
+uint8_t nvGetOpenPercent(void)
+{
+   return nv.data.openPercent;
+}
+
+void nvSetOpenPercent(uint8_t value)
+{
+   nv.data.openPercent = value;
 }
 
 void NonVolataileTask(void)
 {
    while(true)
    {
-      data.data.checksum = 0;
-      data.data.checksum = ~calculateChecksum() + 1;
-      eeprom_update_block(&data.buffer, dataEeprom.buffer, sizeof(DataUnion));
+      nv.data.checksum = 0;
+      nv.data.checksum = ~calculateChecksum() + 1;
+      eeprom_update_block(&nv.buffer, eeprom.buffer, sizeof(DataUnion));
       TaskSleep(500);
    }
 }

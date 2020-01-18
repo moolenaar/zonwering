@@ -21,8 +21,8 @@
 
 #include "general.h"
 
-void idleScreenInit(void);
-void idleScreenUpdate(void);
+void IdleScreenInit(void);
+void IdleScreenUpdate(void);
 void idleScreenKey(enum PressedButtonState key);
 
 #endif

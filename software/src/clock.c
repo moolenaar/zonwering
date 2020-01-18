@@ -24,7 +24,7 @@ static volatile uint32_t timeCounter;
 static volatile uint16_t upDownCounter;
 static volatile int8_t step = 0;
 
-void ClockInit(void)
+void ClockSetup(void)
 {
    timeCounter = nvGetTimeCounter();
    upDownCounter = nvGetUpDownCounter();

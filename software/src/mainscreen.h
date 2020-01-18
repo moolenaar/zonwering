@@ -21,8 +21,9 @@
 
 #include "general.h"
 
-void mainScreenInit(void);
-void mainScreenUpdate(void);
-void mainScreenKey(enum PressedButtonState key);
+void MainScreenSetup(void);
+void MainScreenInit(void);
+void MainScreenUpdate(void);
+void MainScreenKey(enum PressedButtonState key);
 
 #endif

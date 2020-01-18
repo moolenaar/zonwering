@@ -22,7 +22,7 @@
 #include "general.h"
 #include <stdbool.h>
 
-void ClockInit(void);
+void ClockSetup(void);
 void StartTime(uint16_t waitTime);
 uint16_t GetTime(void);
 void HandleClock(void);

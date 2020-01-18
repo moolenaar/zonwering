@@ -41,7 +41,7 @@ enum ScreenModeType GetScreenMode(void);
 void SetScreenMode(enum ScreenModeType screenMode);
 void ProgressBarSetup(void);
 void ProgressBar(uint8_t targetValue);
-char *utoaRightAligned(uint8_t value, char *buffer);
-void RestBacklightTimer(void);
+char *UtoaRightAligned(uint8_t value, char *buffer);
+void ResetBacklightTimer(void);
 
 #endif
