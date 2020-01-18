@@ -33,7 +33,6 @@
 //                    36  SPH
 //                    37  stack pointer value (is not used here so can be used elseware)
 
-
 typedef struct 
 {
    uint8_t* stackbuffer;
@@ -101,7 +100,7 @@ uint8_t InitTask(uint16_t stackSize, uint8_t* stackBuffer, TaskFunction function
    return nrTasks++;
 }
 
-void StartKernel(TaskFunction function)
+__attribute__((optimize("O"))) void StartKernel(TaskFunction function)
 {
    TaskIndex = 0;
    initFunction = function;
@@ -115,7 +114,7 @@ void StartKernel(TaskFunction function)
    // this function starts / returns the first task in the list
 }
 
-void TaskSleep(uint16_t time)
+__attribute__((optimize("O"))) void TaskSleep(uint16_t time)
 {
    // store context of current task
    __asm volatile(
@@ -219,7 +218,7 @@ void TaskSleep(uint16_t time)
    ::);
 }
 
-void TaskStart(uint8_t index)
+__attribute__((optimize("O"))) void TaskStart(uint8_t index)
 {
    ATOMIC_BLOCK(ATOMIC_FORCEON)
    {
@@ -227,7 +226,7 @@ void TaskStart(uint8_t index)
    }   
 }
 
-void TaskStop(uint8_t index)
+__attribute__((optimize("O"))) void TaskStop(uint8_t index)
 {
    ATOMIC_BLOCK(ATOMIC_FORCEON)
    {
@@ -235,12 +234,12 @@ void TaskStop(uint8_t index)
    }
 }
 
-void EnableTaskSwitching(void)
+__attribute__((optimize("O"))) void EnableTaskSwitching(void)
 {
    TIMSK0 |= (1<<OCIE0A);           // enable timer 0 compare match interrupt
 }
 
-ISR (TIM0_COMPA_vect)
+__attribute__((optimize("O"))) ISR (TIM0_COMPA_vect)
 {
    static uint8_t delay = 0;
    static uint8_t i;
@@ -264,3 +263,4 @@ ISR (TIM0_COMPA_vect)
       }
    }
 }
+

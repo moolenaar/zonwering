@@ -23,19 +23,17 @@
 #define NONVOLATAILE_H_
 
 #include "general.h"
+#include <stdbool.h>
 
-/* setup the software that controls reading and writing of the eeprom
- */
-extern void NonVolataileSetup(void);
-
-/* read an uint16 from eeprom
- * returns the value read
- */
-extern uint16_t NonVolataileRead(void);
-
-/* write an uint16 to eeprom
- * value: the value to write to eeprom
- */
-extern void NonVolataileWrite(uint16_t value);
+void NonVolataileSetup(void);
+uint32_t nvGetTimeCounter(void);
+void nvSetTimeCounter(uint32_t value);
+uint16_t nvGetUpDownCounter(void);
+void nvSetUpDownCounter(uint16_t  value);
+int16_t nvGetFullyOpen(void);
+void nvSetFullyOpen(int16_t value);
+bool nvGetTimerActive(void);
+void nvSetTimerActive(bool value);
+void NonVolataileTask(void);
 
 #endif /* NONVOLATAILE_H_ */

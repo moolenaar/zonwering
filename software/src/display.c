@@ -30,14 +30,16 @@
 
 uint8_t screen = 0;
 
-static char EEMEM ProductTitle[20] = "Sun Shade Control";
+static char EEMEM ProductTitle1[20] = "Sun Shade";
+static char EEMEM ProductTitle2[20] = "Control";
 static char EEMEM ProductVersion[20] = "version 1.0";
 
 static void displayProductTitle(void)
 {
    Clear();
-   WriteStaticString(font5x8, 0, 10, ProductTitle);
-   WriteStaticString(font5x8, 10, 24, ProductVersion);
+   WriteStaticString(font5x8, 0, 8, ProductTitle1);
+   WriteStaticString(font5x8, 0, 16, ProductTitle2);
+   WriteStaticString(font5x8, 0, 24, ProductVersion);
    TaskSleep(2000);
 }
 

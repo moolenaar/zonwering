@@ -21,26 +21,77 @@
 
 #include "nonvolataile.h"
 #include <avr/eeprom.h>
+#include <stdbool.h>
+#include "kernel.h"
+#include "lcd.h"
 
-static uint16_t delaySeconds;
- 
+static volatile uint32_t timeCounter;
+static volatile uint16_t upDownCounter;
+static int16_t fullyOpen;
+static bool timerActive; 
+
 void NonVolataileSetup(void)
 {
-   delaySeconds = eeprom_read_word((uint16_t*) 64);
+   timeCounter = 0;//eeprom_read_dword((uint32_t*)500);
+   upDownCounter = 0;//eeprom_read_word((uint16_t*)504);
+   fullyOpen = 1000;//(int16_t)eeprom_read_word((uint16_t*)506);
+   timerActive = false;//eeprom_read_byte((uint8_t*)508);
 }
 
-uint16_t NonVolataileRead(void)
+uint32_t nvGetTimeCounter(void)
 {
-   return delaySeconds;
+   return timeCounter;
 }
 
-void NonVolataileWrite(uint16_t value)
+void nvSetTimeCounter(uint32_t value)
 {
-   if (value != delaySeconds)
+   timeCounter = value;
+}
+
+uint16_t nvGetUpDownCounter(void)
+{
+   return upDownCounter;
+}
+
+void nvSetUpDownCounter(uint16_t  value)
+{
+   upDownCounter = value;
+}
+
+int16_t nvGetFullyOpen(void)
+{
+   return fullyOpen;
+}
+
+void nvSetFullyOpen(int16_t value)
+{
+   fullyOpen = value;
+}
+
+bool nvGetTimerActive(void)
+{
+   return timerActive;
+}
+
+void nvSetTimerActive(bool value)
+{
+   timerActive = value;
+}
+
+void NonVolataileTask(void)
+{
+   while(true)
    {
-      delaySeconds = value;
-      eeprom_write_word((uint16_t*) 64, delaySeconds);
+      eeprom_update_dword((uint32_t*)500, timeCounter);
+      TaskSleep(0);
+      eeprom_update_word((uint16_t*)504, upDownCounter);
+      TaskSleep(0);
+      eeprom_update_word((uint16_t*)506, (uint16_t)fullyOpen);
+      TaskSleep(0);
+      eeprom_update_byte((uint8_t*)508, timerActive);
+      TaskSleep(0);
+      HandleBacklight();
+      TaskSleep(500);
    }
 }
 
-uint8_t config_ee[15] EEMEM = "testing ...";

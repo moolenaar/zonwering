@@ -21,6 +21,8 @@
 #include "kernel.h"
 #include "lcd.h"
 
+uint8_t active;
+
 void LcdSetup(void)
 {
    PORTB &= ~((1 << PORTB1) | (1 << PORTB2));
@@ -41,6 +43,7 @@ void EnableLcd(bool enable)
    if (enable)
    {
       PORTB &= ~(1 << PORTB0);
+      active = 10;
    }
    else
    {
@@ -74,6 +77,7 @@ static void SetAddress(uint8_t x, uint8_t y)
 
 void Clear(void)
 {
+   EnableLcd(true);
    WriteLcdCommand(8);    // display control; switch display off
 
    SetAddress(0, 0);
@@ -143,6 +147,7 @@ static inline void Write8PixelString(const uint8_t *font, const uint8_t x, uint8
 {
    uint8_t data, value, ch, index = 0;
 
+   EnableLcd(true);
    SetAddress(x, y / 8);
 
    ch = source(&text[index++]);
@@ -186,6 +191,7 @@ void static inline Write16PixelString(const uint8_t *font, const uint8_t x, uint
 {
    uint8_t data, value, ch, index = 0;
 
+   EnableLcd(true);
    SetAddress(x, y / 8);
 
    ch = source(&text[index++]);
@@ -252,6 +258,7 @@ void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, 
 {
    uint8_t data, value, ch, index = 0;
 
+   EnableLcd(true);
    SetAddress(x, y / 8);
 
    ch = eeprom_read_byte(&text[index++]);
@@ -289,4 +296,16 @@ void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, 
       }
    }
    SetAddress(x, y / 8);
+}
+
+void HandleBacklight(void)
+{
+   if (active > 0)
+   {
+      active--;
+   }
+   else
+   {
+      EnableLcd(false);
+   }
 }

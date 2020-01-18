@@ -24,6 +24,7 @@
 #include "button.h"
 #include "lcd.h"
 #include "nonvolataile.h"
+#include "clock.h"
 
 //#define test
 
@@ -57,11 +58,12 @@ void TestTask(void)
 
 int main (void)
 {
+   NonVolataileSetup();
    KernelSetup();
    AdcSetup();
    MotorSetup();
    ButtonSetup();
-   NonVolataileSetup();
+   ClockInit();
 
 #ifdef test
    InitTask(TESTSTACKSIZE, testStack, TestTask);

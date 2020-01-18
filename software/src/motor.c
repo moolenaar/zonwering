@@ -21,6 +21,7 @@
 #include "kernel.h"
 #include "motor.h"
 #include "clock.h"
+#include "nonvolataile.h"
 
 /* variable used to stear the output pins that control the motor */ 
 static volatile direction_type motorDirection = DIRECTION_STOP;
@@ -28,7 +29,7 @@ static volatile direction_type motorDirection = DIRECTION_STOP;
 static int16_t fullyOpen = 50*2*10; //0;
 /* requested time to open */
 static int16_t requestedOpenTime = 0;
-
+/* true when the timer to delay closing is active */
 static bool timerActive = false;
 
 direction_type GetMotorDirection(void)
@@ -86,6 +87,9 @@ void MotorSetup(void)
    // PA2; drive motor down, PA3: drive motor up
    PORTA &= ~((1 << PORTA2) | (1 << PORTA3)); // make sure outputs are low at startup
    DDRA |= (1 << DDA2) | (1 << DDA3);
+
+   fullyOpen = nvGetFullyOpen();
+   timerActive = nvGetTimerActive();
 }
 
 void SetMotorOutput(direction_type direction)
@@ -163,6 +167,10 @@ void MotorTask(void)
          MotorClose();
          timerActive = false;
       }
+
+      nvSetFullyOpen(fullyOpen);
+      nvSetTimerActive(timerActive);
+      
       TaskSleep(10);
    }
 }

@@ -52,7 +52,7 @@ void FullOpenKey(enum PressedButtonState key)
       case PressedButtonDownKey:
          WriteStaticString(font5x8, 0, 30, PositionSet);
          SetFullyOpen();
-         TaskSleep(500);
+         TaskSleep(1000);
          SetScreenMode(ModeMainScreenInit);
          break;
 

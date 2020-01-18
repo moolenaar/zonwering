@@ -4,7 +4,7 @@ AVRDUDETARGET     = t84
 TARGET            = zonwering
 SRC               = main.c kernel.c font.c adc.c lcd.c button.c display.c motor.c \
                     mainscreen.c fullopen.c closingtimescreen.c clock.c nonvolataile.c
-OPTIMIZE          = -O
+OPTIMIZE          = -Os
 LIBS              = 
 INCFLAGS          =
 INCLUDE           = -I src -I /usr/lib/avr/include

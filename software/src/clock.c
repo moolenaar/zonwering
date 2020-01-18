@@ -18,11 +18,18 @@
 
 
 #include "clock.h"
+#include "nonvolataile.h"
 
-static volatile uint32_t timeCounter = 0;
-static volatile uint16_t upDownCounter = 0;
+static volatile uint32_t timeCounter;
+static volatile uint16_t upDownCounter;
 static volatile int8_t step = 0;
- 
+
+void ClockInit(void)
+{
+   timeCounter = nvGetTimeCounter();
+   upDownCounter = nvGetUpDownCounter();
+}
+
 void StartTime(uint16_t waitTime)
 {
    timeCounter = (uint32_t)waitTime * 50 * 60;
@@ -66,5 +73,8 @@ void HandleClock(void)
    upDownCounter += step;
    if ((upDownCounter == 0) || (upDownCounter == 0xFFFF)) step = 0;
    if (timeCounter > 0) timeCounter--;
+
+   nvSetUpDownCounter(upDownCounter);
+   nvSetTimeCounter(timeCounter);
 }
 

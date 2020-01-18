@@ -31,7 +31,7 @@
 int8_t step = 0;
 
 static char EEMEM WaitTitle1[20]  = "Waiting before";
-static char EEMEM WaitTitle2[20]  = "closing blinds...";
+static char EEMEM WaitTitle2[20]  = "closing shades...";
 static char EEMEM Semicolon[2]   = ".";
 static char EEMEM Hour[2]   = "h";
 
