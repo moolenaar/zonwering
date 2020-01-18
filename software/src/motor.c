@@ -115,7 +115,7 @@ void SetMotorOutput(direction_type direction)
 void MotorDelayClose(uint16_t delayTime)
 {
    StartTime(delayTime);
-   timerActive = delayTime > 0;   
+   timerActive = delayTime > 1;   
 }
 
 void MotorTask(void)
@@ -162,7 +162,7 @@ void MotorTask(void)
       }
 
       /* time delay has passed; close */
-      if (timerActive && (GetTime() == 1))
+      if (timerActive && (GetTime() == 0))
       {
          MotorClose();
          timerActive = false;
