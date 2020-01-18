@@ -1,5 +1,5 @@
-/* display.h
- * Copyright 2019 Herman Moolenaar
+/* idlescreen.h
+ * Copyright 2020 Herman Moolenaar
  * This file is part of zonwering.
  *
  * zonwering is free software: you can redistribute it and/or modify
@@ -16,32 +16,13 @@
  * along with zonwering. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#ifndef IDLESCREEN_H
+#define IDLESCREEN_H
 
 #include "general.h"
 
-enum ScreenModeType
-{
-   ModeProductTitle = 0,
-   ModeMainScreenInit,
-   ModeMainScreenUpdate,
-   ModeAskClosingTimeInit,
-   ModeAskClosingTimeUpdate,
-   ModeAskFullOpenInit,
-   ModeAskFullOpenUpdate,
-   ModeDiagnosticInit,
-   ModeDiagnosticUpdate,
-   ModeIdleInit,
-   ModeIdleUpdate
-};
-
-void HandleDisplay(void);
-enum ScreenModeType GetScreenMode(void);
-void SetScreenMode(enum ScreenModeType screenMode);
-void ProgressBarSetup(void);
-void ProgressBar(uint8_t targetValue);
-char *utoaRightAligned(uint8_t value, char *buffer);
-void RestBacklightTimer(void);
+void idleScreenInit(void);
+void idleScreenUpdate(void);
+void idleScreenKey(enum PressedButtonState key);
 
 #endif

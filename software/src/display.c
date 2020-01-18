@@ -17,6 +17,7 @@
  */
 
 #include <avr/eeprom.h>
+#include <stdlib.h>
 #include "display.h"
 #include "lcd.h"
 #include "font.h"
@@ -27,12 +28,65 @@
 #include "fullopen.h"
 #include "closingtimescreen.h"
 #include "mainscreen.h"
+#include "idlescreen.h"
 
-uint8_t screen = 0;
+static uint8_t screen = 0;
+static uint8_t current;
+static uint16_t backlightTimer = 1000;
 
 static char EEMEM ProductTitle1[20] = "Sun Shade";
 static char EEMEM ProductTitle2[20] = "Control";
 static char EEMEM ProductVersion[20] = "version 1.0";
+static char EEMEM ProgressOutline[20] = "[==============]";
+static char EEMEM ProgressLineSolid[2] = "/";
+static char EEMEM ProgressLineBlank[2] = " ";
+
+void ProgressBarSetup(void)
+{
+   WriteStaticString(lines5x12, 2, 2, ProgressOutline);
+   current = 0;
+}
+
+void ProgressBar(uint8_t targetValue)
+{
+   targetValue = (uint16_t)targetValue * 77 / 100;
+   if (targetValue >= current)
+   {
+      for (uint8_t i = current; i < targetValue; ++i)
+      {
+         WriteStaticString(lines5x12, 3 + i, 2, ProgressLineSolid);
+      }
+   }
+   else if (targetValue < current)
+   {
+      for (uint8_t i = current; i > targetValue; --i)
+      {
+         WriteStaticString(lines5x12, 3 + i, 2, ProgressLineBlank);
+      }
+   }
+
+   current = targetValue;
+}
+
+char *utoaRightAligned(uint8_t value, char *buffer)
+{
+   utoa(value, buffer, 10);
+   if (buffer[1] == 0)
+   {
+      buffer[2] = 0;
+      buffer[1] = buffer[0];
+      buffer[0] = ' ';
+
+   }
+   if (buffer[2] == 0)
+   {
+      buffer[3] = 0;
+      buffer[2] = buffer[1];
+      buffer[1] = buffer[0];
+      buffer[0] = ' ';
+   }
+   return buffer;
+}
 
 static void displayProductTitle(void)
 {
@@ -51,6 +105,11 @@ enum ScreenModeType GetScreenMode(void)
 void SetScreenMode(enum ScreenModeType screenMode)
 {
    screen = screenMode;
+}
+
+void RestBacklightTimer(void)
+{
+   backlightTimer = 1000;
 }
 
 void HandleDisplay(void)
@@ -100,9 +159,33 @@ void HandleDisplay(void)
          FullOpenUpdate();
          break;
 
+      case ModeIdleInit:
+         idleScreenInit();
+         SetKeyHandler(idleScreenKey);
+         screen = ModeIdleUpdate;
+         break;
+
+      case ModeIdleUpdate:
+         idleScreenUpdate();
+         break;
+
       default:
          screen = ModeProductTitle;
          break;
+   }
+
+   if ((GetMotorDirection() != DIRECTION_STOP) || (GetTime() > 0))
+   {
+      RestBacklightTimer();
+   }
+
+   if (backlightTimer > 0)
+   {
+      backlightTimer--;
+      if (backlightTimer == 0)
+      {
+         screen = ModeIdleInit;
+      } 
    }
 }
 

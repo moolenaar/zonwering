@@ -26,7 +26,7 @@
 
 /* delay time and step in minutes */
 #define MAXDELAYTIME 720
-#define STEPDELAYTIME 2
+#define STEPDELAYTIME 5
 
 int8_t step = 0;
 

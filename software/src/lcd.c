@@ -23,6 +23,20 @@
 
 uint8_t active;
 
+void EnableLcd(bool enable)
+{
+   if (enable)
+   {
+      PORTB &= ~(1 << PORTB0);
+      active = 10;
+   }
+   else
+   {
+      // enableing the LCD also turns on the backlight
+      PORTB |= (1 << PORTB0);
+   }
+}
+
 void LcdSetup(void)
 {
    PORTB &= ~((1 << PORTB1) | (1 << PORTB2));
@@ -36,20 +50,8 @@ void LcdSetup(void)
         |  (1 << PORTA5);   // LCD Din as output
 
    PORTB |= (1 << PORTB2);  // nRESET high
-}
 
-void EnableLcd(bool enable)
-{
-   if (enable)
-   {
-      PORTB &= ~(1 << PORTB0);
-      active = 10;
-   }
-   else
-   {
-      // enableing the LCD also turns on the backlight
-      PORTB |= (1 << PORTB0);
-   }
+   EnableLcd(true);
 }
 
 static void WriteLcdData(uint8_t data)
@@ -77,7 +79,6 @@ static void SetAddress(uint8_t x, uint8_t y)
 
 void Clear(void)
 {
-   EnableLcd(true);
    WriteLcdCommand(8);    // display control; switch display off
 
    SetAddress(0, 0);
@@ -90,7 +91,6 @@ void Clear(void)
 
 void LcdInitialize(void)
 {
-   EnableLcd(true);
    WriteLcdCommand(0x21); // function set; H = 1
    WriteLcdCommand(0x14); // bias value 4 (1 : 48)
    WriteLcdCommand(0xb2); // set Vop to 3 + 50 * 0.06 = 6V
@@ -147,7 +147,6 @@ static inline void Write8PixelString(const uint8_t *font, const uint8_t x, uint8
 {
    uint8_t data, value, ch, index = 0;
 
-   EnableLcd(true);
    SetAddress(x, y / 8);
 
    ch = source(&text[index++]);
@@ -191,7 +190,6 @@ void static inline Write16PixelString(const uint8_t *font, const uint8_t x, uint
 {
    uint8_t data, value, ch, index = 0;
 
-   EnableLcd(true);
    SetAddress(x, y / 8);
 
    ch = source(&text[index++]);
@@ -258,7 +256,6 @@ void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, 
 {
    uint8_t data, value, ch, index = 0;
 
-   EnableLcd(true);
    SetAddress(x, y / 8);
 
    ch = eeprom_read_byte(&text[index++]);
@@ -296,16 +293,4 @@ void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, 
       }
    }
    SetAddress(x, y / 8);
-}
-
-void HandleBacklight(void)
-{
-   if (active > 0)
-   {
-      active--;
-   }
-   else
-   {
-      EnableLcd(false);
-   }
 }

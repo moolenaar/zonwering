@@ -73,6 +73,7 @@ static inline void CheckButtonPress(void)
 
       if (count == 5)
       {
+         RestBacklightTimer();
          pressedButton = AdcButtonToPressedButton(newAdcButton);
          if (keyHandler) keyHandler(pressedButton);
       }

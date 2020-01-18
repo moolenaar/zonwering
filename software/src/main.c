@@ -25,16 +25,17 @@
 #include "lcd.h"
 #include "nonvolataile.h"
 #include "clock.h"
+#include "display.h"
 
 //#define test
 
-#define MOTORSTACKSIZE MINIMUMSTACKSIZE + 22
+#define MOTORSTACKSIZE MINIMUMSTACKSIZE + 30
 uint8_t motorStack[MOTORSTACKSIZE];
 
 #define BUTTONSTACKSIZE MINIMUMSTACKSIZE + 60
 uint8_t buttonStack[BUTTONSTACKSIZE];
 
-#define EEPROMTASKSTACKSIZE MINIMUMSTACKSIZE + 12
+#define EEPROMTASKSTACKSIZE MINIMUMSTACKSIZE + 20
 uint8_t eepromTaskStack[EEPROMTASKSTACKSIZE];
 
 #ifdef test
@@ -71,6 +72,7 @@ int main (void)
    InitTask(EEPROMTASKSTACKSIZE, eepromTaskStack, NonVolataileTask);
    InitTask(MOTORSTACKSIZE, motorStack, MotorTask);
    InitTask(BUTTONSTACKSIZE, buttonStack, ButtonTask);
+   RestBacklightTimer();
 #endif
 
    StartKernel(NULL);

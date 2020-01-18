@@ -27,64 +27,13 @@
 #include "button.h"
 #include "display.h"
 
-static char EEMEM ProgressOutline[20] = "[==============]";
-static char EEMEM ProgressLineSolid[2] = "/";
-static char EEMEM ProgressLineBlank[2] = " ";
 static char EEMEM Up[10] = " Up ";
 static char EEMEM Down[10] = " Down ";
 static char EEMEM Actual[10] = "Actual";
 static char EEMEM Set[10] = "Set";
 
 uint8_t openPercent = 0;
-uint8_t current;
 bool block;
-
-static void ProgressBarSetup(void)
-{
-   WriteStaticString(lines5x12, 2, 2, ProgressOutline);
-   current = 0;
-}
-
-static void ProgressBar(uint8_t targetValue)
-{
-   targetValue = (uint16_t)targetValue * 77 / 100;
-   if (targetValue >= current)
-   {
-      for (uint8_t i = current; i < targetValue; ++i)
-      {
-         WriteStaticString(lines5x12, 3 + i, 2, ProgressLineSolid);
-      }
-   }
-   else if (targetValue < current)
-   {
-      for (uint8_t i = current; i > targetValue; --i)
-      {
-         WriteStaticString(lines5x12, 3 + i, 2, ProgressLineBlank);
-      }
-   }
-
-   current = targetValue;
-}
-
-static char *utoaRightAligned(uint8_t value, char *buffer)
-{
-   utoa(value, buffer, 10);
-   if (buffer[1] == 0)
-   {
-      buffer[2] = 0;
-      buffer[1] = buffer[0];
-      buffer[0] = ' ';
-
-   }
-   if (buffer[2] == 0)
-   {
-      buffer[3] = 0;
-      buffer[2] = buffer[1];
-      buffer[1] = buffer[0];
-      buffer[0] = ' ';
-   }
-   return buffer;
-}
 
 static void ProgressPercent(void)
 {
@@ -116,6 +65,7 @@ static void InvertedWhenMoving(void)
 
    }
 }
+
 void mainScreenInit(void)
 {
    block = false;

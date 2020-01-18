@@ -29,5 +29,4 @@ void WriteStaticString(const uint8_t *font, const uint8_t x, const uint8_t y, co
 void Clear(void);
 void EnableLcd(bool enable);
 void WriteInverted8PixelString(const uint8_t *font, const uint8_t x, uint8_t y, const char* text);
-void HandleBacklight(void);
 #endif
