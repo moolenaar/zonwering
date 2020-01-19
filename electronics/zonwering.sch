@@ -246,7 +246,7 @@ L zonwering-rescue:R R32
 U 1 1 5AF78D25
 P 10250 4450
 F 0 "R32" H 10400 4500 50  0000 C CNN
-F 1 "22" H 10400 4400 50  0000 C CNN
+F 1 "47" H 10400 4400 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 10180 4450 50  0001 C CNN
 F 3 "" H 10250 4450 50  0000 C CNN
 	1    10250 4450
@@ -564,33 +564,6 @@ F 3 "" H 3100 3650 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L zonwering-rescue:R R13
-U 1 1 5AF8C723
-P 4600 1850
-F 0 "R13" H 4450 1950 50  0000 C CNN
-F 1 "0" H 4450 1850 50  0000 C CNN
-F 2 "footprints:Resistor_14mm" V 4530 1850 50  0001 C CNN
-F 3 "" H 4600 1850 50  0000 C CNN
-F 4 "2W" H 4450 1750 60  0000 C CNN "power"
-	1    4600 1850
-	1    0    0    -1  
-$EndComp
-Text GLabel 2950 1650 0    60   Output ~ 0
-SENSE
-$Comp
-L zonwering-rescue:R R26
-U 1 1 5AF922D8
-P 8200 5700
-F 0 "R26" V 8000 5700 50  0000 C CNN
-F 1 "100k" V 8100 5700 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" V 8130 5700 50  0001 C CNN
-F 3 "" H 8200 5700 50  0000 C CNN
-	1    8200 5700
-	0    1    1    0   
-$EndComp
-Text GLabel 9150 5700 2    60   Input ~ 0
-SENSE
-$Comp
 L zonwering-rescue:R R16
 U 1 1 5AF9963B
 P 5350 1100
@@ -604,13 +577,13 @@ $EndComp
 $Comp
 L zonwering-rescue:C C8
 U 1 1 5AF996EE
-P 5350 1850
-F 0 "C8" H 5050 1950 50  0000 L CNN
-F 1 "10nF" H 5000 1850 50  0000 L CNN
-F 2 "footprints:capacitor_RM7.5" H 5388 1700 50  0001 C CNN
-F 3 "" H 5350 1850 50  0000 C CNN
-F 4 "300VAC X2" H 5050 1750 60  0000 C CNN "voltage"
-	1    5350 1850
+P 5350 1650
+F 0 "C8" H 5500 1400 50  0000 L CNN
+F 1 "10nF" H 5450 1300 50  0000 L CNN
+F 2 "footprints:capacitor_RM7.5" H 5388 1500 50  0001 C CNN
+F 3 "" H 5350 1650 50  0000 C CNN
+F 4 "300VAC X2" H 5450 1150 60  0000 C CNN "voltage"
+	1    5350 1650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -627,13 +600,13 @@ $EndComp
 $Comp
 L zonwering-rescue:C C4
 U 1 1 5AF99868
-P 3900 1850
-F 0 "C4" H 3600 1900 50  0000 L CNN
-F 1 "10nF" H 3550 1800 50  0000 L CNN
-F 2 "footprints:capacitor_RM7.5" H 3938 1700 50  0001 C CNN
-F 3 "" H 3900 1850 50  0000 C CNN
-F 4 "300VAC X2" H 3600 1700 60  0000 C CNN "voltage"
-	1    3900 1850
+P 3900 1700
+F 0 "C4" H 4000 2000 50  0000 L CNN
+F 1 "10nF" H 4000 1900 50  0000 L CNN
+F 2 "footprints:capacitor_RM7.5" H 3938 1550 50  0001 C CNN
+F 3 "" H 3900 1700 50  0000 C CNN
+F 4 "300VAC X2" H 4150 1800 60  0000 C CNN "voltage"
+	1    3900 1700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -758,28 +731,6 @@ F 3 "" H 10500 2050 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L zonwering-rescue:R R28
-U 1 1 5AF9FD20
-P 8500 6000
-F 0 "R28" H 8350 6050 50  0000 C CNN
-F 1 "1M" H 8350 5950 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 8430 6000 50  0001 C CNN
-F 3 "" H 8500 6000 50  0000 C CNN
-	1    8500 6000
-	1    0    0    -1  
-$EndComp
-$Comp
-L zonwering-rescue:-3.3V #PWR014
-U 1 1 5AFA0A97
-P 7200 6200
-F 0 "#PWR014" H 7200 6050 50  0001 C CNN
-F 1 "-3.3V" H 7200 6340 50  0000 C CNN
-F 2 "" H 7200 6200 50  0000 C CNN
-F 3 "" H 7200 6200 50  0000 C CNN
-	1    7200 6200
-	-1   0    0    1   
-$EndComp
-$Comp
 L zonwering-rescue:R R31
 U 1 1 5AF6EBC5
 P 8800 2800
@@ -885,61 +836,6 @@ F 3 "" H 3250 4200 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L zonwering-rescue:R R23
-U 1 1 5AFC7262
-P 7450 5950
-F 0 "R23" H 7600 6000 50  0000 C CNN
-F 1 "1M" H 7600 5900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 7380 5950 50  0001 C CNN
-F 3 "" H 7450 5950 50  0000 C CNN
-	1    7450 5950
-	1    0    0    -1  
-$EndComp
-$Comp
-L zonwering-rescue:GND #PWR016
-U 1 1 5AFC78BE
-P 8500 6250
-F 0 "#PWR016" H 8500 6000 50  0001 C CNN
-F 1 "GND" H 8500 6100 50  0000 C CNN
-F 2 "" H 8500 6250 50  0000 C CNN
-F 3 "" H 8500 6250 50  0000 C CNN
-	1    8500 6250
-	1    0    0    -1  
-$EndComp
-$Comp
-L zonwering-rescue:C C10
-U 1 1 5AFC885D
-P 7000 6000
-F 0 "C10" H 7025 6100 50  0000 L CNN
-F 1 "100pF" H 7025 5900 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7038 5850 50  0001 C CNN
-F 3 "" H 7000 6000 50  0000 C CNN
-	1    7000 6000
-	1    0    0    -1  
-$EndComp
-$Comp
-L zonwering-rescue:C C13
-U 1 1 5AFC99D2
-P 8800 5700
-F 0 "C13" V 8550 5650 50  0000 L CNN
-F 1 "100nF" V 8650 5600 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 8838 5550 50  0001 C CNN
-F 3 "" H 8800 5700 50  0000 C CNN
-	1    8800 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L zonwering-rescue:R R25
-U 1 1 5AFCA372
-P 7750 5700
-F 0 "R25" V 7550 5700 50  0000 C CNN
-F 1 "100k" V 7650 5700 50  0000 C CNN
-F 2 "Resistors_SMD:R_1206_HandSoldering" V 7680 5700 50  0001 C CNN
-F 3 "" H 7750 5700 50  0000 C CNN
-	1    7750 5700
-	0    1    1    0   
-$EndComp
-$Comp
 L zonwering-rescue:Q_NMOS_GSD Q2
 U 1 1 5AFD3919
 P 5550 4800
@@ -997,17 +893,6 @@ F 2 "Connect:PINTST" H 10700 3050 50  0001 C CNN
 F 3 "" H 10700 3050 50  0000 C CNN
 	1    10700 3050
 	1    0    0    -1  
-$EndComp
-$Comp
-L zonwering-rescue:CONN_01X01 P7
-U 1 1 5AFE2F94
-P 6700 5500
-F 0 "P7" V 6700 5600 50  0000 C CNN
-F 1 "sense" V 6800 5500 50  0000 C CNN
-F 2 "Connect:PINTST" H 6700 5500 50  0001 C CNN
-F 3 "" H 6700 5500 50  0000 C CNN
-	1    6700 5500
-	0    -1   -1   0   
 $EndComp
 $Comp
 L zonwering-rescue:CONN_01X01 P4
@@ -1127,18 +1012,15 @@ Wire Wire Line
 Wire Wire Line
 	1750 3050 2150 3050
 Wire Wire Line
-	5000 1650 5000 1250
+	5000 2050 5000 1250
 Wire Wire Line
-	2950 1650 3150 1650
-Wire Wire Line
-	3550 1250 3550 1650
+	3550 1250 3550 2050
 Wire Wire Line
 	2200 750  3550 750 
 Wire Wire Line
 	2050 650  5000 650 
 Wire Wire Line
 	5000 650  5000 750 
-Connection ~ 4600 1650
 Wire Wire Line
 	9500 4750 10250 4750
 Wire Wire Line
@@ -1253,9 +1135,7 @@ Wire Wire Line
 Connection ~ 1500 6600
 Connection ~ 1500 7100
 Wire Wire Line
-	5550 6650 6700 6650
-Wire Wire Line
-	5550 6650 5550 6850
+	5550 6750 5550 6850
 Wire Wire Line
 	5550 6850 5450 6850
 Wire Wire Line
@@ -1340,10 +1220,6 @@ Wire Wire Line
 Connection ~ 6400 5800
 Wire Wire Line
 	4450 4800 4550 4800
-Wire Wire Line
-	4600 1700 4600 1650
-Wire Wire Line
-	4600 2000 4600 2050
 Connection ~ 9600 3650
 Wire Wire Line
 	3700 3650 3900 3650
@@ -1373,10 +1249,6 @@ Connection ~ 3550 750
 Wire Wire Line
 	9500 5050 9600 5050
 Connection ~ 9600 5050
-Wire Wire Line
-	8350 5700 8500 5700
-Wire Wire Line
-	6700 6650 6700 5700
 Wire Wire Line
 	8000 1150 8450 1150
 Wire Wire Line
@@ -1421,46 +1293,23 @@ Wire Wire Line
 	3100 3000 3100 3050
 Connection ~ 2600 3650
 Wire Wire Line
-	6700 5700 7000 5700
-Wire Wire Line
-	7000 5700 7000 5850
-Connection ~ 7000 5700
-Wire Wire Line
-	8500 5850 8500 5700
-Connection ~ 8500 5700
-Wire Wire Line
-	8500 6150 8500 6250
-Wire Wire Line
-	7000 6200 7000 6150
-Wire Wire Line
-	9150 5700 8950 5700
-Wire Wire Line
-	8050 5700 7900 5700
-Wire Wire Line
-	5350 2050 5350 2000
+	5350 2050 5350 1800
 Connection ~ 4600 2050
 Connection ~ 2300 4550
 Connection ~ 1450 4550
 Wire Wire Line
 	9600 4050 9500 4050
 Wire Wire Line
-	7000 6200 7200 6200
-Wire Wire Line
-	7450 6200 7450 6100
-Wire Wire Line
-	7450 5800 7450 5700
-Connection ~ 7450 5700
-Wire Wire Line
 	3250 4200 3350 4200
 Wire Wire Line
 	3650 4200 3900 4200
 Connection ~ 3900 4200
 Wire Wire Line
-	5350 1700 5350 1250
+	5350 1500 5350 1250
 Wire Wire Line
-	3900 1700 3900 1250
+	3900 1550 3900 1250
 Wire Wire Line
-	3900 2000 3900 2050
+	3900 1850 3900 2050
 Wire Wire Line
 	2850 6700 2550 6700
 Wire Wire Line
@@ -1481,7 +1330,6 @@ Connection ~ 10500 2150
 Connection ~ 4200 4300
 Connection ~ 3900 4550
 Connection ~ 3600 5700
-Connection ~ 6700 5700
 Connection ~ 10500 3050
 Wire Wire Line
 	1450 2250 1750 2250
@@ -1604,7 +1452,6 @@ F 3 "" H 2600 2750 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	2600 2900 2600 3200
-Connection ~ 7200 6200
 Wire Wire Line
 	4850 2450 5000 2450
 Wire Wire Line
@@ -1619,8 +1466,6 @@ Wire Wire Line
 	7150 2250 7150 2350
 Wire Wire Line
 	7150 2150 7150 2250
-Wire Wire Line
-	4600 1650 5000 1650
 Wire Wire Line
 	2850 6150 2850 6500
 Wire Wire Line
@@ -1655,8 +1500,6 @@ Wire Wire Line
 	5750 5800 5750 6350
 Wire Wire Line
 	6400 5800 6400 5950
-Wire Wire Line
-	3550 1650 4600 1650
 Wire Wire Line
 	9600 3650 10250 3650
 Wire Wire Line
@@ -1696,19 +1539,13 @@ Wire Wire Line
 Wire Wire Line
 	2600 3650 2950 3650
 Wire Wire Line
-	7000 5700 7450 5700
-Wire Wire Line
-	8500 5700 8650 5700
-Wire Wire Line
-	4600 2050 5350 2050
+	4600 2050 5000 2050
 Wire Wire Line
 	2300 5150 3150 5150
 Wire Wire Line
 	2300 4550 2550 4550
 Wire Wire Line
 	1450 4550 1650 4550
-Wire Wire Line
-	7450 5700 7600 5700
 Wire Wire Line
 	3900 4200 3900 4550
 Wire Wire Line
@@ -1739,46 +1576,38 @@ Wire Wire Line
 	1750 2000 1750 2150
 Wire Wire Line
 	4450 5250 4450 5550
-Wire Wire Line
-	7200 6200 7450 6200
 $Comp
 L Device:R R35
 U 1 1 5DACFF1D
-P 4600 1400
-F 0 "R35" H 4670 1446 50  0000 L CNN
-F 1 "4,7k" H 4670 1355 50  0000 L CNN
-F 2 "" V 4530 1400 50  0001 C CNN
-F 3 "~" H 4600 1400 50  0001 C CNN
-	1    4600 1400
+P 4600 1650
+F 0 "R35" H 4670 1696 50  0000 L CNN
+F 1 "4,7k" H 4670 1605 50  0000 L CNN
+F 2 "" V 4530 1650 50  0001 C CNN
+F 3 "~" H 4600 1650 50  0001 C CNN
+	1    4600 1650
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R34
 U 1 1 5DAD0B91
-P 3150 1400
-F 0 "R34" H 3220 1446 50  0000 L CNN
-F 1 "4,7k" H 3220 1355 50  0000 L CNN
-F 2 "" V 3080 1400 50  0001 C CNN
-F 3 "~" H 3150 1400 50  0001 C CNN
-	1    3150 1400
+P 3150 1550
+F 0 "R34" H 3220 1596 50  0000 L CNN
+F 1 "4,7k" H 3220 1505 50  0000 L CNN
+F 2 "" V 3080 1550 50  0001 C CNN
+F 3 "~" H 3150 1550 50  0001 C CNN
+	1    3150 1550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4600 1250 4600 1200
+	4600 1500 4600 1200
 Connection ~ 4600 1200
-Connection ~ 3550 1650
 Wire Wire Line
 	3900 2050 4600 2050
 Wire Wire Line
-	3150 1250 3150 1200
+	3150 1400 3150 1200
 Connection ~ 3150 1200
 Wire Wire Line
-	3150 1550 3150 1650
-Connection ~ 3150 1650
-Wire Wire Line
-	3150 1650 3550 1650
-Wire Wire Line
-	4600 1550 4600 1650
+	3150 1700 3150 2050
 Wire Wire Line
 	2300 5150 1450 5150
 Connection ~ 2300 5150
@@ -1798,10 +1627,10 @@ Connection ~ 750  5150
 Wire Wire Line
 	1150 4900 1250 4900
 $Comp
-L Device:C C?
+L Device:C C13
 U 1 1 5DD10B31
 P 1000 4900
-F 0 "C?" V 748 4900 50  0000 C CNN
+F 0 "C13" V 748 4900 50  0000 C CNN
 F 1 "10nF" V 839 4900 50  0000 C CNN
 F 2 "" H 1038 4750 50  0001 C CNN
 F 3 "~" H 1000 4900 50  0001 C CNN
@@ -1813,4 +1642,30 @@ Wire Wire Line
 Connection ~ 2600 2450
 Wire Wire Line
 	2600 2450 3100 2450
+Wire Wire Line
+	5550 6750 6200 6750
+Wire Wire Line
+	6200 6750 6200 6600
+$Comp
+L zonwering-rescue:CONN_01X01 P7
+U 1 1 5AFE2F94
+P 6200 6400
+F 0 "P7" V 6200 6500 50  0000 C CNN
+F 1 "nc" V 6300 6400 50  0000 C CNN
+F 2 "Connect:PINTST" H 6200 6400 50  0001 C CNN
+F 3 "" H 6200 6400 50  0000 C CNN
+	1    6200 6400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4600 1800 4600 2050
+Connection ~ 5000 2050
+Wire Wire Line
+	5000 2050 5350 2050
+Wire Wire Line
+	3900 2050 3550 2050
+Connection ~ 3900 2050
+Connection ~ 3550 2050
+Wire Wire Line
+	3550 2050 3150 2050
 $EndSCHEMATC
