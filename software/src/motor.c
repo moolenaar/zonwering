@@ -53,9 +53,9 @@ void MotorClose(void)
 {
    if (GetUpDownTime() > 0)
    {
-      StartUp();
-      motorDirection = DIRECTION_UP;
+   StartUp();
    }
+   motorDirection = DIRECTION_UP;
    requestedOpenTime = -1;
 }
 
@@ -126,7 +126,7 @@ void MotorTask(void)
       if ((motorDirection == DIRECTION_UP) && (GetUpDownTime() == 0))
       {
          /* extra time to make sure fully closed */
-         TaskSleep(500);
+         TaskSleep(1000);
          StopUpDown();
          motorDirection = DIRECTION_STOP;
       }
