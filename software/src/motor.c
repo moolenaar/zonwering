@@ -21,7 +21,7 @@
 #include "kernel.h"
 #include "motor.h"
 #include "clock.h"
-#include "nonvolataile.h"
+#include "nonvolatile.h"
 
 /* variable used to stear the output pins that control the motor */ 
 static volatile direction_type motorDirection = DIRECTION_STOP;
@@ -126,7 +126,7 @@ void MotorTask(void)
       if ((motorDirection == DIRECTION_UP) && (GetUpDownTime() == 0))
       {
          /* extra time to make sure fully closed */
-         TaskSleep(1000);
+         TaskSleep(500);
          StopUpDown();
          motorDirection = DIRECTION_STOP;
       }
@@ -139,7 +139,7 @@ void MotorTask(void)
       }
 
       /* start automatic moving up */
-      if((motorDirection == DIRECTION_STOP) && (requestedOpenTime >= 0) && (requestedOpenTime < GetUpDownTime()))
+      if((motorDirection == DIRECTION_STOP) && (requestedOpenTime > 0) && (requestedOpenTime < GetUpDownTime()))
       {
          StartUp();
          motorDirection = DIRECTION_UP;

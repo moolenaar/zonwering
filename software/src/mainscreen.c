@@ -27,7 +27,7 @@
 #include "button.h"
 #include "display.h"
 #include "clock.h"
-#include "nonvolataile.h"
+#include "nonvolatile.h"
 
 static char EEMEM Up[10] = " Up ";
 static char EEMEM Down[10] = " Down ";

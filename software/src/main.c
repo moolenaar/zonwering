@@ -23,7 +23,7 @@
 #include "motor.h"
 #include "button.h"
 #include "lcd.h"
-#include "nonvolataile.h"
+#include "nonvolatile.h"
 #include "clock.h"
 #include "display.h"
 #include "mainscreen.h"

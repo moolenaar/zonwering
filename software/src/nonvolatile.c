@@ -19,7 +19,7 @@
  * along with zonwering. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "nonvolataile.h"
+#include "nonvolatile.h"
 #include <avr/eeprom.h>
 #include <stdbool.h>
 #include <string.h>
